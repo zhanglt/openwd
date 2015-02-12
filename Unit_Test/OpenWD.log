@@ -1,0 +1,28 @@
+﻿生成启动时间为 2015-2-12 17:15:17。
+     1>项目“F:\快盘\Uploads\ActiveX\OpenWD\OpenWD.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Iinclude /Iinclude/test /Iinclude/util /Iinclude/wps /Iinclude/word /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _TEST /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _MERGE_PROXYSTUB /D _WINDLL /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Unit_Test\OpenWD.pch" /Fo"Unit_Test\\" /Fd"Unit_Test\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt cpp\test\UnitTest.cpp
+         UnitTest.cpp
+       Link:
+         F:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\快盘\Uploads\检察院\OperationDLL\Unit_Test\OpenWD.dll" /INCREMENTAL /NOLOGO comsvcs.lib /DEF:".\OpenWD.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"F:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"F:\快盘\Uploads\检察院\OperationDLL\Unit_Test\OpenWD.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL Unit_Test\OpenWD.res
+         Unit_Test\compreg.obj
+         Unit_Test\UnitTest.obj
+         Unit_Test\BrowseDirDialog.obj
+         Unit_Test\des.obj
+         Unit_Test\InfoZip.obj
+         Unit_Test\PubFunction.obj
+         Unit_Test\Regedit.obj
+         Unit_Test\ShowMsgDlg.obj
+         Unit_Test\word.obj
+         Unit_Test\dllmain.obj
+         Unit_Test\OpenEdit.obj
+         Unit_Test\OpenWD.obj
+         Unit_Test\OpenWD_i.obj
+         Unit_Test\stdafx.obj
+         Unit_Test\xdlldata.obj
+         OpenWD.vcxproj -> F:\快盘\Uploads\检察院\OperationDLL\Unit_Test\OpenWD.dll
+     1>已完成生成项目“F:\快盘\Uploads\ActiveX\OpenWD\OpenWD.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.83

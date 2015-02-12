@@ -35,6 +35,12 @@
     <Filter Include="源文件\wps">
       <UniqueIdentifier>{305a58c2-2d1e-4b59-a610-54a2579a399d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\test">
+      <UniqueIdentifier>{d1f1c83b-6035-42d3-b63b-49274725f63d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\test">
+      <UniqueIdentifier>{d3ea5e49-3084-484c-acf2-7ddbd9145371}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,6 +84,9 @@
     </ClCompile>
     <ClCompile Include="cpp\util\ShowMsgDlg.cpp">
       <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\test\UnitTest.cpp">
+      <Filter>源文件\test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="include\util\ZipDLL.h">
       <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\test\test.h">
+      <Filter>头文件\test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
