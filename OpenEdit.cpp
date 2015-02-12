@@ -77,3 +77,76 @@ STDMETHODIMP COpenEdit::PutDocumentFile(BSTR sHeader, int index)
 
 	return S_OK;
 }
+
+
+STDMETHODIMP COpenEdit::SendAttachment(BSTR sInfo)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+
+	return S_OK;
+}
+
+
+STDMETHODIMP COpenEdit::get_ServerIp(int* IP)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+	*IP = this->nIP;
+
+	return S_OK;
+}
+
+
+STDMETHODIMP COpenEdit::put_ServerIp(int IP)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	this->nIP = IP;
+
+	// TODO:  在此添加实现代码
+
+	return S_OK;
+}
+STDMETHODIMP COpenEdit::get_ServerPort(int* pPort)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+	*pPort = this->nPort;
+	return S_OK;
+}
+
+
+STDMETHODIMP COpenEdit::put_ServerPort(int iPort)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+	this->nPort = iPort;
+
+	return S_OK;
+}
+
+STDMETHODIMP COpenEdit::get_ServerPath(BSTR* pPath)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+	*pPath = this->sPath;
+
+	return S_OK;
+}
+
+
+STDMETHODIMP COpenEdit::put_ServerPath(BSTR sPath)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	// TODO:  在此添加实现代码
+	this->sPath = sPath;
+
+	return S_OK;
+}
+

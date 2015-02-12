@@ -21,6 +21,7 @@ interface IComponentRegistrar : IDispatch
 	[id(4)]	HRESULT GetComponents([out] SAFEARRAY(BSTR)* pbstrCLSIDs, [out] SAFEARRAY(BSTR)* pbstrDescriptions);
 	[id(5)]	HRESULT RegisterComponent([in] BSTR bstrCLSID);
 	[id(6)] HRESULT UnregisterComponent([in] BSTR bstrCLSID);
+
 };
 
 [
@@ -37,8 +38,16 @@ interface IOpenEdit : IDispatch{
 	[id(2)] HRESULT GetDocumentFile([in] BSTR sHeader, BSTR sUserName, [in] BOOL bTrace);
 	[id(3)] HRESULT GetAttachment([in] BSTR sInfo, [in] BSTR sFile, [in] int idx);
 	[id(4)] HRESULT PutDocumentFile([in] BSTR sHeader, [in] int index);
-
+	[id(5)] HRESULT SendAttachment([in] BSTR sInfo);
+	[propget, id(6)] HRESULT ServerIp([out, retval] int* IP);
+	[propput, id(6)] HRESULT ServerIp([in] int  IP);
+	[propget, id(7)] HRESULT ServerPort([out, retval] int* pPort);
+	[propput, id(7)] HRESULT ServerPort([in] int  iPort);
+	[propget, id(8)] HRESULT ServerPath([out, retval] BSTR* pPath);
+	[propput, id(8)] HRESULT ServerPath([in] BSTR  sPath);
 };
+
+
 [
 	uuid(C0A07342-EE8F-43A1-A6C7-817D49A6948F),
 	version(1.0),

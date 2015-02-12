@@ -7,7 +7,8 @@
 
 #include "OpenWD_i.h"
 #include "_IOpenEditEvents_CP.h"
-
+#include <string>
+#include <iostream>
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -15,6 +16,7 @@
 #endif
 
 using namespace ATL;
+using namespace std;
 
 
 // COpenEdit
@@ -30,6 +32,9 @@ class ATL_NO_VTABLE COpenEdit :
 {
 private:
 	int  nDocumentType;
+	int  nIP;
+	int  nPort;
+	BSTR  sPath;
 
 public:
 	COpenEdit()
@@ -88,6 +93,7 @@ public:
 	// Parameter: BOOL bTrace  ÐÞ¸ÄºÛ¼£±êÊ¶
 	//************************************
 	STDMETHOD(GetDocumentFile)(BSTR sHeader, BSTR sUserName, BOOL bTrace);
+
 	//************************************
 	// Method:    GetAttachment
 	// FullName:  COpenEdit::GetAttachment
@@ -100,6 +106,14 @@ public:
 	//************************************
 	STDMETHOD(GetAttachment)(BSTR sInfo, BSTR sFile, int idx);
 	STDMETHOD(PutDocumentFile)(BSTR sHeader, int index);
+	STDMETHOD(SendAttachment)(BSTR sInfo);
+
+	STDMETHOD(get_ServerIp)(int* IP);
+	STDMETHOD(put_ServerIp)(int IP);
+	STDMETHOD(get_ServerPort)(int* pPort);
+	STDMETHOD(put_ServerPort)(int iPort);
+	STDMETHOD(get_ServerPath)(BSTR* pPath);
+	STDMETHOD(put_ServerPath)(BSTR sPath);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(OpenEdit), COpenEdit)

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Feb 12 21:58:55 2015
+/* at Thu Feb 12 22:56:51 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -312,6 +312,27 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ BSTR sHeader,
             /* [in] */ int index) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE SendAttachment( 
+            /* [in] */ BSTR sInfo) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerIp( 
+            /* [retval][out] */ int *IP) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerIp( 
+            /* [in] */ int IP) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerPort( 
+            /* [retval][out] */ int *pPort) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerPort( 
+            /* [in] */ int iPort) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerPath( 
+            /* [retval][out] */ BSTR *pPath) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerPath( 
+            /* [in] */ BSTR sPath) = 0;
+        
     };
     
     
@@ -395,6 +416,34 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ BSTR sHeader,
             /* [in] */ int index);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *SendAttachment )( 
+            IOpenEdit * This,
+            /* [in] */ BSTR sInfo);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerIp )( 
+            IOpenEdit * This,
+            /* [retval][out] */ int *IP);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerIp )( 
+            IOpenEdit * This,
+            /* [in] */ int IP);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerPort )( 
+            IOpenEdit * This,
+            /* [retval][out] */ int *pPort);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerPort )( 
+            IOpenEdit * This,
+            /* [in] */ int iPort);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerPath )( 
+            IOpenEdit * This,
+            /* [retval][out] */ BSTR *pPath);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerPath )( 
+            IOpenEdit * This,
+            /* [in] */ BSTR sPath);
+        
         END_INTERFACE
     } IOpenEditVtbl;
 
@@ -445,6 +494,27 @@ EXTERN_C const IID IID_IOpenEdit;
 
 #define IOpenEdit_PutDocumentFile(This,sHeader,index)	\
     ( (This)->lpVtbl -> PutDocumentFile(This,sHeader,index) ) 
+
+#define IOpenEdit_SendAttachment(This,sInfo)	\
+    ( (This)->lpVtbl -> SendAttachment(This,sInfo) ) 
+
+#define IOpenEdit_get_ServerIp(This,IP)	\
+    ( (This)->lpVtbl -> get_ServerIp(This,IP) ) 
+
+#define IOpenEdit_put_ServerIp(This,IP)	\
+    ( (This)->lpVtbl -> put_ServerIp(This,IP) ) 
+
+#define IOpenEdit_get_ServerPort(This,pPort)	\
+    ( (This)->lpVtbl -> get_ServerPort(This,pPort) ) 
+
+#define IOpenEdit_put_ServerPort(This,iPort)	\
+    ( (This)->lpVtbl -> put_ServerPort(This,iPort) ) 
+
+#define IOpenEdit_get_ServerPath(This,pPath)	\
+    ( (This)->lpVtbl -> get_ServerPath(This,pPath) ) 
+
+#define IOpenEdit_put_ServerPath(This,sPath)	\
+    ( (This)->lpVtbl -> put_ServerPath(This,sPath) ) 
 
 #endif /* COBJMACROS */
 
