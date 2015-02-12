@@ -1,0 +1,26 @@
+HKCR
+{
+	OpenWD.OpenEdit.1 = s 'OpenEdit Class'
+	{
+		CLSID = s '{79DAD3A5-311C-41C5-8F57-D083A2933D2B}'
+	}
+	OpenWD.OpenEdit = s 'OpenEdit Class'
+	{		
+		CurVer = s 'OpenWD.OpenEdit.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {79DAD3A5-311C-41C5-8F57-D083A2933D2B} = s 'OpenEdit Class'
+		{
+			ProgID = s 'OpenWD.OpenEdit.1'
+			VersionIndependentProgID = s 'OpenWD.OpenEdit'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{C0A07342-EE8F-43A1-A6C7-817D49A6948F}'
+			Version = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,74 @@
+// OpenWD.idl : OpenWD 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(OpenWD.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(a817e7a2-43fa-11d0-9e44-00aa00b6770a),
+	dual,	
+	pointer_default(unique)
+]
+interface IComponentRegistrar : IDispatch
+{
+	[id(1)]	HRESULT Attach([in] BSTR bstrPath);
+	[id(2)]	HRESULT RegisterAll();
+	[id(3)]	HRESULT UnregisterAll();
+	[id(4)]	HRESULT GetComponents([out] SAFEARRAY(BSTR)* pbstrCLSIDs, [out] SAFEARRAY(BSTR)* pbstrDescriptions);
+	[id(5)]	HRESULT RegisterComponent([in] BSTR bstrCLSID);
+	[id(6)] HRESULT UnregisterComponent([in] BSTR bstrCLSID);
+};
+
+[
+	object,
+	uuid(7C077787-C729-48E2-BB4A-00BF00BD274F),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IOpenEdit : IDispatch{
+	
+	[propget, id(1)] HRESULT DocumentType([out, retval] int* pDocType);
+	[propput, id(1)] HRESULT DocumentType([in] int nDocType);
+	[id(2)] HRESULT GetDocumentFile([in] BSTR sHeader, BSTR sUserName, [in] BOOL bTrace);
+	[id(3)] HRESULT GetAttachment([in] BSTR sInfo, [in] BSTR sFile, [in] int idx);
+	[id(4)] HRESULT PutDocumentFile([in] BSTR sHeader, [in] int index);
+
+};
+[
+	uuid(C0A07342-EE8F-43A1-A6C7-817D49A6948F),
+	version(1.0),
+	custom(a817e7a1-43fa-11d0-9e44-00aa00b6770a,"{3C78CC30-EE07-4A63-8CA7-36AF5073AD17}")
+]
+library OpenWDLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(3C78CC30-EE07-4A63-8CA7-36AF5073AD17)		
+	]
+	coclass CompReg
+	{
+		[default] interface IComponentRegistrar;
+	};
+	[
+		uuid(43836F27-31CC-4523-8190-09DFE7D0729B)		
+	]
+	dispinterface _IOpenEditEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(79DAD3A5-311C-41C5-8F57-D083A2933D2B)		
+	]
+	coclass OpenEdit
+	{
+		[default] interface IOpenEdit;
+		[default, source] dispinterface _IOpenEditEvents;
+	};
+};
+
