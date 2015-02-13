@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Feb 12 22:56:51 2015
+/* at Fri Feb 13 09:09:05 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -447,7 +447,7 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 376 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure PutDocumentFile */
+	/* Procedure SendDocumentFile */
 
 /* 378 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
@@ -1583,7 +1583,7 @@ CINTERFACE_PROXY_VTABLE(19) _IOpenEditProxyVtbl =
     (void *) (INT_PTR) -1 /* IOpenEdit::put_DocumentType */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::GetDocumentFile */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::GetAttachment */ ,
-    (void *) (INT_PTR) -1 /* IOpenEdit::PutDocumentFile */ ,
+    (void *) (INT_PTR) -1 /* IOpenEdit::SendDocumentFile */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::SendAttachment */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::get_ServerIp */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::put_ServerIp */ ,

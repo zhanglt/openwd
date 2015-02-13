@@ -69,7 +69,7 @@ STDMETHODIMP COpenEdit::GetAttachment(BSTR sInfo, BSTR sFile, int idx)
 }
 
 
-STDMETHODIMP COpenEdit::PutDocumentFile(BSTR sHeader, int index)
+STDMETHODIMP COpenEdit::SendDocumentFile(BSTR sHeader, int index)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 

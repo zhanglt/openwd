@@ -85,9 +85,6 @@
     <ClCompile Include="cpp\util\ShowMsgDlg.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\test\UnitTest.cpp">
-      <Filter>源文件\test</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -149,9 +146,6 @@
     </ClInclude>
     <ClInclude Include="include\util\ZipDLL.h">
       <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\test\test.h">
-      <Filter>头文件\test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

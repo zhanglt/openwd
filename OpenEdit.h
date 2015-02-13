@@ -105,7 +105,7 @@ public:
 	// Parameter: BOOL idx 单/多文件标识
 	//************************************
 	STDMETHOD(GetAttachment)(BSTR sInfo, BSTR sFile, int idx);
-	STDMETHOD(PutDocumentFile)(BSTR sHeader, int index);
+	STDMETHOD(SendDocumentFile)(BSTR sHeader, int index);
 	STDMETHOD(SendAttachment)(BSTR sInfo);
 
 	STDMETHOD(get_ServerIp)(int* IP);

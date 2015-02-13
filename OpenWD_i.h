@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Feb 12 22:56:51 2015
+/* at Fri Feb 13 09:09:05 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -308,7 +308,7 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ BSTR sFile,
             /* [in] */ int idx) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE PutDocumentFile( 
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE SendDocumentFile( 
             /* [in] */ BSTR sHeader,
             /* [in] */ int index) = 0;
         
@@ -411,7 +411,7 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ BSTR sFile,
             /* [in] */ int idx);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *PutDocumentFile )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *SendDocumentFile )( 
             IOpenEdit * This,
             /* [in] */ BSTR sHeader,
             /* [in] */ int index);
@@ -492,8 +492,8 @@ EXTERN_C const IID IID_IOpenEdit;
 #define IOpenEdit_GetAttachment(This,sInfo,sFile,idx)	\
     ( (This)->lpVtbl -> GetAttachment(This,sInfo,sFile,idx) ) 
 
-#define IOpenEdit_PutDocumentFile(This,sHeader,index)	\
-    ( (This)->lpVtbl -> PutDocumentFile(This,sHeader,index) ) 
+#define IOpenEdit_SendDocumentFile(This,sHeader,index)	\
+    ( (This)->lpVtbl -> SendDocumentFile(This,sHeader,index) ) 
 
 #define IOpenEdit_SendAttachment(This,sInfo)	\
     ( (This)->lpVtbl -> SendAttachment(This,sInfo) ) 
