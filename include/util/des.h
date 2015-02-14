@@ -9,6 +9,8 @@
 /// 公    司： 
 /// 产    品：
 /// ///////////////////////////////////////////////////////////////////////////////
+#ifndef OPENED_DES_H
+#define OPENED_DES_H
 extern  char SubKeys[16][48];              //储存16组48位密钥
 extern  char szCiphertext[16];             //储存16位密文(十六进制字符串)
 extern  char szPlaintext[8];               //储存8位明文字符串
@@ -124,3 +126,4 @@ void CleanPlaintextMark(int iPlaintextLength);
 void InitializeKey(string s);
 BOOL GetUnlokPassword(char * Password);
 CString  DecryptAnyLength1(BSTR szSource);
+#endif

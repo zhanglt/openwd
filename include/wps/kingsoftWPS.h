@@ -1,3 +1,5 @@
+#ifndef OPENED_KINGSOFTWPS_H
+#define OPENED_KINGSOFTWPS_H
 // CAccessible0 °ü×°Æ÷Àà
 namespace wpsDoc {
 class CAccessible0 : public COleDispatchDriver
@@ -82739,3 +82741,4 @@ public:
 
 
 }
+#endif

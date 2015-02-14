@@ -1,4 +1,5 @@
-
+#ifndef OPENED_MSWORD_H
+#define OPENED_MSWORD_H
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 namespace wdocx {
 
@@ -23192,14 +23193,45 @@ public:
 		InvokeHelper(0x11, DISPATCH_METHOD, VT_BOOL, (void*)&result, parms, FileName);
 		return result;
 	}
-	LPDISPATCH Open2002(VARIANT * FileName, VARIANT * ConfirmConversions, VARIANT * ReadOnly, VARIANT * AddToRecentFiles, VARIANT * PasswordDocument, VARIANT * PasswordTemplate, VARIANT * Revert, VARIANT * WritePasswordDocument, VARIANT * WritePasswordTemplate, VARIANT * Format, VARIANT * Encoding, VARIANT * Visible, VARIANT * OpenAndRepair, VARIANT * DocumentDirection, VARIANT * NoEncodingDialog)
+	LPDISPATCH Open2002(VARIANT * FileName, 
+						VARIANT * ConfirmConversions, 
+						VARIANT * ReadOnly, 
+						VARIANT * AddToRecentFiles, 
+						VARIANT * PasswordDocument, 
+						VARIANT * PasswordTemplate, 
+						VARIANT * Revert, 
+						VARIANT * WritePasswordDocument, 
+						VARIANT * WritePasswordTemplate, 
+						VARIANT * Format, 
+						VARIANT * Encoding, 
+						VARIANT * Visible, 
+						VARIANT * OpenAndRepair, 
+						VARIANT * DocumentDirection, 
+						VARIANT * NoEncodingDialog	
+						)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT;
 		InvokeHelper(0x12, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, FileName, ConfirmConversions, ReadOnly, AddToRecentFiles, PasswordDocument, PasswordTemplate, Revert, WritePasswordDocument, WritePasswordTemplate, Format, Encoding, Visible, OpenAndRepair, DocumentDirection, NoEncodingDialog);
 		return result;
 	}
-	LPDISPATCH Open(VARIANT * FileName, VARIANT * ConfirmConversions, VARIANT * ReadOnly, VARIANT * AddToRecentFiles, VARIANT * PasswordDocument, VARIANT * PasswordTemplate, VARIANT * Revert, VARIANT * WritePasswordDocument, VARIANT * WritePasswordTemplate, VARIANT * Format, VARIANT * Encoding, VARIANT * Visible, VARIANT * OpenAndRepair, VARIANT * DocumentDirection, VARIANT * NoEncodingDialog, VARIANT * XMLTransform)
+	LPDISPATCH Open(VARIANT * FileName, //The name of the document (paths are accepted).
+					VARIANT * ConfirmConversions,//True to display the Convert File dialog box if the file is not in Microsoft Word format.
+					VARIANT * ReadOnly, //True to open the document as read-only. This argument does not override the read-only recommended setting on a saved document. For example, if a document has been saved with read-only recommended turned on, setting the ReadOnly argument to False will not cause the file to be opened as read/write.
+					VARIANT * AddToRecentFiles, //True to add the file name to the list of recently used files at the bottom of the File menu.
+					VARIANT * PasswordDocument, //The password for opening the document.
+					VARIANT * PasswordTemplate, //The password for opening the template.
+					VARIANT * Revert, //Controls what happens if FileName is the name of an open document. True to discard any unsaved changes to the open document and reopen the file. False to activate the open document.
+					VARIANT * WritePasswordDocument, //The password for saving changes to the document.
+					VARIANT * WritePasswordTemplate, //The password for saving changes to the template.
+					VARIANT * Format, //The file converter to be used to open the document. Can be one of the WdOpenFormat constants. The default is wdOpenFormatAuto.
+					VARIANT * Encoding, //The document encoding(code page or character set) to be used by Word when you view the saved document.Can be any valid MsoEncoding constant.For the list of valid MsoEncoding constants, see the Object Browser in the Visual Basic Editor.The default is the system code page.
+					VARIANT * Visible, //True if the document is opened in a visible window. The default is True.
+					VARIANT * OpenAndRepair,//True to repair the document to prevent document corruption
+					VARIANT * DocumentDirection, //Indicates the horizontal flow of text in a document. Can be any valid WdDocumentDirection constant. The default is wdLeftToRight.
+					VARIANT * NoEncodingDialog, //True to skip displaying the Encoding dialog box that Word displays if the text encoding cannot be recognized. The default is False.
+					VARIANT * XMLTransform      /*Specifies a transform to use.*/
+					)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT;
@@ -78047,3 +78079,5 @@ public:
 
 };
 }
+
+#endif

@@ -54,7 +54,7 @@ STDMETHODIMP COpenEdit::put_DocumentType(int nDocType)
 }
 
 
-STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, BOOL bTrace)
+STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, int nState, BOOL bTrace)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	USES_CONVERSION;
@@ -64,9 +64,8 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, BOOL bTrac
 
 		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
 			oWordApp.Quit(vOpt, vOpt, vOpt);
-			oWordApp.ReleaseDispatch();
-
-			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+			oWordApp.ReleaseDispatch(); //ReleaseDispatch()不能关闭当前启动的winword.exe进程，需要使用wordApp.quit() 来退出进程。
+			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), nState, 1)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
 			}
@@ -89,7 +88,7 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, BOOL bTrac
 		}
 		else{//如果没有安装金山WPS，启动ms word 来处理
 
-			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), nState, 1)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
 			}

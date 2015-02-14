@@ -44,7 +44,11 @@ public:
 	{
 		//设置默认处理文档类型（默认为=0 为Ms word 类型）
 		this->nDocumentType = 0;
-		
+		if (!AfxOleInit()){
+			AfxMessageBox(_T("Cannot initialize COM dll"));
+		}else{
+			AfxEnableControlContainer();
+		}
 	}
 
 DECLARE_REGISTRY_RESOURCEID(IDR_OPENEDIT)
@@ -92,8 +96,9 @@ public:
 	// Parameter: BSTR szHeader
 	// Parameter: BSTR szUserName
 	// Parameter: BOOL bTrace  修改痕迹标识
+	// Parameter: BSTR nState  文件打开状态
 	//************************************
-	STDMETHOD(GetDocumentFile)(BSTR sHeader, BSTR sUserName, BOOL bTrace);
+	STDMETHOD(GetDocumentFile)(BSTR sHeader, BSTR sUserName, int nState, BOOL bTrace);
 
 	//************************************
 	// Method:    GetAttachment

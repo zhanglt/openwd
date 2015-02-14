@@ -2,16 +2,17 @@
 /*----------------------------------------------
 功能：word文件功能函数
 ------------------------------------------------*/
+#ifndef OPENED_WORD_H
+#define OPENED_WORD_H
+
 namespace wdocx {
+
 #define EDIT        0   //编辑状态
 #define MODIFY      1   //修改状态
 #define READONLY    2	//浏览状态
 #define FINALEDIT   3	//定稿后编辑，自动接受痕迹
-
-
-
 	//功能：打开word文档
-	BOOL OpenWordFile(CString szFileName/*word文件名*/, CString szUserName, int nPower = 0/*权限*/, int bHaveTrace = 0/*痕迹*/);
+	BOOL OpenWordFile(CString szFileName/*word文件名*/, CString szUserName, int nState = 0/*文件打开状态*/, int bHaveTrace = 0/*痕迹*/);
 	//功能：打开借阅文档
 	//BOOL OpenWordEmprstimoFile (char * szFileName,BOOL hide);
 	//盖章
@@ -34,7 +35,7 @@ namespace wdocx {
 	//功能：word文档转为Html
 	BOOL OpenHtmlFile(char * szFileName/*word文件名*/, char * szUserName, int nPower = 0/*权限*/, int bHaveTrace = 0);
 	//功能：从服务器下载Doc文件
-	BOOL GetDocFileFromServer(CString szInfo, CString szUsername = "", int bHaveTrace = 0);
+	BOOL GetDocFileFromServer(CString szInfo, CString szUsername = "", int nState=0, int bHaveTrace = 0);
 	//盖章
 	BOOL StampFaxEx(char * szInfo);
 	BOOL FinalTextEx(char *szInfo, int nPower);
@@ -46,8 +47,8 @@ namespace wdocx {
 	BOOL FinalFaxTextEx(char * szInfo, int nPower);
 	//功能：向服务器上传文件
 	BOOL SendDocFileToServer(char *szInfo = "", int index = 1);
-	int  IsNeedLoad(int index);
-	BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath);
+
+	
 	//功能：向服务器上传文件
 	BOOL InsuerDocument(char * szHeader, char * szSomeString = "");
 	BOOL StampCover(char * szHeader);
@@ -56,5 +57,5 @@ namespace wdocx {
 	int DownLoadAllAttachmentEx(char * szInfo, CString szFileNames);
 	BOOL SendAttach(CString szInfo);
 	BOOL SendMailEx(CString szInfo, float fPart /*以K为单位*/, float fTotal/*以兆为单位*/);
-	BOOL DocConnectionHttp(CString TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
-}
+	}
+#endif

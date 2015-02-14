@@ -35,7 +35,7 @@ interface IOpenEdit : IDispatch{
 	
 	[propget, id(1)] HRESULT DocumentType([out, retval] int* pDocType);
 	[propput, id(1)] HRESULT DocumentType([in] int nDocType);
-	[id(2)] HRESULT GetDocumentFile([in] BSTR sHeader, BSTR sUserName, [in] BOOL bTrace);
+	[id(2)] HRESULT GetDocumentFile([in] BSTR sHeader, BSTR sUserName, [in] int nState, [in] BOOL bTrace);
 	[id(3)] HRESULT GetAttachment([in] BSTR sInfo, [in] BSTR sFile, [in] int idx);
 	[id(4)] HRESULT SendDocumentFile([in] BSTR sHeader, [in] int index);
 	[id(5)] HRESULT SendAttachment([in] BSTR sInfo);

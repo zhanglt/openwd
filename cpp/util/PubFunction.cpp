@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
+
 #include "util/InfoZip.h"
 #include "afxdlgs.h"
 #include "util/Regedit.h"
@@ -11,8 +12,6 @@ using namespace std;
 
 #define DOWNLOAD 1   //下载
 #define SEND     0   //上传
-
-
 #define NSIZE 11
 //CString Dir[NSIZE]={"","正文编辑","正文定稿","正文排版","正文盖章","传真编辑","传真定稿","传真排版","传真盖章","附件处理","附件下载"};
 CString Dir[NSIZE] = { "", "文书编辑", "正文定稿", "正文排版", "正文盖章", "传真编辑", "生成文书", "传真排版", "文书盖章", "附件处理", "附件下载" };
@@ -24,34 +23,277 @@ CString szFinalFile = "NOFILE";
 
 CString lpTitle = "";  //在多线程中使用
 int CmdShow = 0;       //在多线程中使用
-
 CString szA_Name = "openwd.txt";
-
-
-BOOL SetIpAndPort(char * Ip/*IP地址*/, int Port/*端口*/, char *ServerURL/*请求服务器URL*/, char *Password/*解锁密码*/)
+//************************************
+// Method:    DocConnectionHttp
+// FullName:  DocConnectionHttp
+// Access:    public 
+// Returns:   BOOL
+// Qualifier:
+// Parameter: char * TextBuf
+// Parameter: DWORD nFileLen
+// Parameter: int index
+// Parameter: int bDownLoad
+// Parameter: CString szAttachmentFileName
+//************************************
+BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad, CString szAttachmentFileName)
 {
-	//MessageBox(NULL,Password,"系统信息",MB_OK|MB_ICONINFORMATION);
-	CString szValue;
-	szValue = Ip;
-	AfxGetApp()->WriteProfileString("openwd", "Ip", szValue);
-	szValue.Format("%d", Port);
-	AfxGetApp()->WriteProfileString("openwd", "Port", szValue);
-	szValue = ServerURL;
-	AfxGetApp()->WriteProfileString("openwd", "ServerURL", szValue);
-	szValue = Password;
-	AfxGetApp()->WriteProfileString("openwd", "Password", szValue);
+	if (bDownLoad)   //>0 表示下载
+	{
+		if (!GetTheCabarcFile()) return false; //下载加解压缩工具
+		/*
+		int rec = IsNeedLoad(index);
+		if (rec == -1) return false;             //出错
+		if (rec == 0) return true;               //已经下载
+		*/
+	}
+	CString Ip, Port, ServerURL;
+	try
+	{
+		if (!GetIpAndPort(Ip, Port, ServerURL)) {  //获取端口、IP地址、及服务器名称
+			return false;
+		}
+		/*
+		if (AfxGetApp()->GetProfileString("Telecom", "Large", "") == "1")
+		{
+		memset(ServerURL, 0, sizeof(ServerURL));
+		strcpy(ServerURL, "servlet/ULoadBDoc");
+		}*/
+	}
+	catch (CException * e)
+	{
+		e->ReportError();
+		return false;
+	}
+
+	CInternetSession INetSession;
+	CHttpConnection *pHttpServer = NULL;
+	CHttpFile       *pHttpFile = NULL;
+
+	FILE * pfile = NULL;      //保存服务器下载的信息
+	CString szPath;         //保存临时文件
+	szPath.Format("%s\\openwd\\%s\\TempDoc.dat", GetSysDirectory(), Dir[index]);
+	try
+	{
+		INetSession.SetOption(INTERNET_OPTION_CONNECT_TIMEOUT,			30 * 60 * 1000);
+		INetSession.SetOption(INTERNET_OPTION_DATA_SEND_TIMEOUT,		30 * 60 * 1000);
+		INetSession.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT,		30 * 60 * 1000);
+		INetSession.SetOption(INTERNET_OPTION_CONTROL_SEND_TIMEOUT,		30 * 60 * 1000);
+		INetSession.SetOption(INTERNET_OPTION_CONTROL_RECEIVE_TIMEOUT,	30 * 60 * 1000);
+
+		INTERNET_PORT nport = atoi(Port);
+
+		if (nport>0)
+			pHttpServer = INetSession.GetHttpConnection(Ip, nport);
+		else
+			pHttpServer = INetSession.GetHttpConnection(Ip);
+
+		pHttpFile = pHttpServer->OpenRequest(CHttpConnection::HTTP_VERB_POST, ServerURL, NULL, 1, NULL, NULL, INTERNET_FLAG_DONT_CACHE);
+		pHttpFile->SendRequestEx(nFileLen);
+		pHttpFile->Write(TextBuf, nFileLen);
+
+
+		if (!(pHttpFile->EndRequest()))
+		{
+			MessageBox(NULL, "服务器结束请求失败，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
+			INetSession.Close();
+			return false;
+		}
+
+		char buf[1001];
+		memset(buf, 0, sizeof(buf));
+		if (bDownLoad)
+		{
+			pfile = fopen(szPath, "wb");
+			if (pfile == NULL)
+			{
+				if (pHttpFile != NULL)		delete pHttpFile;
+				if (pHttpServer != NULL)	delete pHttpServer;
+				INetSession.Close();
+				MessageBox(NULL, "无法生成临时下载文件，可能是网络正忙，请稍后重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
+				return false;
+			}
+			DWORD AllCount = 0;
+			for (;;)
+			{
+				int len = pHttpFile->Read(buf, sizeof(buf)-1);
+				AllCount += len;
+				if (len == 0) break;							  //将服务器返回信息息全部读出
+				fwrite((void*)buf, 1, len, pfile);
+				memset(buf, 0, sizeof(buf));
+			}   //保存文件结束 
+			if (pfile) fclose(pfile);
+			CString szStr;
+			szStr = buf;
+
+			if (szStr == "large"){
+				if (pHttpFile != NULL)		delete pHttpFile;
+				if (pHttpServer != NULL)	delete pHttpServer;
+				INetSession.Close();
+				MessageBox(NULL, "文件太大，无法进行编辑操作!", "系统信息", MB_OK | MB_ICONINFORMATION);
+				return false;
+			}
+
+			if (AllCount<100){
+				if (pHttpFile != NULL)		delete pHttpFile;
+				if (pHttpServer != NULL)	delete pHttpServer;
+				INetSession.Close();
+				MessageBox(NULL, "服务器没有返回信息，请稍后重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
+				return false;
+
+			}
+
+		}
+		else
+		{
+			CString sztemp;
+
+			bool issuccessed = false;
+			int findposition = 0;
+
+			int len = pHttpFile->Read(buf, sizeof(buf)-1);    //从端口读取返回信息
+			sztemp = buf;
+			sztemp.MakeUpper();
+
+			while (findposition<len) //查找
+			{
+				if (len - findposition<2)
+				{
+					issuccessed = false;
+					break;
+				}
+
+				int i = 0;
+				for (i; i<2; i++)
+				{
+					int j;
+					char tempmark[4] = "OK";
+					j = findposition + i;
+
+					if (sztemp[j] != tempmark[i])
+						break;
+
+				}
+
+				if (i == 2) { issuccessed = true; break; }
+
+				findposition = findposition + 1;
+			}
+
+			if (issuccessed == false)
+			{
+				if (pHttpFile != NULL)	delete pHttpFile;
+				if (pHttpServer != NULL)	delete pHttpServer;
+				INetSession.Close();
+				MessageBox(NULL, "上传文件失败，请重新提交!", "系统信息", MB_OK | MB_ICONINFORMATION);
+				return false;
+			}
+		}
+		//释放内存空间
+		if (pHttpFile != NULL)		delete pHttpFile;
+		if (pHttpServer != NULL)	delete pHttpServer;
+		INetSession.Close();		
+	}
+	catch (CInternetException *pInetEx)
+	{   //释放内存空间
+		char msg[400];
+		memset(msg, 0, sizeof(msg));
+		pInetEx->GetErrorMessage(msg, sizeof(msg)-1);
+		CString szError;
+		szError.Format("%s请重试！", msg);
+		MessageBox(NULL, szError, "系统信息", MB_OK | MB_ICONERROR);
+		pInetEx->Delete();
+		if (pHttpFile != NULL)	delete pHttpFile;
+		if (pHttpServer != NULL)	delete pHttpServer;
+		if (pfile) fclose(pfile);
+		INetSession.Close();
+		return false;
+	}
+
+	if (bDownLoad)
+	{
+		if (!MakeFile(szPath, index, szAttachmentFileName)) return false;
+
+	}
+
+	return true;
+}
+int  IsNeedLoad(int index)
+{
+	int nMark = atoi(GetString("Mark", GetIniName(index)));
+	int nInMark = atoi(GetString("Mark", GetIniName(index)));
+	if (nMark + nInMark <= 0) DeleteDirFile(index);    //DeleteAll(index);
+
+	//判断下列文件是否打开,当文件名为空时，说明文件已经打开
+	if (GetFileName("ini", "P_", index) == "") return -1;  //权限
+	if (GetFileName("doc", "H_", index) == "") return -1;  //头文件
+	if (GetFileName("doc", "T_", index) == "") return -1;  //模板
+	if (GetFileName("doc", "D_", index) == "") return -1;  //数据文件
+	if (GetFileName("bmp", "B_", index) == "") return -1;  //公章
+
+	//如果不清理文件，则每次都要下载
+	if (AfxGetApp()->GetProfileString("Telecom", "DeleteAllFile", "") != "") return true;
+
+	if (GetString("IsNeedLoad", GetIniName(index)) == "1") return false;  //如果存在则不需要下载
+
 	return true;
 }
 
-BOOL GetIpAndPort(char * Ip/*IP地址*/, int * Port/*端口*/, char *ServerURL/*请求服务器URL*/){
-	CString szValue;
-	szValue = AfxGetApp()->GetProfileString("openwd", "Ip", "");
-	strcpy(Ip, szValue);
-	//AfxMessageBox(szValue);
-	szValue = AfxGetApp()->GetProfileString("openwd", "Port", "");
-	*Port = atoi(szValue);
-	szValue = AfxGetApp()->GetProfileString("openwd", "ServerURL", "");
-	strcpy(ServerURL, szValue);
+BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath)
+{
+
+	FILE *pfile = NULL;
+	pfile = fopen(szFileName, "rb");
+	if (pfile == NULL)
+	{
+		MessageBox(NULL, "打开已下载的数据文件失败，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
+		return false;
+	}
+
+	if (!SplitFile(pfile, GetFileName("ini", "P_", index), "HEADSTART", "HEADEND")) { fclose(pfile); return false; }
+
+	if (!SplitFile(pfile, GetFileName("zip", "H_", index), "FILEHEADSTART", "FILEHEADEND")) { fclose(pfile); return false; }
+	if (!SplitFile(pfile, GetFileName("zip", "T_", index), "TMPSTART", "TMPEND")) { fclose(pfile); return false; }
+	if (!SplitFile(pfile, GetFileName("zip", "D_", index), "DATASTART", "DATAEND")) { fclose(pfile); return false; }
+	if (!SplitFile(pfile, GetFileName("zip", "B_", index), "PICTURESTART", "PICTUREEND")) { fclose(pfile); return false; }
+	if (pfile) fclose(pfile);
+
+	if (index == 10)  //2003/11/26  添加了下载所有附件的功能
+	{  //下载所有附件
+		if (!DeCompression(GetFileName("zip", "D_", index), szAttachmentPath, index)) return false;
+	}
+	else
+	{
+
+		//解压缩文件
+		if (!DeCompression(GetFileName("zip", "H_", index), GetFileName("doc", "H_", index), index)) return false;
+		if (!DeCompression(GetFileName("zip", "T_", index), GetFileName("doc", "T_", index), index)) return false;
+		if (!DeCompression(GetFileName("zip", "D_", index), GetFileName("doc", "D_", index), index)) return false;
+		if (!DeCompression(GetFileName("zip", "B_", index), GetFileName("bmp", "B_", index), index)) return false;
+
+	}
+	return true;
+}
+BOOL SetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/, CString Password/*解锁密码*/)
+{
+	//MessageBox(NULL,Password,"系统信息",MB_OK|MB_ICONINFORMATION);
+	//CString szValue;
+	//szValue = Ip;
+	AfxGetApp()->WriteProfileString("openwd", "Ip", Ip);
+	//szValue.Format("%d", Port);
+	AfxGetApp()->WriteProfileString("openwd", "Port", Port);
+	//szValue = ServerURL;
+	AfxGetApp()->WriteProfileString("openwd", "ServerURL", ServerURL);
+	//szValue = Password;
+	AfxGetApp()->WriteProfileString("openwd", "Password", Password);
+	return true;
+}
+
+BOOL GetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/){
+	
+	Ip = AfxGetApp()->GetProfileString("openwd", "Ip", "");	
+	Port = AfxGetApp()->GetProfileString("openwd", "Port", "");	
+	ServerURL = AfxGetApp()->GetProfileString("openwd", "ServerURL", "");
 	return true;
 }
 
@@ -87,15 +329,16 @@ BOOL GetTheCabarcFile()
 			fclose(pfile);
 		}
 		if (!bRight)
-		{
+		{/*
 			int	 Port = 0;
 			char Ip[20];
 			memset(Ip, 0, sizeof(Ip));
 			char ServerURL[256];
-			memset(ServerURL, 0, sizeof(ServerURL));
+			memset(ServerURL, 0, sizeof(ServerURL));*/
+			CString Ip, Port, ServerURL;
 			try
 			{
-				if (!GetIpAndPort(Ip, &Port, ServerURL)) return false;   //获取端口、IP地址、及服务器名称
+				if (!GetIpAndPort(Ip, Port, ServerURL)) return false;   //获取端口、IP地址、及服务器名称
 			}
 			catch (CException * e)
 			{
@@ -116,7 +359,7 @@ BOOL GetTheCabarcFile()
 				INetSession.SetOption(INTERNET_OPTION_CONTROL_SEND_TIMEOUT, 30 * 60 * 1000);
 				INetSession.SetOption(INTERNET_OPTION_CONTROL_RECEIVE_TIMEOUT, 30 * 60 * 1000);
 
-				INTERNET_PORT nport = Port;
+				INTERNET_PORT nport = atoi(Port);
 				if (nport > 0)
 					pHttpServer = INetSession.GetHttpConnection(Ip, nport);
 				else

@@ -1,8 +1,6 @@
-
-
 #include "StdAfx.h"
-#include "word/word.h"
-#include "word/msword.h"
+#include "../../OpenWD/include/word/word.h"
+#include "../../OpenWD/include/word/msword.h"
 #include "util/PubFunction.h"
 #include "util/Regedit.h"
 #include "util/BrowseDirDialog.h"
@@ -10,155 +8,125 @@
 //#include "des.h"
 //#include "../../OpenWD.h"
 
-BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nPower, int bHaveTrace)
-{
-	//    if(FileIsOpen(szFileName)) return false;
-	COleVariant covTrue((short)TRUE),
-		covFalse((short)FALSE),
-		covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
-	COleVariant vTrue((short)TRUE),
-		vFalse((short)FALSE),
-		vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),
-		vP((short)true, VT_I2);
-	COleVariant vPP(short(1));
-	COleVariant vMM(short(0));
-	COleVariant vdSaveChanges(short(0));
-	COleVariant vFormat(short(0));
-
-
-	//char Password[256];
-	//memset(Password, 0, sizeof(Password));
-	////GetUnlokPassword(Password);
+BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int bHaveTrace){
 
 	//开始一个Microsoft Word实例 
 	wdocx::CApplication oWordApp;
-
-
-	if (!oWordApp.CreateDispatch("Word.Application"))
-	{
+	CoInitialize(NULL);
+	if (!oWordApp.CreateDispatch("Word.Application")){
 		MessageBox(NULL, "创建Word对象失败", "系统信息", MB_OK | MB_SETFOREGROUND);
-
+		CoUninitialize();
 		return S_FALSE;
 	}
-
-	//建立一个新的文档 
+	//    if(FileIsOpen(szFileName)) return false;
+	COleVariant covTrue((short)TRUE),
+				covFalse((short)FALSE),
+				covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
+	COleVariant varstrNull("");
+	COleVariant vdSaveChanges(short(0));
+	COleVariant vFormat(short(0));
+	//char Password[256];
+	//memset(Password, 0, sizeof(Password));
+	////GetUnlokPassword(Password);	
+    //建立一个新的文档 
 	wdocx::CDocuments oDocs;
 	wdocx::CDocument0 oDoc;
 	oDocs = oWordApp.get_Documents();
-
-	 //显示Word文档
+    //显示Word文档
 	oWordApp.put_Visible(VARIANT_TRUE);
-		oDoc.AttachDispatch(oDocs.Open(
+	
+	oDoc.AttachDispatch(oDocs.Open(
 		COleVariant(szFileName, VT_BSTR),
 		covFalse,
 		covFalse,
 		covFalse,
-		covOptional,
-		covOptional,
+		varstrNull,
+		varstrNull,
 		covFalse,
-		covOptional,
-		covOptional,
-		covOptional,
-		covOptional,
+		varstrNull,
+		varstrNull,
+		vFormat,
+		covFalse,
 		covTrue,
-		covOptional,
-		covOptional,
-		covOptional,
-		covOptional
-		)
+		covFalse,
+		covFalse,
+		covFalse,
+		varstrNull)
 		);
 
-	//禁用文件、工具菜单
-	/**
-	wdocx::_CommandBars mybars;
-	wdocx::CommandBar  mybar;
-	mybars.AttachDispatch (oDoc.get_CommandBars (),TRUE);
-	wdocx::CommandBar   menu;
-	wdocx::CommandBarControls   menus;
-	wdocx::CommandBarPopup   File,   Tools;
-	menu.AttachDispatch(mybars.GetActiveMenuBar());
-	menus.AttachDispatch(menu.GetControls());
-	File.AttachDispatch(menus.GetItem(COleVariant((short)1)),   TRUE);
-	Tools.AttachDispatch(menus.GetItem(COleVariant((short)6)),   TRUE);
-	File.SetVisible (false);
-	Tools.SetVisible (false);
-	File.Reset(); //菜单复位，一定要复位，不然日常打开word也会隐藏文件、工具菜单。
-	Tools.Reset();
-	mybar.ReleaseDispatch();
-	mybars.ReleaseDispatch();
-	**/
-	//2003/7/11  
 	wdocx::CWindow0  win;
-	win = oWordApp.get_ActiveWindow();
+	win = oWordApp.get_ActiveWindow(); //将word窗口放到前台。
 
 	wdocx::CView0  view;
 	view = win.get_View();
 
-	try{ oDoc.put_TrackRevisions(false); }
-	catch (...){ TRACE("Office 2000!\n"); }
+	try{ 
+		oDoc.put_TrackRevisions(false); 
+	}catch (...){
+		TRACE("Office 2013! \n"); }
 
-	if (oDoc.get_ProtectionType()== 0 || oDoc.get_ProtectionType() == 2){
-		try{ oDoc.Unprotect(COleVariant("Password")); }
-		catch (...){ TRACE("Office 2000!\n"); }
 
-	}
-
-	if (nPower == EDIT)
+	switch (nState)
 	{
+	case  EDIT :
+		if (oDoc.get_ProtectionType() == 0 || oDoc.get_ProtectionType() == 2){
+			try{
+				oDoc.Unprotect(COleVariant("Password"));
+			}
+			catch (...){
+				TRACE("Office 2013!\n");
+			}
+		}
 		try{
 			oDoc.put_TrackRevisions(false);
 			oDoc.put_PrintRevisions(bHaveTrace);
 			oDoc.put_ShowRevisions(bHaveTrace);
 		}
-		catch (...){ 
-			TRACE("Office 2013!\n"); 
+		catch (...){
+			TRACE("Office 2013!\n");
 		}
-
-	}
-
-
-	if (nPower == MODIFY)
-	{
+	case  MODIFY :
 		oWordApp.put_UserName(szUserName);
-
 		//This is used by word xp 
-
+		if (oDoc.get_ProtectionType() == 0 || oDoc.get_ProtectionType() == 2){
+			try{
+				oDoc.Unprotect(COleVariant("Password"));
+			}
+			catch (...){
+				TRACE("Office 2013!\n");
+			}
+		}
 
 		try{
 			oDoc.put_TrackRevisions(true);
 			oDoc.put_PrintRevisions(bHaveTrace);
 			oDoc.put_ShowRevisions(bHaveTrace);
+			view.put_ShowInsertionsAndDeletions(bHaveTrace);
+			oDoc.Protect(0, covFalse, COleVariant("Password"), covOptional, covOptional);
 		}
-		catch (...){ TRACE("Office 2013!\n"); }
+		catch (...){
+			TRACE("Office 2013!\n");
+		}
 
-
-
-
-		try{ view.put_ShowInsertionsAndDeletions(bHaveTrace); }
-		catch (...){ TRACE("Office 2013!\n"); }
-		//  AfxMessageBox(Password);
-		try{ oDoc.Protect(0, vFalse, COleVariant("Password"), covOptional, covOptional); }
-		catch (...){ TRACE("Office 2013!\n"); }
-
-
-	}
-	else if (nPower == READONLY)
-	{
+	case  READONLY:
 		try{
 			oDoc.put_PrintRevisions(bHaveTrace);
 			oDoc.put_ShowRevisions(bHaveTrace);
-			oDoc.Protect(2, vFalse, COleVariant("Password"), covOptional, covOptional);
+			oDoc.Protect(2, covFalse, COleVariant("Password"), covOptional, covOptional);
 		}
-		catch (...){ TRACE("Office 2013!\n"); }
+		catch (...){
+			TRACE("Office 2013!\n");
+		}
 
+	default:
+		break;
 	}
-
 
 	oDoc.ReleaseDispatch();
 	//	oWordApp.ReleaseDispatch();
 
 	//	oWordApp.Quit(vOpt,vOpt,vOpt);
-
+	CoUninitialize();
 	return true;
 }
 
@@ -629,7 +597,7 @@ BOOL wdocx::EditFaxWord(CString szFileName, CString szUserName, CString szHeader
 		oDoc.put_ShowRevisions(bHaveTrace);
 
 		try{ view.put_ShowInsertionsAndDeletions(bHaveTrace); }
-		catch (...){ TRACE("Office 2000!\n"); }
+		catch (...){ TRACE("Office 2013!\n"); }
 		oDoc.Protect(0, vFalse, COleVariant(Password),vFalse,vFalse);
 
 	}
@@ -836,7 +804,7 @@ BOOL wdocx::FinalFaxTextWord(CString szFileName, int nPower)
 			oDoc.put_ShowRevisions(false);
 			oDoc.AcceptAllRevisions();
 		}
-		catch (...){ TRACE("Office 2000!\n"); }
+		catch (...){ TRACE("Office 2013!\n"); }
 
 
 	}
@@ -854,7 +822,7 @@ BOOL wdocx::FinalFaxTextWord(CString szFileName, int nPower)
 			oDoc.put_ShowRevisions(false);
 			oDoc.Protect(2, vFalse, COleVariant(Password),vFalse,vFalse);
 		}
-		catch (...){ TRACE("Office 2000!\n"); }
+		catch (...){ TRACE("Office 2013!\n"); }
 	}
 
 	oDoc.Save();   //保存文件
@@ -1123,25 +1091,22 @@ BOOL wdocx::SetPortect(CString szFileName)
 // Access:    public 
 // Returns:   BOOL
 // Qualifier:
-// Parameter: char * szInfo
-// Parameter: char * szUserName
+// Parameter: CString szInfo
+// Parameter: CString szUserName
+// Parameter: int nState
 // Parameter: int bHaveTrace
 //************************************
-BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int bHaveTrace)
+BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int nState, int bHaveTrace)
 {
-
 	//MessageBox(NULL,szInfo,"GetDocFileFromServer！头信息",MB_OK|MB_ICONINFORMATION);
 	int index = 1;
 	CString szTextFile;
 	CString szPowerFile;
-
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
-
-
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "") return false;
 	szPowerFile = GetFileName("ini", "P_", index);
-
+	/*
 	//下载完成，现在要进行打开文件的操作
 	char fname[256];
 	strcpy(fname, szTextFile);
@@ -1152,35 +1117,15 @@ BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int bHaveTr
 	{
 		MessageBox(NULL, "获取权限出错,请重试！", "系统信息", MB_OK | MB_ICONINFORMATION);
 		return false;
-	}
-
-	char buf[30];
-	memset(buf, 0, sizeof(buf));
-	fgets(buf, sizeof(buf)-1, pf);
-	if (pf) fclose(pf);
-	int npower = atoi(buf);
-
-
-	/**
-	int i=npower;
-	char a[10];
-	LPCSTR str;
-
-	itoa(i, a, 10);
-	str = a;
-
-	MessageBox(NULL,str,"power值",MB_OK|MB_ICONINFORMATION);
-
-	**/
-	if (wdocx::OpenWordFile(fname, szUserName, npower, bHaveTrace) == false) {
+	}*/
+	
+	if (wdocx::OpenWordFile(szTextFile, szUserName, nState, bHaveTrace) == false) {
 		DeleteFile(GetIniName(index));
 		return false;
 	}
 
 	WriteString("LastFileName", szTextFile, GetIniName(index));
 	WriteString("IsNeedLoad", "1", GetIniName(index));
-
-
 	//szFinalFile=GetFile("doc","D_",index);
 	return true;
 }
@@ -1191,7 +1136,7 @@ BOOL wdocx::StampFaxEx(char * szInfo)
 	CString szFaxFile;
 	CString szPicture;
 
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }
 	szFaxFile = GetFileName("doc", "D_", index);
 	if (szFaxFile == "") return false;
 	szPicture = GetFileName("bmp", "B_", index);
@@ -1213,7 +1158,7 @@ BOOL wdocx::FinalTextEx(char *szInfo, int nPower)
 {
 	int index = 3;
 	CString szTextFile;
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "") return false;
@@ -1233,7 +1178,7 @@ BOOL wdocx::EditFaxEx(char * szInfo, char *szHeader, char * szUserName, int nPow
 	int index = 5;
 	CString szFaxFile;
 
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 
 	szFaxFile = GetFileName("doc", "D_", index);
 	if (szFaxFile == "") return false;
@@ -1251,7 +1196,7 @@ BOOL wdocx::FinalFaxEx(char *szInfo, char * szHeader)
 	int index = 6;
 	CString szFaxFile;
 
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 
 	szFaxFile = GetFileName("doc", "D_", index);
 	if (szFaxFile == "") return false;
@@ -1273,7 +1218,7 @@ BOOL wdocx::FinalFaxTextEx(char *szInfo, int nPower)
 	int index = 7;
 	CString szFaxFile;
 
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }
 	szFaxFile = GetFileName("doc", "D_", index);
 	if (szFaxFile == "") return false;
 
@@ -1405,7 +1350,7 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 	if (pfile) fclose(pfile);
 
 
-	if (!wdocx::DocConnectionHttp(buf, nInfoLen + nFileLen, index, false/*表示发送数据*/))
+	if (!DocConnectionHttp(buf, nInfoLen + nFileLen, index, false/*表示发送数据*/))
 	{
 		delete buf;
 		return false;
@@ -1425,273 +1370,6 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 }
 
 
-//************************************
-// Method:    DocConnectionHttp
-// FullName:  wdocx::DocConnectionHttp
-// Access:    public 
-// Returns:   BOOL
-// Qualifier:
-// Parameter: char * TextBuf
-// Parameter: DWORD nFileLen
-// Parameter: int index
-// Parameter: int bDownLoad
-// Parameter: CString szAttachmentFileName
-//************************************
-BOOL wdocx::DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad, CString szAttachmentFileName)
-{
-	//MessageBox(NULL,TextBuf,"GetDocFileFromServer！!!!头信息",MB_OK|MB_ICONINFORMATION);
-
-	if (bDownLoad)   //>0 表示下载
-	{
-		if (!GetTheCabarcFile()) return false; //下载加解压缩工具
-		int rec = wdocx::IsNeedLoad(index);
-		if (rec == -1) return false;             //出错
-		if (rec == 0) return true;               //已经下载
-	}
-	int	 Port = 0;//服务器端口号
-	char Ip[20];//服务器IP地址
-	memset(Ip, 0, sizeof(Ip));
-	char ServerURL[256];// 请求的URL
-	memset(ServerURL, 0, sizeof(ServerURL));
-	try
-	{
-		if (!GetIpAndPort(Ip, &Port, ServerURL)) {  //获取端口、IP地址、及服务器名称
-			return false;
-		}
-
-		//2003/7/9 added by lhx
-		if (AfxGetApp()->GetProfileString("Telecom", "Large", "") == "1")
-		{
-			memset(ServerURL, 0, sizeof(ServerURL));
-			strcpy(ServerURL, "servlet/ULoadBDoc");
-		}
-	}
-	catch (CException * e)
-	{
-		e->ReportError();
-		return false;
-	}
-
-	CInternetSession INetSession;
-	CHttpConnection *pHttpServer = NULL;
-	CHttpFile* pHttpFile = NULL;
-
-	FILE * pfile = NULL;      //保存服务器下载的信息
-	CString szPath;         //保存临时文件
-	szPath.Format("%s\\unicom\\%s\\TempDoc.dat", GetSysDirectory(), Dir[index]);
-	try
-	{
-		INetSession.SetOption(INTERNET_OPTION_CONNECT_TIMEOUT, 30 * 60 * 1000);
-		INetSession.SetOption(INTERNET_OPTION_DATA_SEND_TIMEOUT, 30 * 60 * 1000);
-		INetSession.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT, 30 * 60 * 1000);
-		INetSession.SetOption(INTERNET_OPTION_CONTROL_SEND_TIMEOUT, 30 * 60 * 1000);
-		INetSession.SetOption(INTERNET_OPTION_CONTROL_RECEIVE_TIMEOUT, 30 * 60 * 1000);
-
-		INTERNET_PORT nport = Port;
-
-		if (nport>0)
-			pHttpServer = INetSession.GetHttpConnection(Ip, nport);
-		else
-			pHttpServer = INetSession.GetHttpConnection(Ip);
-
-		pHttpFile = pHttpServer->OpenRequest(CHttpConnection::HTTP_VERB_POST, ServerURL, NULL, 1, NULL, NULL, INTERNET_FLAG_DONT_CACHE);
-
-		pHttpFile->SendRequestEx(nFileLen);
-
-		pHttpFile->Write(TextBuf, nFileLen);
-
-
-		if (!(pHttpFile->EndRequest()))
-		{
-			MessageBox(NULL, "服务器结束请求失败，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
-			INetSession.Close();
-			return false;
-		}
-
-		char buf[1001];
-		memset(buf, 0, sizeof(buf));
-		if (bDownLoad)
-		{
-
-			pfile = fopen(szPath, "wb");
-			if (pfile == NULL)
-			{
-				if (pHttpFile != NULL)	delete pHttpFile;
-				if (pHttpServer != NULL)	delete pHttpServer;
-				INetSession.Close();
-				MessageBox(NULL, "无法生成临时下载文件，可能是网络正忙，请稍后重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
-				return false;
-			}
-			DWORD AllCount = 0;
-			for (;;)
-			{
-				int len = pHttpFile->Read(buf, sizeof(buf)-1);
-				AllCount += len;
-				if (len == 0) break;							  //将服务器返回信息息全部读出
-				fwrite((void*)buf, 1, len, pfile);
-				memset(buf, 0, sizeof(buf));
-			}   //保存文件结束 
-			if (pfile) fclose(pfile);
-			CString szStr;
-			szStr = buf;
-
-			if (szStr == "large")
-			{
-				if (pHttpFile != NULL)	delete pHttpFile;
-				if (pHttpServer != NULL)	delete pHttpServer;
-				INetSession.Close();
-				MessageBox(NULL, "文件太大，无法进行编辑操作!", "系统信息", MB_OK | MB_ICONINFORMATION);
-				return false;
-			}
-
-			if (AllCount<100)
-			{
-				if (pHttpFile != NULL)	delete pHttpFile;
-				if (pHttpServer != NULL)	delete pHttpServer;
-				INetSession.Close();
-				MessageBox(NULL, "服务器没有返回信息，请稍后重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
-				return false;
-
-			}
-
-		}
-		else
-		{
-
-			CString sztemp;
-
-			bool issuccessed = false;
-			int findposition = 0;
-
-			int len = pHttpFile->Read(buf, sizeof(buf)-1);    //从端口读取返回信息
-			sztemp = buf;
-			sztemp.MakeUpper();
-
-			//Luke(2004-05-10)
-			while (findposition<len) //查找
-			{
-				if (len - findposition<2)
-				{
-					issuccessed = false;
-					break;
-				}
-
-				int i = 0;
-				for (i; i<2; i++)
-				{
-					int j;
-					char tempmark[4] = "OK";
-					j = findposition + i;
-
-					if (sztemp[j] != tempmark[i])
-						break;
-
-				}
-
-				if (i == 2) { issuccessed = true; break; }
-
-				findposition = findposition + 1;
-			}
-
-			if (issuccessed == false)
-			{
-				if (pHttpFile != NULL)	delete pHttpFile;
-				if (pHttpServer != NULL)	delete pHttpServer;
-				INetSession.Close();
-				MessageBox(NULL, "上传文件失败，请重新提交!", "系统信息", MB_OK | MB_ICONINFORMATION);
-				return false;
-			}
-		}
-		//释放内存空间
-		if (pHttpFile != NULL)	delete pHttpFile;
-		if (pHttpServer != NULL)	delete pHttpServer;
-		INetSession.Close();
-		//MessageBox(NULL,TextBuf,"44444444444",MB_OK|MB_ICONINFORMATION);
-	}
-	catch (CInternetException *pInetEx)
-	{   //释放内存空间
-		char msg[400];
-		memset(msg, 0, sizeof(msg));
-		pInetEx->GetErrorMessage(msg, sizeof(msg)-1);
-		CString szError;
-		szError.Format("%s请重试！", msg);
-		MessageBox(NULL, szError, "系统信息", MB_OK | MB_ICONERROR);
-		pInetEx->Delete();
-		if (pHttpFile != NULL)	delete pHttpFile;
-		if (pHttpServer != NULL)	delete pHttpServer;
-		if (pfile) fclose(pfile);
-		INetSession.Close();
-		return false;
-	}
-
-	if (bDownLoad)
-	{
-		//写.ini文件
-
-		if (!wdocx::MakeFile(szPath, index, szAttachmentFileName)) return false;
-
-	}
-
-	return true;
-}
-
-
-int  wdocx::IsNeedLoad(int index)
-{
-	int nMark = atoi(GetString("Mark", GetIniName(index)));
-	int nInMark = atoi(GetString("Mark", GetIniName(index)));
-	if (nMark + nInMark <= 0) DeleteDirFile(index);    //DeleteAll(index);
-
-	//判断下列文件是否打开,当文件名为空时，说明文件已经打开
-	if (GetFileName("ini", "P_", index) == "") return -1;  //权限
-	if (GetFileName("doc", "H_", index) == "") return -1;  //头文件
-	if (GetFileName("doc", "T_", index) == "") return -1;  //模板
-	if (GetFileName("doc", "D_", index) == "") return -1;  //数据文件
-	if (GetFileName("bmp", "B_", index) == "") return -1;  //公章
-
-	//如果不清理文件，则每次都要下载
-	if (AfxGetApp()->GetProfileString("Telecom", "DeleteAllFile", "") != "") return true;
-
-	if (GetString("IsNeedLoad", GetIniName(index)) == "1") return false;  //如果存在则不需要下载
-
-	return true;
-}
-
-BOOL wdocx::MakeFile(CString szFileName, int index, CString szAttachmentPath)
-{
-
-	FILE *pfile = NULL;
-	pfile = fopen(szFileName, "rb");
-	if (pfile == NULL)
-	{
-		MessageBox(NULL, "打开已下载的数据文件失败，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
-		return false;
-	}
-
-	if (!SplitFile(pfile, GetFileName("ini", "P_", index), "HEADSTART", "HEADEND")) { fclose(pfile); return false; }
-
-	if (!SplitFile(pfile, GetFileName("zip", "H_", index), "FILEHEADSTART", "FILEHEADEND")) { fclose(pfile); return false; }
-	if (!SplitFile(pfile, GetFileName("zip", "T_", index), "TMPSTART", "TMPEND")) { fclose(pfile); return false; }
-	if (!SplitFile(pfile, GetFileName("zip", "D_", index), "DATASTART", "DATAEND")) { fclose(pfile); return false; }
-	if (!SplitFile(pfile, GetFileName("zip", "B_", index), "PICTURESTART", "PICTUREEND")) { fclose(pfile); return false; }
-	if (pfile) fclose(pfile);
-
-	if (index == 10)  //2003/11/26  添加了下载所有附件的功能
-	{  //下载所有附件
-		if (!DeCompression(GetFileName("zip", "D_", index), szAttachmentPath, index)) return false;
-	}
-	else
-	{
-
-		//解压缩文件
-		if (!DeCompression(GetFileName("zip", "H_", index), GetFileName("doc", "H_", index), index)) return false;
-		if (!DeCompression(GetFileName("zip", "T_", index), GetFileName("doc", "T_", index), index)) return false;
-		if (!DeCompression(GetFileName("zip", "D_", index), GetFileName("doc", "D_", index), index)) return false;
-		if (!DeCompression(GetFileName("zip", "B_", index), GetFileName("bmp", "B_", index), index)) return false;
-
-	}
-	return true;
-}
 //定稿
 BOOL wdocx::InsuerDocument(char * szHeader, char * szSomeString)
 {
@@ -1700,7 +1378,7 @@ BOOL wdocx::InsuerDocument(char * szHeader, char * szSomeString)
 	CString szTemFile;
 	CString szHeadFile;
 
-	if (!wdocx::DocConnectionHttp(szHeader, strlen(szHeader), index)){ return false; }
+	if (!DocConnectionHttp(szHeader, strlen(szHeader), index)){ return false; }
 
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "")  return false;
@@ -1726,7 +1404,7 @@ BOOL wdocx::StampCover(char * szHeader)
 	CString szTextFile;
 	CString szPicture;
 
-	if (!wdocx::DocConnectionHttp(szHeader, strlen(szHeader), index)){ return false; }  //下载文件
+	if (!DocConnectionHttp(szHeader, strlen(szHeader), index)){ return false; }  //下载文件
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "") return false;
 	szPicture = GetFileName("bmp", "B_", index);
@@ -1820,7 +1498,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 		strcpy(buf, szInfo);
 		fread((void*)(buf + nlen), 1, nFileLen, pfile);
 		if (pfile) fclose(pfile);
-		if (!wdocx::DocConnectionHttp(buf, nFileLen + nlen, index, 0)) //上传文件
+		if (!DocConnectionHttp(buf, nFileLen + nlen, index, 0)) //上传文件
 		{
 			delete buf;
 			buf = NULL;
@@ -1870,7 +1548,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 			}
 
 			//发送数据
-			if (!wdocx::DocConnectionHttp(buffer, nFileLen, index, 0))
+			if (!DocConnectionHttp(buffer, nFileLen, index, 0))
 			{
 				AfxGetApp()->WriteProfileString("Telecom", "Large", "0");
 				if (pfile) fclose(pfile);
@@ -1898,7 +1576,7 @@ BOOL wdocx::DownLoad(char * szInfo, char * szUpInfo, char * szFileName)
 	strcpy(szInfo, szInformation);
 	CString szAttachFile;
 
-	if (!wdocx::DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 
 	//生成附件
 	char path[256];
@@ -1995,7 +1673,7 @@ int wdocx::DownLoadAllAttachmentEx(char * szInfo, CString szFileNames)
 		memset(InfoBuf, 0, sizeof(InfoBuf));
 		strcpy(InfoBuf, szInformation);
 		szA_Name = szItem[i];   //将文件名保起来以备下载后改名
-		if (!wdocx::DocConnectionHttp(InfoBuf, strlen(InfoBuf), index, 1, szTempName)){ return false; }  //下载文件
+		if (!DocConnectionHttp(InfoBuf, strlen(InfoBuf), index, 1, szTempName)){ return false; }  //下载文件
 	}
 	return true;
 }

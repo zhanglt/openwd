@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sat Feb 14 08:45:47 2015
+/* at Wed Feb 25 20:09:17 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -301,6 +301,7 @@ EXTERN_C const IID IID_IOpenEdit;
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetDocumentFile( 
             /* [in] */ BSTR sHeader,
             BSTR sUserName,
+            /* [in] */ int nState,
             /* [in] */ BOOL bTrace) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetAttachment( 
@@ -403,6 +404,7 @@ EXTERN_C const IID IID_IOpenEdit;
             IOpenEdit * This,
             /* [in] */ BSTR sHeader,
             BSTR sUserName,
+            /* [in] */ int nState,
             /* [in] */ BOOL bTrace);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetAttachment )( 
@@ -486,8 +488,8 @@ EXTERN_C const IID IID_IOpenEdit;
 #define IOpenEdit_put_DocumentType(This,nDocType)	\
     ( (This)->lpVtbl -> put_DocumentType(This,nDocType) ) 
 
-#define IOpenEdit_GetDocumentFile(This,sHeader,sUserName,bTrace)	\
-    ( (This)->lpVtbl -> GetDocumentFile(This,sHeader,sUserName,bTrace) ) 
+#define IOpenEdit_GetDocumentFile(This,sHeader,sUserName,nState,bTrace)	\
+    ( (This)->lpVtbl -> GetDocumentFile(This,sHeader,sUserName,nState,bTrace) ) 
 
 #define IOpenEdit_GetAttachment(This,sInfo,sFile,idx)	\
     ( (This)->lpVtbl -> GetAttachment(This,sInfo,sFile,idx) ) 

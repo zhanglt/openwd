@@ -1,6 +1,8 @@
 /*----------------------------------------------
 功能：通用功能函数
 ------------------------------------------------*/
+#ifndef OPENED_PUBFUNCTION_H
+#define OPENED_PUBFUNCTION_H
 #include <string>
 #include <cmath>
 #include <stdio.h>
@@ -15,12 +17,14 @@ extern CString szTmpID;
 extern CString szFinalFile;
 extern CString szA_Name;
 
-
+BOOL DocConnectionHttp(CString TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
+int  IsNeedLoad(int index);
+BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath);
 //功能：存储服务器IP及端口
-BOOL SetIpAndPort(char * Ip/*IP地址*/, int  Port/*端口*/, char *ServerURL/*请求服务器URL*/, char *Password/*解锁密码*/);
+BOOL SetIpAndPort(CString Ip/*IP地址*/, CString  Port/*端口*/, CString ServerURL/*请求服务器URL*/, CString Password/*解锁密码*/);
 
 //功能：获取服务器IP及端口
-BOOL GetIpAndPort(char * Ip/*IP地址*/, int * Port/*端口*/, char *ServerURL/*请求服务器URL*/);
+BOOL GetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/);
 
 //功能：设置文件ID号
 void SetID(char* FileID, char* TmpID = "");
@@ -94,6 +98,7 @@ BOOL DeleteDataFile(CString szPath);
 //分解文件名
 void GetAllFileNames(CStringArray &szItems, CString szFileNames);
 BOOL JudgeFileIgnoreOrNot(CString szPath, CString & szFileName);
+#endif
 
 
 
