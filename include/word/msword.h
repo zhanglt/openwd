@@ -5150,7 +5150,7 @@ public:
 		static BYTE parms[] = VTS_BSTR VTS_BSTR VTS_I4 VTS_PBSTR VTS_PBSTR VTS_PBSTR VTS_UNKNOWN;
 		InvokeHelper(0x5, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Account, PostID, ParentWindow, xHTML, Title, DatePosted, Categories);
 	}/*
-	 ’≈¿÷ÃŒ◊¢ Õ
+	 zhanglt◊¢ Õ
 	void PublishPost(LPCTSTR Account, long ParentWindow, LPDISPATCH Document, LPCTSTR xHTML, LPCTSTR Title, LPCTSTR DateTime, SAFEARRAY * Categories, BOOL Draft, BSTR * PostID, BSTR * PublishMessage)
 	{
 		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_DISPATCH VTS_BSTR VTS_BSTR VTS_BSTR VTS_NONE VTS_BOOL VTS_PBSTR VTS_PBSTR;

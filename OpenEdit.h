@@ -18,6 +18,9 @@
 using namespace ATL;
 using namespace std;
 
+#define TYPE_WORD   0    //msword文档
+#define TYPE_WPS	1    //kingsoft wps文档
+
 
 // COpenEdit
 
@@ -75,8 +78,6 @@ END_CONNECTION_POINT_MAP()
 
 public:
 	
-
-
 	//************************************
 	//word/wps文档标识
 	//************************************
