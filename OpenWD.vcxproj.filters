@@ -85,6 +85,9 @@
     <ClCompile Include="cpp\util\ShowMsgDlg.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\wps\wps.cpp">
+      <Filter>源文件\wps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -146,6 +149,12 @@
     </ClInclude>
     <ClInclude Include="include\util\ZipDLL.h">
       <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wps\kingsoftWPS.h">
+      <Filter>头文件\wps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wps\wps.h">
+      <Filter>头文件\wps</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

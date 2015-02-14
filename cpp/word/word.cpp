@@ -10,7 +10,7 @@
 //#include "des.h"
 //#include "../../OpenWD.h"
 
-BOOL wdocx::OpenWordFile(char * szFileName, char * szUserName, int nPower, int bHaveTrace)
+BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nPower, int bHaveTrace)
 {
 	//    if(FileIsOpen(szFileName)) return false;
 	COleVariant covTrue((short)TRUE),
@@ -192,7 +192,7 @@ BOOL wdocx::LastText(CString szTempleteFileName,/*被插入的文件名*/  CString szHe
 	oDocs = oWordApp.get_Documents();
 
 	oWordApp.put_Visible(VARIANT_FALSE);   //不显示Word文档
-	//打开正文主体进行接受痕迹（为了解决定稿时某写文件会丢失数据的问题2008、11、4张乐涛增加）
+	//打开正文主体进行接受痕迹（为了解决定稿时某写文件会丢失数据的问题2008、11、4zhanglt增加）
 	oDoc.AttachDispatch(oDocs.Open(
 		COleVariant(szDataFileName, VT_BSTR),
 		covFalse,
@@ -777,7 +777,7 @@ BOOL wdocx::FinalFaxTextWord(CString szFileName, int nPower)
 		return false;
 	}
 
-	MessageBox(NULL, "张乐涛创建Word对象失败", "系统信息", MB_OK | MB_SETFOREGROUND);
+	MessageBox(NULL, "zhanglt创建Word对象失败", "系统信息", MB_OK | MB_SETFOREGROUND);
 	wdocx::CDocuments oDocs;
 	wdocx::CDocument0 oDoc;
 
@@ -1127,7 +1127,7 @@ BOOL wdocx::SetPortect(CString szFileName)
 // Parameter: char * szUserName
 // Parameter: int bHaveTrace
 //************************************
-BOOL wdocx::GetDocFileFromServer(char* szInfo, char * szUserName, int bHaveTrace)
+BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int bHaveTrace)
 {
 
 	//MessageBox(NULL,szInfo,"GetDocFileFromServer！头信息",MB_OK|MB_ICONINFORMATION);
@@ -1437,7 +1437,7 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 // Parameter: int bDownLoad
 // Parameter: CString szAttachmentFileName
 //************************************
-BOOL wdocx::DocConnectionHttp(char * TextBuf, DWORD nFileLen, int index, int bDownLoad, CString szAttachmentFileName)
+BOOL wdocx::DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad, CString szAttachmentFileName)
 {
 	//MessageBox(NULL,TextBuf,"GetDocFileFromServer！!!!头信息",MB_OK|MB_ICONINFORMATION);
 

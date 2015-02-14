@@ -190,6 +190,7 @@
     <ClCompile Include="cpp\util\Regedit.cpp" />
     <ClCompile Include="cpp\util\ShowMsgDlg.cpp" />
     <ClCompile Include="cpp\word\word.cpp" />
+    <ClCompile Include="cpp\wps\wps.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Unit_Test|Win32'">false</CompileAsManaged>
@@ -245,6 +246,8 @@
     <ClInclude Include="include\util\ZipDLL.h" />
     <ClInclude Include="include\word\msword.h" />
     <ClInclude Include="include\word\word.h" />
+    <ClInclude Include="include\wps\kingsoftWPS.h" />
+    <ClInclude Include="include\wps\wps.h" />
     <ClInclude Include="OpenEdit.h" />
     <ClInclude Include="OpenWD_i.h" />
     <ClInclude Include="Resource.h" />

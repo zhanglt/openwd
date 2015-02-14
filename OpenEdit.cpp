@@ -3,8 +3,13 @@
 #include "stdafx.h"
 #include "OpenEdit.h"
 #include "word/msword.h"
+#include "word/word.h"
+#include "wps/kingsoftWPS.h"
+#include "wps/wps.h"
+
+
 wdocx::CApplication oWordApp; //ms word 
-//_Application oWpsApp;  // kingsoft wps
+wpsDoc::CApplication oWpsApp;  // kingsoft wps
 COleVariant   vOpt(DISP_E_PARAMNOTFOUND, VT_ERROR);
 // COpenEdit
 
@@ -52,9 +57,47 @@ STDMETHODIMP COpenEdit::put_DocumentType(int nDocType)
 STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, BOOL bTrace)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
+	USES_CONVERSION;
 	// TODO:  在此添加实现代码
 
+	if (this->nDocumentType == 0){//文档类型（ms office）
+
+		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
+			oWordApp.Quit(vOpt, vOpt, vOpt);
+			oWordApp.ReleaseDispatch();
+
+			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}
+		}else{//如果没有安装ms word ，启动wps处理
+
+			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}
+		}
+	}else{//文档类型（Kingsoft office wps）
+
+		if (oWpsApp.CreateDispatch("Wps.Application")) {//首先判断客户端是否安装金山WPS
+			oWpsApp.ReleaseDispatch();
+			AfxMessageBox("ddddddddddd");
+			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}
+		}
+		else{//如果没有安装金山WPS，启动ms word 来处理
+
+			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}
+		}
+	}
+
+	AfxGetApp()->DoWaitCursor(0);
+	
 	return S_OK;
 }
 

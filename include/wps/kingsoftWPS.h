@@ -1,15 +1,11 @@
-
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-namespace wdocx {
-
-// CAccessible 包装器类
-
-class CAccessible : public COleDispatchDriver
+// CAccessible0 包装器类
+namespace wpsDoc {
+class CAccessible0 : public COleDispatchDriver
 {
 public:
-	CAccessible(){} // 调用 COleDispatchDriver 默认构造函数
-	CAccessible(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAccessible(const CAccessible& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAccessible0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAccessible0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAccessible0(const CAccessible0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -325,14 +321,76 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAdjustments 包装器类
+// CAdjustments0 包装器类
 
-class CAdjustments : public COleDispatchDriver
+class CAdjustments0 : public COleDispatchDriver
 {
 public:
-	CAdjustments(){} // 调用 COleDispatchDriver 默认构造函数
-	CAdjustments(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAdjustments(const CAdjustments& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAdjustments0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAdjustments0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAdjustments0(const CAdjustments0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// Adjustments 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Item(long Index)
+	{
+		float result;
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, parms, Index);
+		return result;
+	}
+	void put_Item(long Index, float newValue)
+	{
+		static BYTE parms[] = VTS_I4 VTS_R4;
+		InvokeHelper(0x0, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, Index, newValue);
+	}
+
+	// Adjustments 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CAdjustments1 包装器类
+
+class CAdjustments1 : public COleDispatchDriver
+{
+public:
+	CAdjustments1(){} // 调用 COleDispatchDriver 默认构造函数
+	CAdjustments1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAdjustments1(const CAdjustments1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -387,14 +445,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAnswerWizard 包装器类
+// CAnswerWizard0 包装器类
 
-class CAnswerWizard : public COleDispatchDriver
+class CAnswerWizard0 : public COleDispatchDriver
 {
 public:
-	CAnswerWizard(){} // 调用 COleDispatchDriver 默认构造函数
-	CAnswerWizard(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAnswerWizard(const CAnswerWizard& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAnswerWizard0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAnswerWizard0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAnswerWizard0(const CAnswerWizard0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -445,14 +503,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAnswerWizardFiles 包装器类
+// CAnswerWizardFiles0 包装器类
 
-class CAnswerWizardFiles : public COleDispatchDriver
+class CAnswerWizardFiles0 : public COleDispatchDriver
 {
 public:
-	CAnswerWizardFiles(){} // 调用 COleDispatchDriver 默认构造函数
-	CAnswerWizardFiles(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAnswerWizardFiles(const CAnswerWizardFiles& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAnswerWizardFiles0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAnswerWizardFiles0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAnswerWizardFiles0(const CAnswerWizardFiles0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -2660,14 +2718,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAssistance 包装器类
+// CAssistance0 包装器类
 
-class CAssistance : public COleDispatchDriver
+class CAssistance0 : public COleDispatchDriver
 {
 public:
-	CAssistance(){} // 调用 COleDispatchDriver 默认构造函数
-	CAssistance(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAssistance(const CAssistance& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAssistance0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAssistance0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAssistance0(const CAssistance0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -2706,14 +2764,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAssistant 包装器类
+// CAssistant0 包装器类
 
-class CAssistant : public COleDispatchDriver
+class CAssistant0 : public COleDispatchDriver
 {
 public:
-	CAssistant(){} // 调用 COleDispatchDriver 默认构造函数
-	CAssistant(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAssistant(const CAssistant& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAssistant0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAssistant0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAssistant0(const CAssistant0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -3723,14 +3781,84 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CAxes 包装器类
+// CAxes0 包装器类
 
-class CAxes : public COleDispatchDriver
+class CAxes0 : public COleDispatchDriver
 {
 public:
-	CAxes(){} // 调用 COleDispatchDriver 默认构造函数
-	CAxes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CAxes(const CAxes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CAxes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CAxes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAxes0(const CAxes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// Axes 方法
+public:
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Item(long Type, long AxisGroup)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, Type, AxisGroup);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0x60020002, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get__Default(long Type, long AxisGroup)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, Type, AxisGroup);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// Axes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CAxes1 包装器类
+
+class CAxes1 : public COleDispatchDriver
+{
+public:
+	CAxes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CAxes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CAxes1(const CAxes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -4571,14 +4699,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBalloon 包装器类
+// CBalloon0 包装器类
 
-class CBalloon : public COleDispatchDriver
+class CBalloon0 : public COleDispatchDriver
 {
 public:
-	CBalloon(){} // 调用 COleDispatchDriver 默认构造函数
-	CBalloon(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBalloon(const CBalloon& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBalloon0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBalloon0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBalloon0(const CBalloon0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -4747,14 +4875,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBalloonCheckbox 包装器类
+// CBalloonCheckbox0 包装器类
 
-class CBalloonCheckbox : public COleDispatchDriver
+class CBalloonCheckbox0 : public COleDispatchDriver
 {
 public:
-	CBalloonCheckbox(){} // 调用 COleDispatchDriver 默认构造函数
-	CBalloonCheckbox(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBalloonCheckbox(const CBalloonCheckbox& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBalloonCheckbox0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBalloonCheckbox0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBalloonCheckbox0(const CBalloonCheckbox0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -4825,14 +4953,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBalloonCheckboxes 包装器类
+// CBalloonCheckboxes0 包装器类
 
-class CBalloonCheckboxes : public COleDispatchDriver
+class CBalloonCheckboxes0 : public COleDispatchDriver
 {
 public:
-	CBalloonCheckboxes(){} // 调用 COleDispatchDriver 默认构造函数
-	CBalloonCheckboxes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBalloonCheckboxes(const CBalloonCheckboxes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBalloonCheckboxes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBalloonCheckboxes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBalloonCheckboxes0(const CBalloonCheckboxes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -4899,14 +5027,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBalloonLabel 包装器类
+// CBalloonLabel0 包装器类
 
-class CBalloonLabel : public COleDispatchDriver
+class CBalloonLabel0 : public COleDispatchDriver
 {
 public:
-	CBalloonLabel(){} // 调用 COleDispatchDriver 默认构造函数
-	CBalloonLabel(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBalloonLabel(const CBalloonLabel& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBalloonLabel0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBalloonLabel0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBalloonLabel0(const CBalloonLabel0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -4966,14 +5094,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBalloonLabels 包装器类
+// CBalloonLabels0 包装器类
 
-class CBalloonLabels : public COleDispatchDriver
+class CBalloonLabels0 : public COleDispatchDriver
 {
 public:
-	CBalloonLabels(){} // 调用 COleDispatchDriver 默认构造函数
-	CBalloonLabels(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBalloonLabels(const CBalloonLabels& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBalloonLabels0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBalloonLabels0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBalloonLabels0(const CBalloonLabels0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -5107,14 +5235,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBlogExtensibility 包装器类
+// CBlogExtensibility0 包装器类
 
-class CBlogExtensibility : public COleDispatchDriver
+class CBlogExtensibility0 : public COleDispatchDriver
 {
 public:
-	CBlogExtensibility(){} // 调用 COleDispatchDriver 默认构造函数
-	CBlogExtensibility(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBlogExtensibility(const CBlogExtensibility& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBlogExtensibility0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBlogExtensibility0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBlogExtensibility0(const CBlogExtensibility0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -5149,24 +5277,8 @@ public:
 	{
 		static BYTE parms[] = VTS_BSTR VTS_BSTR VTS_I4 VTS_PBSTR VTS_PBSTR VTS_PBSTR VTS_UNKNOWN;
 		InvokeHelper(0x5, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Account, PostID, ParentWindow, xHTML, Title, DatePosted, Categories);
-	}/*
-	 zhanglt注释
-	void PublishPost(LPCTSTR Account, long ParentWindow, LPDISPATCH Document, LPCTSTR xHTML, LPCTSTR Title, LPCTSTR DateTime, SAFEARRAY * Categories, BOOL Draft, BSTR * PostID, BSTR * PublishMessage)
-	{
-		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_DISPATCH VTS_BSTR VTS_BSTR VTS_BSTR VTS_NONE VTS_BOOL VTS_PBSTR VTS_PBSTR;
-		InvokeHelper(0x6, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Account, ParentWindow, Document, xHTML, Title, DateTime, Categories, Draft, PostID, PublishMessage);
 	}
-	void RepublishPost(LPCTSTR Account, long ParentWindow, LPDISPATCH Document, LPCTSTR PostID, LPCTSTR xHTML, LPCTSTR Title, LPCTSTR DateTime, SAFEARRAY * Categories, BOOL Draft, BSTR * PublishMessage)
-	{
-		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_DISPATCH VTS_BSTR VTS_BSTR VTS_BSTR VTS_BSTR VTS_NONE VTS_BOOL VTS_PBSTR;
-		InvokeHelper(0x7, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Account, ParentWindow, Document, PostID, xHTML, Title, DateTime, Categories, Draft, PublishMessage);
-	}
-	void GetCategories(LPCTSTR Account, long ParentWindow, LPDISPATCH Document, SAFEARRAY * * Categories)
-	{
-		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_DISPATCH VTS_UNKNOWN;
-		InvokeHelper(0x8, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Account, ParentWindow, Document, Categories);
-	}
-	*/
+	
 	// IBlogExtensibility 属性
 public:
 
@@ -5174,14 +5286,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBlogPictureExtensibility 包装器类
+// CBlogPictureExtensibility0 包装器类
 
-class CBlogPictureExtensibility : public COleDispatchDriver
+class CBlogPictureExtensibility0 : public COleDispatchDriver
 {
 public:
-	CBlogPictureExtensibility(){} // 调用 COleDispatchDriver 默认构造函数
-	CBlogPictureExtensibility(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBlogPictureExtensibility(const CBlogPictureExtensibility& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBlogPictureExtensibility0(){} // 调用 COleDispatchDriver 默认构造函数
+	CBlogPictureExtensibility0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBlogPictureExtensibility0(const CBlogPictureExtensibility0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -6504,14 +6616,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CBulletFormat2 包装器类
+// CBulletFormat20 包装器类
 
-class CBulletFormat2 : public COleDispatchDriver
+class CBulletFormat20 : public COleDispatchDriver
 {
 public:
-	CBulletFormat2(){} // 调用 COleDispatchDriver 默认构造函数
-	CBulletFormat2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CBulletFormat2(const CBulletFormat2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CBulletFormat20(){} // 调用 COleDispatchDriver 默认构造函数
+	CBulletFormat20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CBulletFormat20(const CBulletFormat20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -6653,14 +6765,167 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCalloutFormat 包装器类
+// CCalloutFormat0 包装器类
 
-class CCalloutFormat : public COleDispatchDriver
+class CCalloutFormat0 : public COleDispatchDriver
 {
 public:
-	CCalloutFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CCalloutFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCalloutFormat(const CCalloutFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCalloutFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCalloutFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCalloutFormat0(const CCalloutFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// CalloutFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void AutomaticLength()
+	{
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void CustomDrop(float Drop)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Drop);
+	}
+	void CustomLength(float Length)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Length);
+	}
+	void PresetDrop(long DropType)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, DropType);
+	}
+	long get_Accent()
+	{
+		long result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Accent(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Angle()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Angle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_AutoAttach()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_AutoAttach(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_AutoLength()
+	{
+		long result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Border()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Border(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Drop()
+	{
+		float result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	long get_DropType()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Gap()
+	{
+		float result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Gap(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Length()
+	{
+		float result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Type(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// CalloutFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CCalloutFormat1 包装器类
+
+class CCalloutFormat1 : public COleDispatchDriver
+{
+public:
+	CCalloutFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCalloutFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCalloutFormat1(const CCalloutFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -6806,14 +7071,171 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCanvasShapes 包装器类
+// CCanvasShapes0 包装器类
 
-class CCanvasShapes : public COleDispatchDriver
+class CCanvasShapes0 : public COleDispatchDriver
 {
 public:
-	CCanvasShapes(){} // 调用 COleDispatchDriver 默认构造函数
-	CCanvasShapes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCanvasShapes(const CCanvasShapes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCanvasShapes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCanvasShapes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCanvasShapes0(const CCanvasShapes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// CanvasShapes 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH AddCallout(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddConnector(long Type, float BeginX, float BeginY, float EndX, float EndY)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, BeginX, BeginY, EndX, EndY);
+		return result;
+	}
+	LPDISPATCH AddCurve(VARIANT& SafeArrayOfPoints)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &SafeArrayOfPoints);
+		return result;
+	}
+	LPDISPATCH AddLabel(long Orientation, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Orientation, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddLine(float BeginX, float BeginY, float EndX, float EndY)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, BeginX, BeginY, EndX, EndY);
+		return result;
+	}
+	LPDISPATCH AddPicture(LPCTSTR FileName, long LinkToFile, long SaveWithDocument, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddPolyline(VARIANT& SafeArrayOfPoints)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &SafeArrayOfPoints);
+		return result;
+	}
+	LPDISPATCH AddShape(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddTextEffect(long PresetTextEffect, LPCTSTR Text, LPCTSTR FontName, float FontSize, long FontBold, long FontItalic, float Left, float Top)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_BSTR VTS_BSTR VTS_R4 VTS_I4 VTS_I4 VTS_R4 VTS_R4;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, PresetTextEffect, Text, FontName, FontSize, FontBold, FontItalic, Left, Top);
+		return result;
+	}
+	LPDISPATCH AddTextbox(long Orientation, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x13, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Orientation, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH BuildFreeform(long EditingType, float X1, float Y1)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4;
+		InvokeHelper(0x14, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, EditingType, X1, Y1);
+		return result;
+	}
+	LPDISPATCH Range(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x15, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	void SelectAll()
+	{
+		InvokeHelper(0x16, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH get_Background()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// CanvasShapes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CCanvasShapes1 包装器类
+
+class CCanvasShapes1 : public COleDispatchDriver
+{
+public:
+	CCanvasShapes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCanvasShapes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCanvasShapes1(const CCanvasShapes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -9137,14 +9559,180 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CChartFillFormat 包装器类
+// CChartFillFormat0 包装器类
 
-class CChartFillFormat : public COleDispatchDriver
+class CChartFillFormat0 : public COleDispatchDriver
 {
 public:
-	CChartFillFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CChartFillFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CChartFillFormat(const CChartFillFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CChartFillFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartFillFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartFillFormat0(const CChartFillFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ChartFillFormat 方法
+public:
+	void OneColorGradient(long Style, long Variant, float Degree)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_R4;
+		InvokeHelper(0x60020000, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant, Degree);
+	}
+	void TwoColorGradient(long Style, long Variant)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0x60020001, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant);
+	}
+	void PresetTextured(long PresetTexture)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020002, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PresetTexture);
+	}
+	void Solid()
+	{
+		InvokeHelper(0x60020003, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Patterned(long Pattern)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020004, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Pattern);
+	}
+	void UserPicture(VARIANT& PictureFile, VARIANT& PictureFormat, VARIANT& PictureStackUnit, VARIANT& PicturePlacement)
+	{
+		static BYTE parms[] = VTS_VARIANT VTS_VARIANT VTS_VARIANT VTS_VARIANT;
+		InvokeHelper(0x60020005, DISPATCH_METHOD, VT_EMPTY, NULL, parms, &PictureFile, &PictureFormat, &PictureStackUnit, &PicturePlacement);
+	}
+	void UserTextured(LPCTSTR TextureFile)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020006, DISPATCH_METHOD, VT_EMPTY, NULL, parms, TextureFile);
+	}
+	void PresetGradient(long Style, long Variant, long PresetGradientType)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_I4;
+		InvokeHelper(0x60020007, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant, PresetGradientType);
+	}
+	LPUNKNOWN get_BackColor()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0x60020008, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPUNKNOWN get_ForeColor()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0x60020009, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	long get_GradientColorType()
+	{
+		long result;
+		InvokeHelper(0x6002000a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_GradientDegree()
+	{
+		float result;
+		InvokeHelper(0x6002000b, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	long get_GradientStyle()
+	{
+		long result;
+		InvokeHelper(0x6002000c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_GradientVariant()
+	{
+		long result;
+		InvokeHelper(0x6002000d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Pattern()
+	{
+		long result;
+		InvokeHelper(0x6002000e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_PresetGradientType()
+	{
+		long result;
+		InvokeHelper(0x6002000f, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_PresetTexture()
+	{
+		long result;
+		InvokeHelper(0x60020010, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	CString get_TextureName()
+	{
+		CString result;
+		InvokeHelper(0x60020011, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	long get_TextureType()
+	{
+		long result;
+		InvokeHelper(0x60020012, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x60020013, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020014, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x60020014, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// ChartFillFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CChartFillFormat1 包装器类
+
+class CChartFillFormat1 : public COleDispatchDriver
+{
+public:
+	CChartFillFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartFillFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartFillFormat1(const CChartFillFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -9303,14 +9891,212 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CChartFont 包装器类
+// CChartFont0 包装器类
 
-class CChartFont : public COleDispatchDriver
+class CChartFont0 : public COleDispatchDriver
 {
 public:
-	CChartFont(){} // 调用 COleDispatchDriver 默认构造函数
-	CChartFont(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CChartFont(const CChartFont& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CChartFont0(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartFont0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartFont0(const CChartFont0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ChartFont 方法
+public:
+	void put_Background(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Background()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Bold(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020002, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Bold()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020002, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Color(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020004, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Color()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020004, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_ColorIndex(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020006, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_ColorIndex()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020006, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_FontStyle(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020008, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_FontStyle()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020008, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Italic(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Italic()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000a, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Name(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Name()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000c, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_OutlineFont(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_OutlineFont()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000e, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Shadow(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020010, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Shadow()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020010, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Size(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020012, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Size()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020012, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_StrikeThrough(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020014, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_StrikeThrough()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020014, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Subscript(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020016, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Subscript()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020016, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Superscript(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x60020018, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Superscript()
+	{
+		VARIANT result;
+		InvokeHelper(0x60020018, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	void put_Underline(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002001a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	VARIANT get_Underline()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002001a, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// ChartFont 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CChartFont1 包装器类
+
+class CChartFont1 : public COleDispatchDriver
+{
+public:
+	CChartFont1(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartFont1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartFont1(const CChartFont1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -9937,14 +10723,77 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CChartGroups 包装器类
+// CChartGroups0 包装器类
 
-class CChartGroups : public COleDispatchDriver
+class CChartGroups0 : public COleDispatchDriver
 {
 public:
-	CChartGroups(){} // 调用 COleDispatchDriver 默认构造函数
-	CChartGroups(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CChartGroups(const CChartGroups& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CChartGroups0(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartGroups0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartGroups0(const CChartGroups0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ChartGroups 方法
+public:
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x76, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0xaa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN _NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_METHOD, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+
+	// ChartGroups 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CChartGroups1 包装器类
+
+class CChartGroups1 : public COleDispatchDriver
+{
+public:
+	CChartGroups1(){} // 调用 COleDispatchDriver 默认构造函数
+	CChartGroups1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CChartGroups1(const CChartGroups1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -10869,14 +11718,119 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CColorFormat 包装器类
+// CColorFormat0 包装器类
 
-class CColorFormat : public COleDispatchDriver
+class CColorFormat0 : public COleDispatchDriver
 {
 public:
-	CColorFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CColorFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CColorFormat(const CColorFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CColorFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CColorFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CColorFormat0(const CColorFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ColorFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_RGB()
+	{
+		long result;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RGB(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x0, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_SchemeColor()
+	{
+		long result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_SchemeColor(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_TintAndShade()
+	{
+		float result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TintAndShade(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_ObjectThemeColor()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ObjectThemeColor(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Brightness()
+	{
+		float result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Brightness(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// ColorFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CColorFormat1 包装器类
+
+class CColorFormat1 : public COleDispatchDriver
+{
+public:
+	CColorFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CColorFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CColorFormat1(const CColorFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -11379,14 +12333,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCOMAddIn 包装器类
+// CCOMAddIn0 包装器类
 
-class CCOMAddIn : public COleDispatchDriver
+class CCOMAddIn0 : public COleDispatchDriver
 {
 public:
-	CCOMAddIn(){} // 调用 COleDispatchDriver 默认构造函数
-	CCOMAddIn(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCOMAddIn(const CCOMAddIn& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCOMAddIn0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCOMAddIn0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCOMAddIn0(const CCOMAddIn0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -11468,14 +12422,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCOMAddIns 包装器类
+// CCOMAddIns0 包装器类
 
-class CCOMAddIns : public COleDispatchDriver
+class CCOMAddIns0 : public COleDispatchDriver
 {
 public:
-	CCOMAddIns(){} // 调用 COleDispatchDriver 默认构造函数
-	CCOMAddIns(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCOMAddIns(const CCOMAddIns& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCOMAddIns0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCOMAddIns0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCOMAddIns0(const CCOMAddIns0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -11539,14 +12493,15 @@ public:
 };
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
-// CCommandBar0 包装器类
 
-class CCommandBar0 : public COleDispatchDriver
+// CCommandBar1 包装器类
+
+class CCommandBar1 : public COleDispatchDriver
 {
 public:
-	CCommandBar0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBar0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBar0(const CCommandBar0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBar1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBar1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBar1(const CCommandBar1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -11921,14 +12876,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarActiveX 包装器类
+// CCommandBarActiveX0 包装器类
 
-class CCommandBarActiveX : public COleDispatchDriver
+class CCommandBarActiveX0 : public COleDispatchDriver
 {
 public:
-	CCommandBarActiveX(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarActiveX(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarActiveX(const CCommandBarActiveX& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarActiveX0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarActiveX0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarActiveX0(const CCommandBarActiveX0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -12414,14 +13369,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarButton 包装器类
+// CCommandBarButton0 包装器类
 
-class CCommandBarButton : public COleDispatchDriver
+class CCommandBarButton0 : public COleDispatchDriver
 {
 public:
-	CCommandBarButton(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarButton(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarButton(const CCommandBarButton& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarButton0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarButton0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarButton0(const CCommandBarButton0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -12971,14 +13926,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarButtonEvents 包装器类
+// CCommandBarButtonEvents1 包装器类
 
-class CCommandBarButtonEvents : public COleDispatchDriver
+class CCommandBarButtonEvents1 : public COleDispatchDriver
 {
 public:
-	CCommandBarButtonEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarButtonEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarButtonEvents(const CCommandBarButtonEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarButtonEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarButtonEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarButtonEvents1(const CCommandBarButtonEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -13002,14 +13957,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarButtonEvents0 包装器类
+// CCommandBarButtonEvents2 包装器类
 
-class CCommandBarButtonEvents0 : public COleDispatchDriver
+class CCommandBarButtonEvents2 : public COleDispatchDriver
 {
 public:
-	CCommandBarButtonEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarButtonEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarButtonEvents0(const CCommandBarButtonEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarButtonEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarButtonEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarButtonEvents2(const CCommandBarButtonEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -13033,14 +13988,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarComboBox 包装器类
+// CCommandBarComboBox0 包装器类
 
-class CCommandBarComboBox : public COleDispatchDriver
+class CCommandBarComboBox0 : public COleDispatchDriver
 {
 public:
-	CCommandBarComboBox(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarComboBox(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarComboBox(const CCommandBarComboBox& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarComboBox0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarComboBox0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarComboBox0(const CCommandBarComboBox0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -13592,14 +14547,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarComboBoxEvents 包装器类
+// CCommandBarComboBoxEvents1 包装器类
 
-class CCommandBarComboBoxEvents : public COleDispatchDriver
+class CCommandBarComboBoxEvents1 : public COleDispatchDriver
 {
 public:
-	CCommandBarComboBoxEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarComboBoxEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarComboBoxEvents(const CCommandBarComboBoxEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarComboBoxEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarComboBoxEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarComboBoxEvents1(const CCommandBarComboBoxEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -13623,14 +14578,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarComboBoxEvents0 包装器类
+// CCommandBarComboBoxEvents2 包装器类
 
-class CCommandBarComboBoxEvents0 : public COleDispatchDriver
+class CCommandBarComboBoxEvents2 : public COleDispatchDriver
 {
 public:
-	CCommandBarComboBoxEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarComboBoxEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarComboBoxEvents0(const CCommandBarComboBoxEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarComboBoxEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarComboBoxEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarComboBoxEvents2(const CCommandBarComboBoxEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -13654,14 +14609,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarControl 包装器类
+// CCommandBarControl0 包装器类
 
-class CCommandBarControl : public COleDispatchDriver
+class CCommandBarControl0 : public COleDispatchDriver
 {
 public:
-	CCommandBarControl(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarControl(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarControl(const CCommandBarControl& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarControl0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarControl0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarControl0(const CCommandBarControl0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -14109,14 +15064,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarControls 包装器类
+// CCommandBarControls0 包装器类
 
-class CCommandBarControls : public COleDispatchDriver
+class CCommandBarControls0 : public COleDispatchDriver
 {
 public:
-	CCommandBarControls(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarControls(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarControls(const CCommandBarControls& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarControls0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarControls0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarControls0(const CCommandBarControls0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -14179,14 +15134,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarPopup 包装器类
+// CCommandBarPopup0 包装器类
 
-class CCommandBarPopup : public COleDispatchDriver
+class CCommandBarPopup0 : public COleDispatchDriver
 {
 public:
-	CCommandBarPopup(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarPopup(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarPopup(const CCommandBarPopup& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarPopup0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarPopup0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarPopup0(const CCommandBarPopup0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -14663,14 +15618,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBars 包装器类
+// CCommandBars0 包装器类
 
-class CCommandBars : public COleDispatchDriver
+class CCommandBars0 : public COleDispatchDriver
 {
 public:
-	CCommandBars(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBars(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBars(const CCommandBars& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBars0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBars0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBars0(const CCommandBars0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -14931,14 +15886,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarsEvents 包装器类
+// CCommandBarsEvents1 包装器类
 
-class CCommandBarsEvents : public COleDispatchDriver
+class CCommandBarsEvents1 : public COleDispatchDriver
 {
 public:
-	CCommandBarsEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarsEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarsEvents(const CCommandBarsEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarsEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarsEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarsEvents1(const CCommandBarsEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -14961,14 +15916,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCommandBarsEvents0 包装器类
+// CCommandBarsEvents2 包装器类
 
-class CCommandBarsEvents0 : public COleDispatchDriver
+class CCommandBarsEvents2 : public COleDispatchDriver
 {
 public:
-	CCommandBarsEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCommandBarsEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCommandBarsEvents0(const CCommandBarsEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCommandBarsEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCommandBarsEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCommandBarsEvents2(const CCommandBarsEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -15494,14 +16449,123 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CConnectorFormat 包装器类
+// CConnectorFormat0 包装器类
 
-class CConnectorFormat : public COleDispatchDriver
+class CConnectorFormat0 : public COleDispatchDriver
 {
 public:
-	CConnectorFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CConnectorFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CConnectorFormat(const CConnectorFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CConnectorFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CConnectorFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CConnectorFormat0(const CConnectorFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ConnectorFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void BeginConnect(LPDISPATCH ConnectedShape, long ConnectionSite)
+	{
+		static BYTE parms[] = VTS_DISPATCH VTS_I4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, ConnectedShape, ConnectionSite);
+	}
+	void BeginDisconnect()
+	{
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void EndConnect(LPDISPATCH ConnectedShape, long ConnectionSite)
+	{
+		static BYTE parms[] = VTS_DISPATCH VTS_I4;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, parms, ConnectedShape, ConnectionSite);
+	}
+	void EndDisconnect()
+	{
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	long get_BeginConnected()
+	{
+		long result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_BeginConnectedShape()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_BeginConnectionSite()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_EndConnected()
+	{
+		long result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_EndConnectedShape()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_EndConnectionSite()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Type(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// ConnectorFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CConnectorFormat1 包装器类
+
+class CConnectorFormat1 : public COleDispatchDriver
+{
+public:
+	CConnectorFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CConnectorFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CConnectorFormat1(const CConnectorFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -15603,14 +16667,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CContactCard 包装器类
+// CContactCard0 包装器类
 
-class CContactCard : public COleDispatchDriver
+class CContactCard0 : public COleDispatchDriver
 {
 public:
-	CContactCard(){} // 调用 COleDispatchDriver 默认构造函数
-	CContactCard(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CContactCard(const CContactCard& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CContactCard0(){} // 调用 COleDispatchDriver 默认构造函数
+	CContactCard0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CContactCard0(const CContactCard0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16282,14 +17346,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCrop 包装器类
+// CCrop0 包装器类
 
-class CCrop : public COleDispatchDriver
+class CCrop0 : public COleDispatchDriver
 {
 public:
-	CCrop(){} // 调用 COleDispatchDriver 默认构造函数
-	CCrop(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCrop(const CCrop& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCrop0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCrop0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCrop0(const CCrop0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16408,14 +17472,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCTPFactory 包装器类
+// CCTPFactory0 包装器类
 
-class CCTPFactory : public COleDispatchDriver
+class CCTPFactory0 : public COleDispatchDriver
 {
 public:
-	CCTPFactory(){} // 调用 COleDispatchDriver 默认构造函数
-	CCTPFactory(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCTPFactory(const CCTPFactory& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCTPFactory0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCTPFactory0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCTPFactory0(const CCTPFactory0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16822,14 +17886,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomTaskPane 包装器类
+// CCustomTaskPane0 包装器类
 
-class CCustomTaskPane : public COleDispatchDriver
+class CCustomTaskPane0 : public COleDispatchDriver
 {
 public:
-	CCustomTaskPane(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomTaskPane(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomTaskPane(const CCustomTaskPane& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomTaskPane0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomTaskPane0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomTaskPane0(const CCustomTaskPane0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16931,14 +17995,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomTaskPaneConsumer 包装器类
+// CCustomTaskPaneConsumer0 包装器类
 
-class CCustomTaskPaneConsumer : public COleDispatchDriver
+class CCustomTaskPaneConsumer0 : public COleDispatchDriver
 {
 public:
-	CCustomTaskPaneConsumer(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomTaskPaneConsumer(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomTaskPaneConsumer(const CCustomTaskPaneConsumer& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomTaskPaneConsumer0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomTaskPaneConsumer0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomTaskPaneConsumer0(const CCustomTaskPaneConsumer0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16962,14 +18026,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomTaskPaneEvents 包装器类
+// CCustomTaskPaneEvents1 包装器类
 
-class CCustomTaskPaneEvents : public COleDispatchDriver
+class CCustomTaskPaneEvents1 : public COleDispatchDriver
 {
 public:
-	CCustomTaskPaneEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomTaskPaneEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomTaskPaneEvents(const CCustomTaskPaneEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomTaskPaneEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomTaskPaneEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomTaskPaneEvents1(const CCustomTaskPaneEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -16998,14 +18062,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomTaskPaneEvents0 包装器类
+// CCustomTaskPaneEvents2 包装器类
 
-class CCustomTaskPaneEvents0 : public COleDispatchDriver
+class CCustomTaskPaneEvents2 : public COleDispatchDriver
 {
 public:
-	CCustomTaskPaneEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomTaskPaneEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomTaskPaneEvents0(const CCustomTaskPaneEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomTaskPaneEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomTaskPaneEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomTaskPaneEvents2(const CCustomTaskPaneEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17034,14 +18098,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLNode 包装器类
+// CCustomXMLNode0 包装器类
 
-class CCustomXMLNode : public COleDispatchDriver
+class CCustomXMLNode0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLNode(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLNode(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLNode(const CCustomXMLNode& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLNode0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLNode0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLNode0(const CCustomXMLNode0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17243,14 +18307,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLNodes 包装器类
+// CCustomXMLNodes0 包装器类
 
-class CCustomXMLNodes : public COleDispatchDriver
+class CCustomXMLNodes0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLNodes(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLNodes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLNodes(const CCustomXMLNodes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLNodes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLNodes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLNodes0(const CCustomXMLNodes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17306,14 +18370,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPart 包装器类
+// CCustomXMLPart0 包装器类
 
-class CCustomXMLPart : public COleDispatchDriver
+class CCustomXMLPart0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPart(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPart(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPart(const CCustomXMLPart& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPart0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPart0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPart0(const CCustomXMLPart0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17440,14 +18504,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPartEvents 包装器类
+// CCustomXMLPartEvents1 包装器类
 
-class CCustomXMLPartEvents : public COleDispatchDriver
+class CCustomXMLPartEvents1 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPartEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPartEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPartEvents(const CCustomXMLPartEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPartEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPartEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPartEvents1(const CCustomXMLPartEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17481,14 +18545,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPartEvents0 包装器类
+// CCustomXMLPartEvents2 包装器类
 
-class CCustomXMLPartEvents0 : public COleDispatchDriver
+class CCustomXMLPartEvents2 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPartEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPartEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPartEvents0(const CCustomXMLPartEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPartEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPartEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPartEvents2(const CCustomXMLPartEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17522,14 +18586,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLParts 包装器类
+// CCustomXMLParts0 包装器类
 
-class CCustomXMLParts : public COleDispatchDriver
+class CCustomXMLParts0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLParts(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLParts(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLParts(const CCustomXMLParts& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLParts0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLParts0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLParts0(const CCustomXMLParts0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17606,14 +18670,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPartsEvents 包装器类
+// CCustomXMLPartsEvents1 包装器类
 
-class CCustomXMLPartsEvents : public COleDispatchDriver
+class CCustomXMLPartsEvents1 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPartsEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPartsEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPartsEvents(const CCustomXMLPartsEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPartsEvents1(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPartsEvents1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPartsEvents1(const CCustomXMLPartsEvents1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17647,14 +18711,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPartsEvents0 包装器类
+// CCustomXMLPartsEvents2 包装器类
 
-class CCustomXMLPartsEvents0 : public COleDispatchDriver
+class CCustomXMLPartsEvents2 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPartsEvents0(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPartsEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPartsEvents0(const CCustomXMLPartsEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPartsEvents2(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPartsEvents2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPartsEvents2(const CCustomXMLPartsEvents2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17688,14 +18752,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPrefixMapping 包装器类
+// CCustomXMLPrefixMapping0 包装器类
 
-class CCustomXMLPrefixMapping : public COleDispatchDriver
+class CCustomXMLPrefixMapping0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPrefixMapping(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPrefixMapping(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPrefixMapping(const CCustomXMLPrefixMapping& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPrefixMapping0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPrefixMapping0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPrefixMapping0(const CCustomXMLPrefixMapping0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17744,14 +18808,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLPrefixMappings 包装器类
+// CCustomXMLPrefixMappings0 包装器类
 
-class CCustomXMLPrefixMappings : public COleDispatchDriver
+class CCustomXMLPrefixMappings0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLPrefixMappings(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLPrefixMappings(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLPrefixMappings(const CCustomXMLPrefixMappings& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLPrefixMappings0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLPrefixMappings0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLPrefixMappings0(const CCustomXMLPrefixMappings0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17826,14 +18890,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLSchema 包装器类
+// CCustomXMLSchema0 包装器类
 
-class CCustomXMLSchema : public COleDispatchDriver
+class CCustomXMLSchema0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLSchema(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLSchema(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLSchema(const CCustomXMLSchema& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLSchema0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLSchema0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLSchema0(const CCustomXMLSchema0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17890,14 +18954,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLSchemaCollection 包装器类
+// CCustomXMLSchemaCollection0 包装器类
 
-class CCustomXMLSchemaCollection : public COleDispatchDriver
+class CCustomXMLSchemaCollection0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLSchemaCollection(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLSchemaCollection(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLSchemaCollection(const CCustomXMLSchemaCollection& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLSchemaCollection0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLSchemaCollection0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLSchemaCollection0(const CCustomXMLSchemaCollection0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -17978,14 +19042,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLValidationError 包装器类
+// CCustomXMLValidationError0 包装器类
 
-class CCustomXMLValidationError : public COleDispatchDriver
+class CCustomXMLValidationError0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLValidationError(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLValidationError(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLValidationError(const CCustomXMLValidationError& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLValidationError0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLValidationError0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLValidationError0(const CCustomXMLValidationError0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -18056,14 +19120,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CCustomXMLValidationErrors 包装器类
+// CCustomXMLValidationErrors0 包装器类
 
-class CCustomXMLValidationErrors : public COleDispatchDriver
+class CCustomXMLValidationErrors0 : public COleDispatchDriver
 {
 public:
-	CCustomXMLValidationErrors(){} // 调用 COleDispatchDriver 默认构造函数
-	CCustomXMLValidationErrors(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CCustomXMLValidationErrors(const CCustomXMLValidationErrors& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CCustomXMLValidationErrors0(){} // 调用 COleDispatchDriver 默认构造函数
+	CCustomXMLValidationErrors0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CCustomXMLValidationErrors0(const CCustomXMLValidationErrors0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -19363,14 +20427,149 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDiagramNode 包装器类
+// CDiagramNode0 包装器类
 
-class CDiagramNode : public COleDispatchDriver
+class CDiagramNode0 : public COleDispatchDriver
 {
 public:
-	CDiagramNode(){} // 调用 COleDispatchDriver 默认构造函数
-	CDiagramNode(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDiagramNode(const CDiagramNode& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDiagramNode0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNode0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNode0(const CDiagramNode0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// DiagramNode 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH AddNode(long Pos, long NodeType)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Pos, NodeType);
+		return result;
+	}
+	void Delete()
+	{
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void MoveNode(LPDISPATCH TargetNode, long Pos)
+	{
+		static BYTE parms[] = VTS_DISPATCH VTS_I4;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, parms, TargetNode, Pos);
+	}
+	void ReplaceNode(LPDISPATCH TargetNode)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, TargetNode);
+	}
+	void SwapNode(LPDISPATCH TargetNode, BOOL SwapChildren)
+	{
+		static BYTE parms[] = VTS_DISPATCH VTS_BOOL;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_EMPTY, NULL, parms, TargetNode, SwapChildren);
+	}
+	LPDISPATCH CloneNode(BOOL CopyChildren, LPDISPATCH TargetNode, long Pos)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BOOL VTS_DISPATCH VTS_I4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, CopyChildren, TargetNode, Pos);
+		return result;
+	}
+	void TransferChildren(LPDISPATCH ReceivingNode)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_EMPTY, NULL, parms, ReceivingNode);
+	}
+	LPDISPATCH NextNode()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH PrevNode()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Children()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Shape()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Root()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Diagram()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Layout()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Layout(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_TextShape()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// DiagramNode 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CDiagramNode1 包装器类
+
+class CDiagramNode1 : public COleDispatchDriver
+{
+public:
+	CDiagramNode1(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNode1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNode1(const CDiagramNode1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -19498,14 +20697,100 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDiagramNodeChildren 包装器类
+// CDiagramNodeChildren0 包装器类
 
-class CDiagramNodeChildren : public COleDispatchDriver
+class CDiagramNodeChildren0 : public COleDispatchDriver
 {
 public:
-	CDiagramNodeChildren(){} // 调用 COleDispatchDriver 默认构造函数
-	CDiagramNodeChildren(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDiagramNodeChildren(const CDiagramNodeChildren& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDiagramNodeChildren0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNodeChildren0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNodeChildren0(const CDiagramNodeChildren0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// DiagramNodeChildren 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPDISPATCH AddNode(VARIANT& Index, long NodeType)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT VTS_I4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index, NodeType);
+		return result;
+	}
+	void SelectAll()
+	{
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_FirstChild()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_LastChild()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// DiagramNodeChildren 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CDiagramNodeChildren1 包装器类
+
+class CDiagramNodeChildren1 : public COleDispatchDriver
+{
+public:
+	CDiagramNodeChildren1(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNodeChildren1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNodeChildren1(const CDiagramNodeChildren1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -19584,14 +20869,81 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDiagramNodes 包装器类
+// CDiagramNodes0 包装器类
 
-class CDiagramNodes : public COleDispatchDriver
+class CDiagramNodes0 : public COleDispatchDriver
 {
 public:
-	CDiagramNodes(){} // 调用 COleDispatchDriver 默认构造函数
-	CDiagramNodes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDiagramNodes(const CDiagramNodes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDiagramNodes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNodes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNodes0(const CDiagramNodes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// DiagramNodes 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	void SelectAll()
+	{
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+
+	// DiagramNodes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CDiagramNodes1 包装器类
+
+class CDiagramNodes1 : public COleDispatchDriver
+{
+public:
+	CDiagramNodes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CDiagramNodes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDiagramNodes1(const CDiagramNodes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -22805,14 +24157,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDocumentInspector 包装器类
+// CDocumentInspector0 包装器类
 
-class CDocumentInspector : public COleDispatchDriver
+class CDocumentInspector0 : public COleDispatchDriver
 {
 public:
-	CDocumentInspector(){} // 调用 COleDispatchDriver 默认构造函数
-	CDocumentInspector(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDocumentInspector(const CDocumentInspector& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDocumentInspector0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDocumentInspector0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDocumentInspector0(const CDocumentInspector0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -22871,14 +24223,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDocumentInspectors 包装器类
+// CDocumentInspectors0 包装器类
 
-class CDocumentInspectors : public COleDispatchDriver
+class CDocumentInspectors0 : public COleDispatchDriver
 {
 public:
-	CDocumentInspectors(){} // 调用 COleDispatchDriver 默认构造函数
-	CDocumentInspectors(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDocumentInspectors(const CDocumentInspectors& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDocumentInspectors0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDocumentInspectors0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDocumentInspectors0(const CDocumentInspectors0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -22934,14 +24286,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDocumentLibraryVersion 包装器类
+// CDocumentLibraryVersion0 包装器类
 
-class CDocumentLibraryVersion : public COleDispatchDriver
+class CDocumentLibraryVersion0 : public COleDispatchDriver
 {
 public:
-	CDocumentLibraryVersion(){} // 调用 COleDispatchDriver 默认构造函数
-	CDocumentLibraryVersion(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDocumentLibraryVersion(const CDocumentLibraryVersion& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDocumentLibraryVersion0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDocumentLibraryVersion0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDocumentLibraryVersion0(const CDocumentLibraryVersion0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -23018,14 +24370,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CDocumentLibraryVersions 包装器类
+// CDocumentLibraryVersions0 包装器类
 
-class CDocumentLibraryVersions : public COleDispatchDriver
+class CDocumentLibraryVersions0 : public COleDispatchDriver
 {
 public:
-	CDocumentLibraryVersions(){} // 调用 COleDispatchDriver 默认构造函数
-	CDocumentLibraryVersions(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CDocumentLibraryVersions(const CDocumentLibraryVersions& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CDocumentLibraryVersions0(){} // 调用 COleDispatchDriver 默认构造函数
+	CDocumentLibraryVersions0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CDocumentLibraryVersions0(const CDocumentLibraryVersions0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -23702,14 +25054,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CEffectParameter 包装器类
+// CEffectParameter0 包装器类
 
-class CEffectParameter : public COleDispatchDriver
+class CEffectParameter0 : public COleDispatchDriver
 {
 public:
-	CEffectParameter(){} // 调用 COleDispatchDriver 默认构造函数
-	CEffectParameter(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CEffectParameter(const CEffectParameter& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CEffectParameter0(){} // 调用 COleDispatchDriver 默认构造函数
+	CEffectParameter0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CEffectParameter0(const CEffectParameter0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -23757,14 +25109,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CEffectParameters 包装器类
+// CEffectParameters0 包装器类
 
-class CEffectParameters : public COleDispatchDriver
+class CEffectParameters0 : public COleDispatchDriver
 {
 public:
-	CEffectParameters(){} // 调用 COleDispatchDriver 默认构造函数
-	CEffectParameters(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CEffectParameters(const CEffectParameters& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CEffectParameters0(){} // 调用 COleDispatchDriver 默认构造函数
+	CEffectParameters0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CEffectParameters0(const CEffectParameters0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -24557,14 +25909,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CEncryptionProvider 包装器类
+// CEncryptionProvider0 包装器类
 
-class CEncryptionProvider : public COleDispatchDriver
+class CEncryptionProvider0 : public COleDispatchDriver
 {
 public:
-	CEncryptionProvider(){} // 调用 COleDispatchDriver 默认构造函数
-	CEncryptionProvider(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CEncryptionProvider(const CEncryptionProvider& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CEncryptionProvider0(){} // 调用 COleDispatchDriver 默认构造函数
+	CEncryptionProvider0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CEncryptionProvider0(const CEncryptionProvider0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -25825,14 +27177,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileDialog0 包装器类
+// CFileDialog1 包装器类
 
-class CFileDialog0 : public COleDispatchDriver
+class CFileDialog1 : public COleDispatchDriver
 {
 public:
-	CFileDialog0(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileDialog0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileDialog0(const CFileDialog0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileDialog1(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileDialog1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileDialog1(const CFileDialog1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -25969,14 +27321,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileDialogFilter 包装器类
+// CFileDialogFilter0 包装器类
 
-class CFileDialogFilter : public COleDispatchDriver
+class CFileDialogFilter0 : public COleDispatchDriver
 {
 public:
-	CFileDialogFilter(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileDialogFilter(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileDialogFilter(const CFileDialogFilter& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileDialogFilter0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileDialogFilter0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileDialogFilter0(const CFileDialogFilter0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26025,14 +27377,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileDialogFilters 包装器类
+// CFileDialogFilters0 包装器类
 
-class CFileDialogFilters : public COleDispatchDriver
+class CFileDialogFilters0 : public COleDispatchDriver
 {
 public:
-	CFileDialogFilters(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileDialogFilters(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileDialogFilters(const CFileDialogFilters& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileDialogFilters0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileDialogFilters0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileDialogFilters0(const CFileDialogFilters0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26104,14 +27456,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileDialogSelectedItems 包装器类
+// CFileDialogSelectedItems0 包装器类
 
-class CFileDialogSelectedItems : public COleDispatchDriver
+class CFileDialogSelectedItems0 : public COleDispatchDriver
 {
 public:
-	CFileDialogSelectedItems(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileDialogSelectedItems(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileDialogSelectedItems(const CFileDialogSelectedItems& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileDialogSelectedItems0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileDialogSelectedItems0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileDialogSelectedItems0(const CFileDialogSelectedItems0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26167,14 +27519,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileSearch 包装器类
+// CFileSearch0 包装器类
 
-class CFileSearch : public COleDispatchDriver
+class CFileSearch0 : public COleDispatchDriver
 {
 public:
-	CFileSearch(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileSearch(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileSearch(const CFileSearch& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileSearch0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileSearch0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileSearch0(const CFileSearch0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26338,14 +27690,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFileTypes 包装器类
+// CFileTypes0 包装器类
 
-class CFileTypes : public COleDispatchDriver
+class CFileTypes0 : public COleDispatchDriver
 {
 public:
-	CFileTypes(){} // 调用 COleDispatchDriver 默认构造函数
-	CFileTypes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFileTypes(const CFileTypes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFileTypes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFileTypes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFileTypes0(const CFileTypes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26405,14 +27757,305 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFillFormat 包装器类
+// CFillFormat0 包装器类
 
-class CFillFormat : public COleDispatchDriver
+class CFillFormat0 : public COleDispatchDriver
 {
 public:
-	CFillFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CFillFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFillFormat(const CFillFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFillFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFillFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFillFormat0(const CFillFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// FillFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Background()
+	{
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void OneColorGradient(long Style, long Variant, float Degree)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant, Degree);
+	}
+	void Patterned(long Pattern)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Pattern);
+	}
+	void PresetGradient(long Style, long Variant, long PresetGradientType)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant, PresetGradientType);
+	}
+	void PresetTextured(long PresetTexture)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PresetTexture);
+	}
+	void Solid()
+	{
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void TwoColorGradient(long Style, long Variant)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Style, Variant);
+	}
+	void UserPicture(LPCTSTR PictureFile)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PictureFile);
+	}
+	void UserTextured(LPCTSTR TextureFile)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_EMPTY, NULL, parms, TextureFile);
+	}
+	LPDISPATCH get_BackColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void put_BackColor(LPDISPATCH newValue)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_ForeColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void put_ForeColor(LPDISPATCH newValue)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_GradientColorType()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_GradientDegree()
+	{
+		float result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	long get_GradientStyle()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_GradientVariant()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Pattern()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_PresetGradientType()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_PresetTexture()
+	{
+		long result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	CString get_TextureName()
+	{
+		CString result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	long get_TextureType()
+	{
+		long result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Transparency()
+	{
+		float result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Transparency(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x70, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x71, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x71, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_GradientStops()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x72, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_TextureOffsetX()
+	{
+		float result;
+		InvokeHelper(0x73, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureOffsetX(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x73, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_TextureOffsetY()
+	{
+		float result;
+		InvokeHelper(0x74, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureOffsetY(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x74, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_TextureAlignment()
+	{
+		long result;
+		InvokeHelper(0x75, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureAlignment(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x75, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_TextureHorizontalScale()
+	{
+		float result;
+		InvokeHelper(0x76, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureHorizontalScale(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x76, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_TextureVerticalScale()
+	{
+		float result;
+		InvokeHelper(0x77, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureVerticalScale(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x77, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_TextureTile()
+	{
+		long result;
+		InvokeHelper(0x78, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TextureTile(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x78, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_RotateWithObject()
+	{
+		long result;
+		InvokeHelper(0x79, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotateWithObject(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x79, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_PictureEffects()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x7a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_GradientAngle()
+	{
+		float result;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_GradientAngle(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// FillFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CFillFormat1 包装器类
+
+class CFillFormat1 : public COleDispatchDriver
+{
+public:
+	CFillFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CFillFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFillFormat1(const CFillFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -26686,14 +28329,302 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFind 包装器类
+// CFind0 包装器类
 
-class CFind : public COleDispatchDriver
+class CFind0 : public COleDispatchDriver
 {
 public:
-	CFind(){} // 调用 COleDispatchDriver 默认构造函数
-	CFind(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFind(const CFind& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFind0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFind0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFind0(const CFind0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// IFind 方法
+public:
+	CString get_SearchPath()
+	{
+		CString result;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Name()
+	{
+		CString result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	BOOL get_SubDir()
+	{
+		BOOL result;
+		InvokeHelper(0x60020002, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Title()
+	{
+		CString result;
+		InvokeHelper(0x60020003, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Author()
+	{
+		CString result;
+		InvokeHelper(0x60020004, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Keywords()
+	{
+		CString result;
+		InvokeHelper(0x60020005, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Subject()
+	{
+		CString result;
+		InvokeHelper(0x60020006, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	long get_Options()
+	{
+		long result;
+		InvokeHelper(0x60020007, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	BOOL get_MatchCase()
+	{
+		BOOL result;
+		InvokeHelper(0x60020008, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Text()
+	{
+		CString result;
+		InvokeHelper(0x60020009, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	BOOL get_PatternMatch()
+	{
+		BOOL result;
+		InvokeHelper(0x6002000a, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_DateSavedFrom()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000b, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_DateSavedTo()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000c, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	CString get_SavedBy()
+	{
+		CString result;
+		InvokeHelper(0x6002000d, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_DateCreatedFrom()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000e, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_DateCreatedTo()
+	{
+		VARIANT result;
+		InvokeHelper(0x6002000f, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	long get_View()
+	{
+		long result;
+		InvokeHelper(0x60020010, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_SortBy()
+	{
+		long result;
+		InvokeHelper(0x60020011, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_ListBy()
+	{
+		long result;
+		InvokeHelper(0x60020012, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_SelectedFile()
+	{
+		long result;
+		InvokeHelper(0x60020013, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Results()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020014, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long Show()
+	{
+		long result;
+		InvokeHelper(0x60020015, DISPATCH_METHOD, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_SearchPath(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x0, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Name(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_SubDir(BOOL newValue)
+	{
+		static BYTE parms[] = VTS_BOOL;
+		InvokeHelper(0x60020002, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Title(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020003, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Author(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020004, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Keywords(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020005, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Subject(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020006, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Options(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020007, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_MatchCase(BOOL newValue)
+	{
+		static BYTE parms[] = VTS_BOOL;
+		InvokeHelper(0x60020008, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_Text(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x60020009, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_PatternMatch(BOOL newValue)
+	{
+		static BYTE parms[] = VTS_BOOL;
+		InvokeHelper(0x6002000a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_DateSavedFrom(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	void put_DateSavedTo(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	void put_SavedBy(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x6002000d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_DateCreatedFrom(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	void put_DateCreatedTo(VARIANT& newValue)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x6002000f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, &newValue);
+	}
+	void put_View(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020010, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_SortBy(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020011, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_ListBy(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020012, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void put_SelectedFile(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x60020013, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void Execute()
+	{
+		InvokeHelper(0x6002002a, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Load(LPCTSTR bstrQueryName)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x6002002b, DISPATCH_METHOD, VT_EMPTY, NULL, parms, bstrQueryName);
+	}
+	void Save(LPCTSTR bstrQueryName)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x6002002c, DISPATCH_METHOD, VT_EMPTY, NULL, parms, bstrQueryName);
+	}
+	void Delete(LPCTSTR bstrQueryName)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x6002002d, DISPATCH_METHOD, VT_EMPTY, NULL, parms, bstrQueryName);
+	}
+	long get_FileType()
+	{
+		long result;
+		InvokeHelper(0x6002002e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_FileType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6002002e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// IFind 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CFind1 包装器类
+
+class CFind1 : public COleDispatchDriver
+{
+public:
+	CFind1(){} // 调用 COleDispatchDriver 默认构造函数
+	CFind1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFind1(const CFind1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -27961,14 +29892,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFont2 包装器类
+// CFont20 包装器类
 
-class CFont2 : public COleDispatchDriver
+class CFont20 : public COleDispatchDriver
 {
 public:
-	CFont2(){} // 调用 COleDispatchDriver 默认构造函数
-	CFont2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFont2(const CFont2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFont20(){} // 调用 COleDispatchDriver 默认构造函数
+	CFont20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFont20(const CFont20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -28996,14 +30927,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFoundFiles 包装器类
+// CFoundFiles1 包装器类
 
-class CFoundFiles : public COleDispatchDriver
+class CFoundFiles1 : public COleDispatchDriver
 {
 public:
-	CFoundFiles(){} // 调用 COleDispatchDriver 默认构造函数
-	CFoundFiles(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFoundFiles(const CFoundFiles& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFoundFiles1(){} // 调用 COleDispatchDriver 默认构造函数
+	CFoundFiles1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFoundFiles1(const CFoundFiles1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -29053,14 +30984,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFoundFiles0 包装器类
+// CFoundFiles2 包装器类
 
-class CFoundFiles0 : public COleDispatchDriver
+class CFoundFiles2 : public COleDispatchDriver
 {
 public:
-	CFoundFiles0(){} // 调用 COleDispatchDriver 默认构造函数
-	CFoundFiles0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFoundFiles0(const CFoundFiles0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFoundFiles2(){} // 调用 COleDispatchDriver 默认构造函数
+	CFoundFiles2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFoundFiles2(const CFoundFiles2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -29605,14 +31536,69 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CFreeformBuilder 包装器类
+// CFreeformBuilder0 包装器类
 
-class CFreeformBuilder : public COleDispatchDriver
+class CFreeformBuilder0 : public COleDispatchDriver
 {
 public:
-	CFreeformBuilder(){} // 调用 COleDispatchDriver 默认构造函数
-	CFreeformBuilder(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CFreeformBuilder(const CFreeformBuilder& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CFreeformBuilder0(){} // 调用 COleDispatchDriver 默认构造函数
+	CFreeformBuilder0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFreeformBuilder0(const CFreeformBuilder0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// FreeformBuilder 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void AddNodes(long SegmentType, long EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, SegmentType, EditingType, X1, Y1, X2, Y2, X3, Y3);
+	}
+	LPDISPATCH ConvertToShape()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// FreeformBuilder 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CFreeformBuilder1 包装器类
+
+class CFreeformBuilder1 : public COleDispatchDriver
+{
+public:
+	CFreeformBuilder1(){} // 调用 COleDispatchDriver 默认构造函数
+	CFreeformBuilder1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CFreeformBuilder1(const CFreeformBuilder1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -30249,14 +32235,80 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CGlowFormat 包装器类
+// CGlowFormat0 包装器类
 
-class CGlowFormat : public COleDispatchDriver
+class CGlowFormat0 : public COleDispatchDriver
 {
 public:
-	CGlowFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CGlowFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CGlowFormat(const CGlowFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CGlowFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CGlowFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGlowFormat0(const CGlowFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// GlowFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Radius()
+	{
+		float result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Radius(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x1, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Color()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Transparency()
+	{
+		float result;
+		InvokeHelper(0x3, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Transparency(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x3, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// GlowFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CGlowFormat1 包装器类
+
+class CGlowFormat1 : public COleDispatchDriver
+{
+public:
+	CGlowFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CGlowFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGlowFormat1(const CGlowFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -30321,14 +32373,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CGradientStop 包装器类
+// CGradientStop0 包装器类
 
-class CGradientStop : public COleDispatchDriver
+class CGradientStop0 : public COleDispatchDriver
 {
 public:
-	CGradientStop(){} // 调用 COleDispatchDriver 默认构造函数
-	CGradientStop(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CGradientStop(const CGradientStop& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CGradientStop0(){} // 调用 COleDispatchDriver 默认构造函数
+	CGradientStop0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGradientStop0(const CGradientStop0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -30387,14 +32439,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CGradientStops 包装器类
+// CGradientStops0 包装器类
 
-class CGradientStops : public COleDispatchDriver
+class CGradientStops0 : public COleDispatchDriver
 {
 public:
-	CGradientStops(){} // 调用 COleDispatchDriver 默认构造函数
-	CGradientStops(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CGradientStops(const CGradientStops& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CGradientStops0(){} // 调用 COleDispatchDriver 默认构造函数
+	CGradientStops0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGradientStops0(const CGradientStops0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -30533,14 +32585,158 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CGroupShapes 包装器类
+// CGridLines0 包装器类
 
-class CGroupShapes : public COleDispatchDriver
+class CGridLines0 : public COleDispatchDriver
 {
 public:
-	CGroupShapes(){} // 调用 COleDispatchDriver 默认构造函数
-	CGroupShapes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CGroupShapes(const CGroupShapes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CGridLines0(){} // 调用 COleDispatchDriver 默认构造函数
+	CGridLines0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGridLines0(const CGridLines0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// GridLines 方法
+public:
+	CString get_Name()
+	{
+		CString result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT Select()
+	{
+		VARIANT result;
+		InvokeHelper(0xeb, DISPATCH_METHOD, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Border()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x80, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT Delete()
+	{
+		VARIANT result;
+		InvokeHelper(0x75, DISPATCH_METHOD, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Format()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020005, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+
+	// GridLines 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CGroupShapes0 包装器类
+
+class CGroupShapes0 : public COleDispatchDriver
+{
+public:
+	CGroupShapes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CGroupShapes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGroupShapes0(const CGroupShapes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// GroupShapes 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Range(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+
+	// GroupShapes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CGroupShapes1 包装器类
+
+class CGroupShapes1 : public COleDispatchDriver
+{
+public:
+	CGroupShapes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CGroupShapes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CGroupShapes1(const CGroupShapes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -31480,14 +33676,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CHTMLProject 包装器类
+// CHTMLProject0 包装器类
 
-class CHTMLProject : public COleDispatchDriver
+class CHTMLProject0 : public COleDispatchDriver
 {
 public:
-	CHTMLProject(){} // 调用 COleDispatchDriver 默认构造函数
-	CHTMLProject(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CHTMLProject(const CHTMLProject& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CHTMLProject0(){} // 调用 COleDispatchDriver 默认构造函数
+	CHTMLProject0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CHTMLProject0(const CHTMLProject0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -31551,14 +33747,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CHTMLProjectItem 包装器类
+// CHTMLProjectItem0 包装器类
 
-class CHTMLProjectItem : public COleDispatchDriver
+class CHTMLProjectItem0 : public COleDispatchDriver
 {
 public:
-	CHTMLProjectItem(){} // 调用 COleDispatchDriver 默认构造函数
-	CHTMLProjectItem(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CHTMLProjectItem(const CHTMLProjectItem& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CHTMLProjectItem0(){} // 调用 COleDispatchDriver 默认构造函数
+	CHTMLProjectItem0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CHTMLProjectItem0(const CHTMLProjectItem0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -31633,14 +33829,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CHTMLProjectItems 包装器类
+// CHTMLProjectItems0 包装器类
 
-class CHTMLProjectItems : public COleDispatchDriver
+class CHTMLProjectItems0 : public COleDispatchDriver
 {
 public:
-	CHTMLProjectItems(){} // 调用 COleDispatchDriver 默认构造函数
-	CHTMLProjectItems(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CHTMLProjectItems(const CHTMLProjectItems& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CHTMLProjectItems0(){} // 调用 COleDispatchDriver 默认构造函数
+	CHTMLProjectItems0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CHTMLProjectItems0(const CHTMLProjectItems0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -31943,14 +34139,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CIMsoDispObj 包装器类
+// CIMsoDispObj0 包装器类
 
-class CIMsoDispObj : public COleDispatchDriver
+class CIMsoDispObj0 : public COleDispatchDriver
 {
 public:
-	CIMsoDispObj(){} // 调用 COleDispatchDriver 默认构造函数
-	CIMsoDispObj(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CIMsoDispObj(const CIMsoDispObj& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CIMsoDispObj0(){} // 调用 COleDispatchDriver 默认构造函数
+	CIMsoDispObj0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CIMsoDispObj0(const CIMsoDispObj0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -31981,14 +34177,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CIMsoOleAccDispObj 包装器类
+// CIMsoOleAccDispObj0 包装器类
 
-class CIMsoOleAccDispObj : public COleDispatchDriver
+class CIMsoOleAccDispObj0 : public COleDispatchDriver
 {
 public:
-	CIMsoOleAccDispObj(){} // 调用 COleDispatchDriver 默认构造函数
-	CIMsoOleAccDispObj(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CIMsoOleAccDispObj(const CIMsoOleAccDispObj& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CIMsoOleAccDispObj0(){} // 调用 COleDispatchDriver 默认构造函数
+	CIMsoOleAccDispObj0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CIMsoOleAccDispObj0(const CIMsoOleAccDispObj0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -32619,14 +34815,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CLanguageSettings 包装器类
+// CLanguageSettings0 包装器类
 
-class CLanguageSettings : public COleDispatchDriver
+class CLanguageSettings0 : public COleDispatchDriver
 {
 public:
-	CLanguageSettings(){} // 调用 COleDispatchDriver 默认构造函数
-	CLanguageSettings(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CLanguageSettings(const CLanguageSettings& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CLanguageSettings0(){} // 调用 COleDispatchDriver 默认构造函数
+	CLanguageSettings0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLanguageSettings0(const CLanguageSettings0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -33752,14 +35948,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CLicAgent 包装器类
+// CLicAgent0 包装器类
 
-class CLicAgent : public COleDispatchDriver
+class CLicAgent0 : public COleDispatchDriver
 {
 public:
-	CLicAgent(){} // 调用 COleDispatchDriver 默认构造函数
-	CLicAgent(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CLicAgent(const CLicAgent& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CLicAgent0(){} // 调用 COleDispatchDriver 默认构造函数
+	CLicAgent0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLicAgent0(const CLicAgent0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -34334,14 +36530,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CLicValidator 包装器类
+// CLicValidator0 包装器类
 
-class CLicValidator : public COleDispatchDriver
+class CLicValidator0 : public COleDispatchDriver
 {
 public:
-	CLicValidator(){} // 调用 COleDispatchDriver 默认构造函数
-	CLicValidator(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CLicValidator(const CLicValidator& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CLicValidator0(){} // 调用 COleDispatchDriver 默认构造函数
+	CLicValidator0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLicValidator0(const CLicValidator0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -34377,14 +36573,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CLicWizExternal 包装器类
+// CLicWizExternal0 包装器类
 
-class CLicWizExternal : public COleDispatchDriver
+class CLicWizExternal0 : public COleDispatchDriver
 {
 public:
-	CLicWizExternal(){} // 调用 COleDispatchDriver 默认构造函数
-	CLicWizExternal(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CLicWizExternal(const CLicWizExternal& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CLicWizExternal0(){} // 调用 COleDispatchDriver 默认构造函数
+	CLicWizExternal0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLicWizExternal0(const CLicWizExternal0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -34637,14 +36833,223 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CLineFormat 包装器类
+// CLineFormat0 包装器类
 
-class CLineFormat : public COleDispatchDriver
+class CLineFormat0 : public COleDispatchDriver
 {
 public:
-	CLineFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CLineFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CLineFormat(const CLineFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CLineFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CLineFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLineFormat0(const CLineFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// LineFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_BackColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void put_BackColor(LPDISPATCH newValue)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BeginArrowheadLength()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BeginArrowheadLength(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BeginArrowheadStyle()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BeginArrowheadStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BeginArrowheadWidth()
+	{
+		long result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BeginArrowheadWidth(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_DashStyle()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_DashStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_EndArrowheadLength()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_EndArrowheadLength(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_EndArrowheadStyle()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_EndArrowheadStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_EndArrowheadWidth()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_EndArrowheadWidth(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_ForeColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void put_ForeColor(LPDISPATCH newValue)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Pattern()
+	{
+		long result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Pattern(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Style()
+	{
+		long result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Style(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Transparency()
+	{
+		float result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Transparency(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x70, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x70, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Weight()
+	{
+		float result;
+		InvokeHelper(0x71, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Weight(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x71, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_InsetPen()
+	{
+		long result;
+		InvokeHelper(0x72, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_InsetPen(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x72, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// LineFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CLineFormat1 包装器类
+
+class CLineFormat1 : public COleDispatchDriver
+{
+public:
+	CLineFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CLineFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CLineFormat1(const CLineFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -37604,14 +40009,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMetaProperties 包装器类
+// CMetaProperties0 包装器类
 
-class CMetaProperties : public COleDispatchDriver
+class CMetaProperties0 : public COleDispatchDriver
 {
 public:
-	CMetaProperties(){} // 调用 COleDispatchDriver 默认构造函数
-	CMetaProperties(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMetaProperties(const CMetaProperties& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMetaProperties0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMetaProperties0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMetaProperties0(const CMetaProperties0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -37692,14 +40097,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMetaProperty 包装器类
+// CMetaProperty0 包装器类
 
-class CMetaProperty : public COleDispatchDriver
+class CMetaProperty0 : public COleDispatchDriver
 {
 public:
-	CMetaProperty(){} // 调用 COleDispatchDriver 默认构造函数
-	CMetaProperty(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMetaProperty(const CMetaProperty& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMetaProperty0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMetaProperty0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMetaProperty0(const CMetaProperty0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -37789,14 +40194,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoAxis 包装器类
+// CMsoAxis0 包装器类
 
-class CMsoAxis : public COleDispatchDriver
+class CMsoAxis0 : public COleDispatchDriver
 {
 public:
-	CMsoAxis(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoAxis(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoAxis(const CMsoAxis& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoAxis0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoAxis0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoAxis0(const CMsoAxis0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -38286,14 +40691,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoAxisTitle 包装器类
+// CMsoAxisTitle0 包装器类
 
-class CMsoAxisTitle : public COleDispatchDriver
+class CMsoAxisTitle0 : public COleDispatchDriver
 {
 public:
-	CMsoAxisTitle(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoAxisTitle(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoAxisTitle(const CMsoAxisTitle& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoAxisTitle0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoAxisTitle0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoAxisTitle0(const CMsoAxisTitle0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -38573,14 +40978,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoBorder 包装器类
+// CMsoBorder0 包装器类
 
-class CMsoBorder : public COleDispatchDriver
+class CMsoBorder0 : public COleDispatchDriver
 {
 public:
-	CMsoBorder(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoBorder(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoBorder(const CMsoBorder& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoBorder0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoBorder0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoBorder0(const CMsoBorder0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -38661,14 +41066,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoCharacters 包装器类
+// CMsoCharacters0 包装器类
 
-class CMsoCharacters : public COleDispatchDriver
+class CMsoCharacters0 : public COleDispatchDriver
 {
 public:
-	CMsoCharacters(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoCharacters(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoCharacters(const CMsoCharacters& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoCharacters0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoCharacters0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoCharacters0(const CMsoCharacters0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -38763,14 +41168,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChart 包装器类
+// CMsoChart0 包装器类
 
-class CMsoChart : public COleDispatchDriver
+class CMsoChart0 : public COleDispatchDriver
 {
 public:
-	CMsoChart(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChart(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChart(const CMsoChart& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChart0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChart0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChart0(const CMsoChart0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -39560,14 +41965,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChartArea 包装器类
+// CMsoChartArea0 包装器类
 
-class CMsoChartArea : public COleDispatchDriver
+class CMsoChartArea0 : public COleDispatchDriver
 {
 public:
-	CMsoChartArea(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChartArea(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChartArea(const CMsoChartArea& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChartArea0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChartArea0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChartArea0(const CMsoChartArea0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -39747,14 +42152,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChartData 包装器类
+// CMsoChartData0 包装器类
 
-class CMsoChartData : public COleDispatchDriver
+class CMsoChartData0 : public COleDispatchDriver
 {
 public:
-	CMsoChartData(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChartData(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChartData(const CMsoChartData& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChartData0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChartData0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChartData0(const CMsoChartData0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -39797,14 +42202,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChartFormat 包装器类
+// CMsoChartFormat0 包装器类
 
-class CMsoChartFormat : public COleDispatchDriver
+class CMsoChartFormat0 : public COleDispatchDriver
 {
 public:
-	CMsoChartFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChartFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChartFormat(const CMsoChartFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChartFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChartFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChartFormat0(const CMsoChartFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -39906,14 +42311,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChartGroup 包装器类
+// CMsoChartGroup0 包装器类
 
-class CMsoChartGroup : public COleDispatchDriver
+class CMsoChartGroup0 : public COleDispatchDriver
 {
 public:
-	CMsoChartGroup(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChartGroup(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChartGroup(const CMsoChartGroup& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChartGroup0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChartGroup0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChartGroup0(const CMsoChartGroup0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40233,14 +42638,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoChartTitle 包装器类
+// CMsoChartTitle0 包装器类
 
-class CMsoChartTitle : public COleDispatchDriver
+class CMsoChartTitle0 : public COleDispatchDriver
 {
 public:
-	CMsoChartTitle(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoChartTitle(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoChartTitle(const CMsoChartTitle& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoChartTitle0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoChartTitle0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoChartTitle0(const CMsoChartTitle0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40520,14 +42925,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoContactCard 包装器类
+// CMsoContactCard0 包装器类
 
-class CMsoContactCard : public COleDispatchDriver
+class CMsoContactCard0 : public COleDispatchDriver
 {
 public:
-	CMsoContactCard(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoContactCard(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoContactCard(const CMsoContactCard& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoContactCard0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoContactCard0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoContactCard0(const CMsoContactCard0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40582,14 +42987,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoCorners 包装器类
+// CMsoCorners0 包装器类
 
-class CMsoCorners : public COleDispatchDriver
+class CMsoCorners0 : public COleDispatchDriver
 {
 public:
-	CMsoCorners(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoCorners(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoCorners(const CMsoCorners& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoCorners0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoCorners0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoCorners0(const CMsoCorners0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40638,14 +43043,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDataTable 包装器类
+// CMsoDataTable0 包装器类
 
-class CMsoDataTable : public COleDispatchDriver
+class CMsoDataTable0 : public COleDispatchDriver
 {
 public:
-	CMsoDataTable(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDataTable(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDataTable(const CMsoDataTable& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDataTable0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDataTable0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDataTable0(const CMsoDataTable0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40763,14 +43168,261 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDebugOptions 包装器类
+// CMsoDebugOptions_UT0 包装器类
 
-class CMsoDebugOptions : public COleDispatchDriver
+class CMsoDebugOptions_UT0 : public COleDispatchDriver
 {
 public:
-	CMsoDebugOptions(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDebugOptions(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDebugOptions(const CMsoDebugOptions& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDebugOptions_UT0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDebugOptions_UT0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDebugOptions_UT0(const CMsoDebugOptions_UT0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// MsoDebugOptions_UT 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Name()
+	{
+		CString result;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	CString get_CollectionName()
+	{
+		CString result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Run()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x2, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// MsoDebugOptions_UT 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CMsoDebugOptions_UTManager0 包装器类
+
+class CMsoDebugOptions_UTManager0 : public COleDispatchDriver
+{
+public:
+	CMsoDebugOptions_UTManager0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDebugOptions_UTManager0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDebugOptions_UTManager0(const CMsoDebugOptions_UTManager0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// MsoDebugOptions_UTManager 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_UnitTests()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void NotifyStartOfTestSuiteRun()
+	{
+		InvokeHelper(0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void NotifyEndOfTestSuiteRun()
+	{
+		InvokeHelper(0x2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	BOOL get_ReportErrors()
+	{
+		BOOL result;
+		InvokeHelper(0x3, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
+		return result;
+	}
+	void put_ReportErrors(BOOL newValue)
+	{
+		static BYTE parms[] = VTS_BOOL;
+		InvokeHelper(0x3, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// MsoDebugOptions_UTManager 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CMsoDebugOptions_UTRunResult0 包装器类
+
+class CMsoDebugOptions_UTRunResult0 : public COleDispatchDriver
+{
+public:
+	CMsoDebugOptions_UTRunResult0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDebugOptions_UTRunResult0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDebugOptions_UTRunResult0(const CMsoDebugOptions_UTRunResult0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// MsoDebugOptions_UTRunResult 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	BOOL get_Passed()
+	{
+		BOOL result;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
+		return result;
+	}
+	CString get_ErrorString()
+	{
+		CString result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+
+	// MsoDebugOptions_UTRunResult 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CMsoDebugOptions_UTs0 包装器类
+
+class CMsoDebugOptions_UTs0 : public COleDispatchDriver
+{
+public:
+	CMsoDebugOptions_UTs0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDebugOptions_UTs0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDebugOptions_UTs0(const CMsoDebugOptions_UTs0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// MsoDebugOptions_UTs 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Item(long Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, Index);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH GetUnitTestsInCollection(LPCTSTR bstrCollectionName)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x2, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName);
+		return result;
+	}
+	LPDISPATCH GetUnitTest(LPCTSTR bstrCollectionName, LPCTSTR bstrUnitTestName)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR VTS_BSTR;
+		InvokeHelper(0x3, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName, bstrUnitTestName);
+		return result;
+	}
+	LPDISPATCH GetMatchingUnitTestsInCollection(LPCTSTR bstrCollectionName, LPCTSTR bstrUnitTestNameFilter)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR VTS_BSTR;
+		InvokeHelper(0x4, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName, bstrUnitTestNameFilter);
+		return result;
+	}
+
+	// MsoDebugOptions_UTs 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CMsoDebugOptions0 包装器类
+
+class CMsoDebugOptions0 : public COleDispatchDriver
+{
+public:
+	CMsoDebugOptions0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDebugOptions0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDebugOptions0(const CMsoDebugOptions0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -40861,261 +43513,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDebugOptions_UT 包装器类
+// CMsoDiagram0 包装器类
 
-class CMsoDebugOptions_UT : public COleDispatchDriver
+class CMsoDiagram0 : public COleDispatchDriver
 {
 public:
-	CMsoDebugOptions_UT(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDebugOptions_UT(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDebugOptions_UT(const CMsoDebugOptions_UT& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// MsoDebugOptions_UT 方法
-public:
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	CString get_Name()
-	{
-		CString result;
-		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
-		return result;
-	}
-	CString get_CollectionName()
-	{
-		CString result;
-		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH Run()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x2, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-
-	// MsoDebugOptions_UT 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
-
-// CMsoDebugOptions_UTManager 包装器类
-
-class CMsoDebugOptions_UTManager : public COleDispatchDriver
-{
-public:
-	CMsoDebugOptions_UTManager(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDebugOptions_UTManager(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDebugOptions_UTManager(const CMsoDebugOptions_UTManager& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// MsoDebugOptions_UTManager 方法
-public:
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_UnitTests()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	void NotifyStartOfTestSuiteRun()
-	{
-		InvokeHelper(0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	void NotifyEndOfTestSuiteRun()
-	{
-		InvokeHelper(0x2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	BOOL get_ReportErrors()
-	{
-		BOOL result;
-		InvokeHelper(0x3, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
-		return result;
-	}
-	void put_ReportErrors(BOOL newValue)
-	{
-		static BYTE parms[] = VTS_BOOL;
-		InvokeHelper(0x3, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-
-	// MsoDebugOptions_UTManager 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
-
-// CMsoDebugOptions_UTRunResult 包装器类
-
-class CMsoDebugOptions_UTRunResult : public COleDispatchDriver
-{
-public:
-	CMsoDebugOptions_UTRunResult(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDebugOptions_UTRunResult(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDebugOptions_UTRunResult(const CMsoDebugOptions_UTRunResult& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// MsoDebugOptions_UTRunResult 方法
-public:
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	BOOL get_Passed()
-	{
-		BOOL result;
-		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
-		return result;
-	}
-	CString get_ErrorString()
-	{
-		CString result;
-		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
-		return result;
-	}
-
-	// MsoDebugOptions_UTRunResult 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
-
-// CMsoDebugOptions_UTs 包装器类
-
-class CMsoDebugOptions_UTs : public COleDispatchDriver
-{
-public:
-	CMsoDebugOptions_UTs(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDebugOptions_UTs(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDebugOptions_UTs(const CMsoDebugOptions_UTs& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// MsoDebugOptions_UTs 方法
-public:
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Item(long Index)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, Index);
-		return result;
-	}
-	long get_Count()
-	{
-		long result;
-		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPUNKNOWN get__NewEnum()
-	{
-		LPUNKNOWN result;
-		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH GetUnitTestsInCollection(LPCTSTR bstrCollectionName)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_BSTR;
-		InvokeHelper(0x2, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName);
-		return result;
-	}
-	LPDISPATCH GetUnitTest(LPCTSTR bstrCollectionName, LPCTSTR bstrUnitTestName)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_BSTR VTS_BSTR;
-		InvokeHelper(0x3, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName, bstrUnitTestName);
-		return result;
-	}
-	LPDISPATCH GetMatchingUnitTestsInCollection(LPCTSTR bstrCollectionName, LPCTSTR bstrUnitTestNameFilter)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_BSTR VTS_BSTR;
-		InvokeHelper(0x4, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, bstrCollectionName, bstrUnitTestNameFilter);
-		return result;
-	}
-
-	// MsoDebugOptions_UTs 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
-
-// CMsoDiagram 包装器类
-
-class CMsoDiagram : public COleDispatchDriver
-{
-public:
-	CMsoDiagram(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDiagram(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDiagram(const CMsoDiagram& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDiagram0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDiagram0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDiagram0(const CMsoDiagram0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41206,14 +43611,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDispCagNotifySink 包装器类
+// CMsoDispCagNotifySink0 包装器类
 
-class CMsoDispCagNotifySink : public COleDispatchDriver
+class CMsoDispCagNotifySink0 : public COleDispatchDriver
 {
 public:
-	CMsoDispCagNotifySink(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDispCagNotifySink(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDispCagNotifySink(const CMsoDispCagNotifySink& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDispCagNotifySink0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDispCagNotifySink0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDispCagNotifySink0(const CMsoDispCagNotifySink0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41241,14 +43646,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDisplayUnitLabel 包装器类
+// CMsoDisplayUnitLabel0 包装器类
 
-class CMsoDisplayUnitLabel : public COleDispatchDriver
+class CMsoDisplayUnitLabel0 : public COleDispatchDriver
 {
 public:
-	CMsoDisplayUnitLabel(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDisplayUnitLabel(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDisplayUnitLabel(const CMsoDisplayUnitLabel& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDisplayUnitLabel0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDisplayUnitLabel0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDisplayUnitLabel0(const CMsoDisplayUnitLabel0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41528,14 +43933,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDownBars 包装器类
+// CMsoDownBars0 包装器类
 
-class CMsoDownBars : public COleDispatchDriver
+class CMsoDownBars0 : public COleDispatchDriver
 {
 public:
-	CMsoDownBars(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDownBars(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDownBars(const CMsoDownBars& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDownBars0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDownBars0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDownBars0(const CMsoDownBars0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41614,14 +44019,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoDropLines 包装器类
+// CMsoDropLines0 包装器类
 
-class CMsoDropLines : public COleDispatchDriver
+class CMsoDropLines0 : public COleDispatchDriver
 {
 public:
-	CMsoDropLines(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoDropLines(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoDropLines(const CMsoDropLines& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoDropLines0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoDropLines0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoDropLines0(const CMsoDropLines0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41684,14 +44089,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoEnvelopeVB 包装器类
+// CMsoEnvelopeVB0 包装器类
 
-class CMsoEnvelopeVB : public COleDispatchDriver
+class CMsoEnvelopeVB0 : public COleDispatchDriver
 {
 public:
-	CMsoEnvelopeVB(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoEnvelopeVB(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoEnvelopeVB(const CMsoEnvelopeVB& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoEnvelopeVB0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoEnvelopeVB0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoEnvelopeVB0(const CMsoEnvelopeVB0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41739,14 +44144,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoEnvelopeVBEvents 包装器类
+// CMsoEnvelopeVBEvents0 包装器类
 
-class CMsoEnvelopeVBEvents : public COleDispatchDriver
+class CMsoEnvelopeVBEvents0 : public COleDispatchDriver
 {
 public:
-	CMsoEnvelopeVBEvents(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoEnvelopeVBEvents(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoEnvelopeVBEvents(const CMsoEnvelopeVBEvents& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoEnvelopeVBEvents0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoEnvelopeVBEvents0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoEnvelopeVBEvents0(const CMsoEnvelopeVBEvents0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41773,14 +44178,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoEServicesDialog 包装器类
+// CMsoEServicesDialog0 包装器类
 
-class CMsoEServicesDialog : public COleDispatchDriver
+class CMsoEServicesDialog0 : public COleDispatchDriver
 {
 public:
-	CMsoEServicesDialog(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoEServicesDialog(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoEServicesDialog(const CMsoEServicesDialog& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoEServicesDialog0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoEServicesDialog0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoEServicesDialog0(const CMsoEServicesDialog0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41833,14 +44238,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoFloor 包装器类
+// CMsoFloor0 包装器类
 
-class CMsoFloor : public COleDispatchDriver
+class CMsoFloor0 : public COleDispatchDriver
 {
 public:
-	CMsoFloor(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoFloor(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoFloor(const CMsoFloor& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoFloor0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoFloor0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoFloor0(const CMsoFloor0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -41945,14 +44350,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoHiLoLines 包装器类
+// CMsoHiLoLines0 包装器类
 
-class CMsoHiLoLines : public COleDispatchDriver
+class CMsoHiLoLines0 : public COleDispatchDriver
 {
 public:
-	CMsoHiLoLines(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoHiLoLines(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoHiLoLines(const CMsoHiLoLines& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoHiLoLines0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoHiLoLines0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoHiLoLines0(const CMsoHiLoLines0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42015,14 +44420,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoHyperlinks 包装器类
+// CMsoHyperlinks0 包装器类
 
-class CMsoHyperlinks : public COleDispatchDriver
+class CMsoHyperlinks0 : public COleDispatchDriver
 {
 public:
-	CMsoHyperlinks(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoHyperlinks(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoHyperlinks(const CMsoHyperlinks& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoHyperlinks0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoHyperlinks0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoHyperlinks0(const CMsoHyperlinks0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42041,14 +44446,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoInterior 包装器类
+// CMsoInterior0 包装器类
 
-class CMsoInterior : public COleDispatchDriver
+class CMsoInterior0 : public COleDispatchDriver
 {
 public:
-	CMsoInterior(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoInterior(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoInterior(const CMsoInterior& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoInterior0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoInterior0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoInterior0(const CMsoInterior0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42151,14 +44556,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoLeaderLines 包装器类
+// CMsoLeaderLines0 包装器类
 
-class CMsoLeaderLines : public COleDispatchDriver
+class CMsoLeaderLines0 : public COleDispatchDriver
 {
 public:
-	CMsoLeaderLines(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoLeaderLines(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoLeaderLines(const CMsoLeaderLines& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoLeaderLines0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoLeaderLines0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoLeaderLines0(const CMsoLeaderLines0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42215,14 +44620,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoLegend 包装器类
+// CMsoLegend0 包装器类
 
-class CMsoLegend : public COleDispatchDriver
+class CMsoLegend0 : public COleDispatchDriver
 {
 public:
-	CMsoLegend(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoLegend(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoLegend(const CMsoLegend& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoLegend0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoLegend0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoLegend0(const CMsoLegend0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42408,14 +44813,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoPlotArea 包装器类
+// CMsoPlotArea0 包装器类
 
-class CMsoPlotArea : public COleDispatchDriver
+class CMsoPlotArea0 : public COleDispatchDriver
 {
 public:
-	CMsoPlotArea(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoPlotArea(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoPlotArea(const CMsoPlotArea& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoPlotArea0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoPlotArea0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoPlotArea0(const CMsoPlotArea0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42593,14 +44998,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoSeriesLines 包装器类
+// CMsoSeriesLines0 包装器类
 
-class CMsoSeriesLines : public COleDispatchDriver
+class CMsoSeriesLines0 : public COleDispatchDriver
 {
 public:
-	CMsoSeriesLines(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoSeriesLines(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoSeriesLines(const CMsoSeriesLines& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoSeriesLines0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoSeriesLines0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoSeriesLines0(const CMsoSeriesLines0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42667,14 +45072,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoTickLabels 包装器类
+// CMsoTickLabels0 包装器类
 
-class CMsoTickLabels : public COleDispatchDriver
+class CMsoTickLabels0 : public COleDispatchDriver
 {
 public:
-	CMsoTickLabels(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoTickLabels(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoTickLabels(const CMsoTickLabels& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoTickLabels0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoTickLabels0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoTickLabels0(const CMsoTickLabels0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42846,14 +45251,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoUpBars 包装器类
+// CMsoUpBars0 包装器类
 
-class CMsoUpBars : public COleDispatchDriver
+class CMsoUpBars0 : public COleDispatchDriver
 {
 public:
-	CMsoUpBars(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoUpBars(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoUpBars(const CMsoUpBars& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoUpBars0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoUpBars0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoUpBars0(const CMsoUpBars0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -42932,14 +45337,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CMsoWalls 包装器类
+// CMsoWalls0 包装器类
 
-class CMsoWalls : public COleDispatchDriver
+class CMsoWalls0 : public COleDispatchDriver
 {
 public:
-	CMsoWalls(){} // 调用 COleDispatchDriver 默认构造函数
-	CMsoWalls(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CMsoWalls(const CMsoWalls& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CMsoWalls0(){} // 调用 COleDispatchDriver 默认构造函数
+	CMsoWalls0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CMsoWalls0(const CMsoWalls0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -43317,14 +45722,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CNewFile 包装器类
+// CNewFile0 包装器类
 
-class CNewFile : public COleDispatchDriver
+class CNewFile0 : public COleDispatchDriver
 {
 public:
-	CNewFile(){} // 调用 COleDispatchDriver 默认构造函数
-	CNewFile(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CNewFile(const CNewFile& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CNewFile0(){} // 调用 COleDispatchDriver 默认构造函数
+	CNewFile0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CNewFile0(const CNewFile0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -43967,14 +46372,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CODSOColumn 包装器类
+// CODSOColumn0 包装器类
 
-class CODSOColumn : public COleDispatchDriver
+class CODSOColumn0 : public COleDispatchDriver
 {
 public:
-	CODSOColumn(){} // 调用 COleDispatchDriver 默认构造函数
-	CODSOColumn(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CODSOColumn(const CODSOColumn& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CODSOColumn0(){} // 调用 COleDispatchDriver 默认构造函数
+	CODSOColumn0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CODSOColumn0(const CODSOColumn0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -44029,14 +46434,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CODSOColumns 包装器类
+// CODSOColumns0 包装器类
 
-class CODSOColumns : public COleDispatchDriver
+class CODSOColumns0 : public COleDispatchDriver
 {
 public:
-	CODSOColumns(){} // 调用 COleDispatchDriver 默认构造函数
-	CODSOColumns(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CODSOColumns(const CODSOColumns& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CODSOColumns0(){} // 调用 COleDispatchDriver 默认构造函数
+	CODSOColumns0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CODSOColumns0(const CODSOColumns0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -44086,14 +46491,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CODSOFilter 包装器类
+// CODSOFilter0 包装器类
 
-class CODSOFilter : public COleDispatchDriver
+class CODSOFilter0 : public COleDispatchDriver
 {
 public:
-	CODSOFilter(){} // 调用 COleDispatchDriver 默认构造函数
-	CODSOFilter(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CODSOFilter(const CODSOFilter& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CODSOFilter0(){} // 调用 COleDispatchDriver 默认构造函数
+	CODSOFilter0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CODSOFilter0(const CODSOFilter0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -44180,14 +46585,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CODSOFilters 包装器类
+// CODSOFilters0 包装器类
 
-class CODSOFilters : public COleDispatchDriver
+class CODSOFilters0 : public COleDispatchDriver
 {
 public:
-	CODSOFilters(){} // 调用 COleDispatchDriver 默认构造函数
-	CODSOFilters(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CODSOFilters(const CODSOFilters& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CODSOFilters0(){} // 调用 COleDispatchDriver 默认构造函数
+	CODSOFilters0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CODSOFilters0(const CODSOFilters0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -44247,14 +46652,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// COfficeDataSourceObject 包装器类
+// COfficeDataSourceObject0 包装器类
 
-class COfficeDataSourceObject : public COleDispatchDriver
+class COfficeDataSourceObject0 : public COleDispatchDriver
 {
 public:
-	COfficeDataSourceObject(){} // 调用 COleDispatchDriver 默认构造函数
-	COfficeDataSourceObject(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	COfficeDataSourceObject(const COfficeDataSourceObject& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	COfficeDataSourceObject0(){} // 调用 COleDispatchDriver 默认构造函数
+	COfficeDataSourceObject0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	COfficeDataSourceObject0(const COfficeDataSourceObject0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -44345,14 +46750,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// COfficeTheme 包装器类
+// COfficeTheme0 包装器类
 
-class COfficeTheme : public COleDispatchDriver
+class COfficeTheme0 : public COleDispatchDriver
 {
 public:
-	COfficeTheme(){} // 调用 COleDispatchDriver 默认构造函数
-	COfficeTheme(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	COfficeTheme(const COfficeTheme& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	COfficeTheme0(){} // 调用 COleDispatchDriver 默认构造函数
+	COfficeTheme0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	COfficeTheme0(const COfficeTheme0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -51368,281 +53773,6 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPane 包装器类
-
-class CPane : public COleDispatchDriver
-{
-public:
-	CPane(){} // 调用 COleDispatchDriver 默认构造函数
-	CPane(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPane(const CPane& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// Pane 方法
-public:
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x3e8, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x3e9, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Parent()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x3ea, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Document()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Selection()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x3, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	BOOL get_DisplayRulers()
-	{
-		BOOL result;
-		InvokeHelper(0x4, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
-		return result;
-	}
-	void put_DisplayRulers(BOOL newValue)
-	{
-		static BYTE parms[] = VTS_BOOL;
-		InvokeHelper(0x4, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	BOOL get_DisplayVerticalRuler()
-	{
-		BOOL result;
-		InvokeHelper(0x5, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
-		return result;
-	}
-	void put_DisplayVerticalRuler(BOOL newValue)
-	{
-		static BYTE parms[] = VTS_BOOL;
-		InvokeHelper(0x5, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	LPDISPATCH get_Zooms()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x7, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Index()
-	{
-		long result;
-		InvokeHelper(0x9, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_View()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0xa, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Next()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0xb, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Previous()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0xc, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_HorizontalPercentScrolled()
-	{
-		long result;
-		InvokeHelper(0xd, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	void put_HorizontalPercentScrolled(long newValue)
-	{
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0xd, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	long get_VerticalPercentScrolled()
-	{
-		long result;
-		InvokeHelper(0xe, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	void put_VerticalPercentScrolled(long newValue)
-	{
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0xe, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	long get_MinimumFontSize()
-	{
-		long result;
-		InvokeHelper(0xf, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	void put_MinimumFontSize(long newValue)
-	{
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0xf, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	BOOL get_BrowseToWindow()
-	{
-		BOOL result;
-		InvokeHelper(0x10, DISPATCH_PROPERTYGET, VT_BOOL, (void*)&result, NULL);
-		return result;
-	}
-	void put_BrowseToWindow(BOOL newValue)
-	{
-		static BYTE parms[] = VTS_BOOL;
-		InvokeHelper(0x10, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
-	}
-	long get_BrowseWidth()
-	{
-		long result;
-		InvokeHelper(0x11, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	void Activate()
-	{
-		InvokeHelper(0x64, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	void Close()
-	{
-		InvokeHelper(0x65, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	void LargeScroll(VARIANT * Down, VARIANT * Up, VARIANT * ToRight, VARIANT * ToLeft)
-	{
-		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT;
-		InvokeHelper(0x66, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Down, Up, ToRight, ToLeft);
-	}
-	void SmallScroll(VARIANT * Down, VARIANT * Up, VARIANT * ToRight, VARIANT * ToLeft)
-	{
-		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT;
-		InvokeHelper(0x67, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Down, Up, ToRight, ToLeft);
-	}
-	void AutoScroll(long Velocity)
-	{
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0x68, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Velocity);
-	}
-	void PageScroll(VARIANT * Down, VARIANT * Up)
-	{
-		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT;
-		InvokeHelper(0x69, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Down, Up);
-	}
-	void NewFrameset()
-	{
-		InvokeHelper(0x6a, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	void TOCInFrameset()
-	{
-		InvokeHelper(0x6b, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	LPDISPATCH get_Frameset()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x12, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Pages()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x13, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-
-	// Pane 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
-
-// CPanes 包装器类
-
-class CPanes : public COleDispatchDriver
-{
-public:
-	CPanes(){} // 调用 COleDispatchDriver 默认构造函数
-	CPanes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPanes(const CPanes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
-
-	// 特性
-public:
-
-	// 操作
-public:
-
-
-	// Panes 方法
-public:
-	LPUNKNOWN get__NewEnum()
-	{
-		LPUNKNOWN result;
-		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
-		return result;
-	}
-	long get_Count()
-	{
-		long result;
-		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Application()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x3e8, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	long get_Creator()
-	{
-		long result;
-		InvokeHelper(0x3e9, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH get_Parent()
-	{
-		LPDISPATCH result;
-		InvokeHelper(0x3ea, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
-		return result;
-	}
-	LPDISPATCH Item(long Index)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_I4;
-		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Index);
-		return result;
-	}
-	LPDISPATCH Add(VARIANT * SplitVertical)
-	{
-		LPDISPATCH result;
-		static BYTE parms[] = VTS_PVARIANT;
-		InvokeHelper(0x3, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, SplitVertical);
-		return result;
-	}
-
-	// Panes 属性
-public:
-
-};
-// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
-
 
 // CParagraph 包装器类
 
@@ -52807,14 +54937,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CParagraphFormat2 包装器类
+// CParagraphFormat20 包装器类
 
-class CParagraphFormat2 : public COleDispatchDriver
+class CParagraphFormat20 : public COleDispatchDriver
 {
 public:
-	CParagraphFormat2(){} // 调用 COleDispatchDriver 默认构造函数
-	CParagraphFormat2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CParagraphFormat2(const CParagraphFormat2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CParagraphFormat20(){} // 调用 COleDispatchDriver 默认构造函数
+	CParagraphFormat20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CParagraphFormat20(const CParagraphFormat20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -53599,14 +55729,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPermission 包装器类
+// CPermission0 包装器类
 
-class CPermission : public COleDispatchDriver
+class CPermission0 : public COleDispatchDriver
 {
 public:
-	CPermission(){} // 调用 COleDispatchDriver 默认构造函数
-	CPermission(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPermission(const CPermission& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPermission0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPermission0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPermission0(const CPermission0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -53751,14 +55881,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerDialog 包装器类
+// CPickerDialog0 包装器类
 
-class CPickerDialog : public COleDispatchDriver
+class CPickerDialog0 : public COleDispatchDriver
 {
 public:
-	CPickerDialog(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerDialog(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerDialog(const CPickerDialog& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerDialog0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerDialog0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerDialog0(const CPickerDialog0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -53837,14 +55967,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerField 包装器类
+// CPickerField0 包装器类
 
-class CPickerField : public COleDispatchDriver
+class CPickerField0 : public COleDispatchDriver
 {
 public:
-	CPickerField(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerField(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerField(const CPickerField& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerField0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerField0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerField0(const CPickerField0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -53893,14 +56023,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerFields 包装器类
+// CPickerFields0 包装器类
 
-class CPickerFields : public COleDispatchDriver
+class CPickerFields0 : public COleDispatchDriver
 {
 public:
-	CPickerFields(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerFields(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerFields(const CPickerFields& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerFields0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerFields0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerFields0(const CPickerFields0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -53950,14 +56080,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerProperties 包装器类
+// CPickerProperties0 包装器类
 
-class CPickerProperties : public COleDispatchDriver
+class CPickerProperties0 : public COleDispatchDriver
 {
 public:
-	CPickerProperties(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerProperties(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerProperties(const CPickerProperties& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerProperties0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerProperties0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerProperties0(const CPickerProperties0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54019,14 +56149,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerProperty 包装器类
+// CPickerProperty0 包装器类
 
-class CPickerProperty : public COleDispatchDriver
+class CPickerProperty0 : public COleDispatchDriver
 {
 public:
-	CPickerProperty(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerProperty(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerProperty(const CPickerProperty& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerProperty0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerProperty0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerProperty0(const CPickerProperty0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54075,14 +56205,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerResult 包装器类
+// CPickerResult0 包装器类
 
-class CPickerResult : public COleDispatchDriver
+class CPickerResult0 : public COleDispatchDriver
 {
 public:
-	CPickerResult(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerResult(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerResult(const CPickerResult& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerResult0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerResult0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerResult0(const CPickerResult0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54191,14 +56321,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPickerResults 包装器类
+// CPickerResults0 包装器类
 
-class CPickerResults : public COleDispatchDriver
+class CPickerResults0 : public COleDispatchDriver
 {
 public:
-	CPickerResults(){} // 调用 COleDispatchDriver 默认构造函数
-	CPickerResults(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPickerResults(const CPickerResults& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPickerResults0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPickerResults0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPickerResults0(const CPickerResults0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54255,14 +56385,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPictureEffect 包装器类
+// CPictureEffect0 包装器类
 
-class CPictureEffect : public COleDispatchDriver
+class CPictureEffect0 : public COleDispatchDriver
 {
 public:
-	CPictureEffect(){} // 调用 COleDispatchDriver 默认构造函数
-	CPictureEffect(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPictureEffect(const CPictureEffect& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPictureEffect0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPictureEffect0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPictureEffect0(const CPictureEffect0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54331,14 +56461,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPictureEffects 包装器类
+// CPictureEffects0 包装器类
 
-class CPictureEffects : public COleDispatchDriver
+class CPictureEffects0 : public COleDispatchDriver
 {
 public:
-	CPictureEffects(){} // 调用 COleDispatchDriver 默认构造函数
-	CPictureEffects(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPictureEffects(const CPictureEffects& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPictureEffects0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPictureEffects0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPictureEffects0(const CPictureEffects0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -54400,14 +56530,173 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPictureFormat 包装器类
+// CPictureFormat0 包装器类
 
-class CPictureFormat : public COleDispatchDriver
+class CPictureFormat0 : public COleDispatchDriver
 {
 public:
-	CPictureFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CPictureFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPictureFormat(const CPictureFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPictureFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPictureFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPictureFormat0(const CPictureFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// PictureFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void IncrementBrightness(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementContrast(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	float get_Brightness()
+	{
+		float result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Brightness(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_ColorType()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ColorType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Contrast()
+	{
+		float result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Contrast(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_CropBottom()
+	{
+		float result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_CropBottom(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_CropLeft()
+	{
+		float result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_CropLeft(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_CropRight()
+	{
+		float result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_CropRight(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_CropTop()
+	{
+		float result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_CropTop(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_TransparencyColor()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TransparencyColor(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_TransparentBackground()
+	{
+		long result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_TransparentBackground(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Crop()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+
+	// PictureFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CPictureFormat1 包装器类
+
+class CPictureFormat1 : public COleDispatchDriver
+{
+public:
+	CPictureFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CPictureFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPictureFormat1(const CPictureFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -55165,14 +57454,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPolicyItem 包装器类
+// CPolicyItem0 包装器类
 
-class CPolicyItem : public COleDispatchDriver
+class CPolicyItem0 : public COleDispatchDriver
 {
 public:
-	CPolicyItem(){} // 调用 COleDispatchDriver 默认构造函数
-	CPolicyItem(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPolicyItem(const CPolicyItem& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPolicyItem0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPolicyItem0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPolicyItem0(const CPolicyItem0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -55302,14 +57591,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPropertyTest 包装器类
+// CPropertyTest0 包装器类
 
-class CPropertyTest : public COleDispatchDriver
+class CPropertyTest0 : public COleDispatchDriver
 {
 public:
-	CPropertyTest(){} // 调用 COleDispatchDriver 默认构造函数
-	CPropertyTest(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPropertyTest(const CPropertyTest& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPropertyTest0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPropertyTest0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPropertyTest0(const CPropertyTest0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -55370,14 +57659,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CPropertyTests 包装器类
+// CPropertyTests0 包装器类
 
-class CPropertyTests : public COleDispatchDriver
+class CPropertyTests0 : public COleDispatchDriver
 {
 public:
-	CPropertyTests(){} // 调用 COleDispatchDriver 默认构造函数
-	CPropertyTests(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CPropertyTests(const CPropertyTests& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CPropertyTests0(){} // 调用 COleDispatchDriver 默认构造函数
+	CPropertyTests0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CPropertyTests0(const CPropertyTests0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -57360,14 +59649,107 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CReflectionFormat 包装器类
+// CReflectionFormat0 包装器类
 
-class CReflectionFormat : public COleDispatchDriver
+class CReflectionFormat0 : public COleDispatchDriver
 {
 public:
-	CReflectionFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CReflectionFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CReflectionFormat(const CReflectionFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CReflectionFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CReflectionFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CReflectionFormat0(const CReflectionFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ReflectionFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Type(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x1, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Transparency()
+	{
+		float result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Transparency(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x2, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Size()
+	{
+		float result;
+		InvokeHelper(0x3, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Size(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x3, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Offset()
+	{
+		float result;
+		InvokeHelper(0x4, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Offset(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x4, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Blur()
+	{
+		float result;
+		InvokeHelper(0x5, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Blur(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x5, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// ReflectionFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CReflectionFormat1 包装器类
+
+class CReflectionFormat1 : public COleDispatchDriver
+{
+public:
+	CReflectionFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CReflectionFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CReflectionFormat1(const CReflectionFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -58159,14 +60541,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRibbonControl 包装器类
+// CRibbonControl0 包装器类
 
-class CRibbonControl : public COleDispatchDriver
+class CRibbonControl0 : public COleDispatchDriver
 {
 public:
-	CRibbonControl(){} // 调用 COleDispatchDriver 默认构造函数
-	CRibbonControl(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRibbonControl(const CRibbonControl& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRibbonControl0(){} // 调用 COleDispatchDriver 默认构造函数
+	CRibbonControl0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRibbonControl0(const CRibbonControl0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -58203,14 +60585,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRibbonExtensibility 包装器类
+// CRibbonExtensibility0 包装器类
 
-class CRibbonExtensibility : public COleDispatchDriver
+class CRibbonExtensibility0 : public COleDispatchDriver
 {
 public:
-	CRibbonExtensibility(){} // 调用 COleDispatchDriver 默认构造函数
-	CRibbonExtensibility(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRibbonExtensibility(const CRibbonExtensibility& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRibbonExtensibility0(){} // 调用 COleDispatchDriver 默认构造函数
+	CRibbonExtensibility0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRibbonExtensibility0(const CRibbonExtensibility0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -58236,14 +60618,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRibbonUI 包装器类
+// CRibbonUI0 包装器类
 
-class CRibbonUI : public COleDispatchDriver
+class CRibbonUI0 : public COleDispatchDriver
 {
 public:
-	CRibbonUI(){} // 调用 COleDispatchDriver 默认构造函数
-	CRibbonUI(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRibbonUI(const CRibbonUI& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRibbonUI0(){} // 调用 COleDispatchDriver 默认构造函数
+	CRibbonUI0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRibbonUI0(const CRibbonUI0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -58991,14 +61373,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRuler2 包装器类
+// CRuler20 包装器类
 
-class CRuler2 : public COleDispatchDriver
+class CRuler20 : public COleDispatchDriver
 {
 public:
-	CRuler2(){} // 调用 COleDispatchDriver 默认构造函数
-	CRuler2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRuler2(const CRuler2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRuler20(){} // 调用 COleDispatchDriver 默认构造函数
+	CRuler20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRuler20(const CRuler20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59047,14 +61429,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRulerLevel2 包装器类
+// CRulerLevel20 包装器类
 
-class CRulerLevel2 : public COleDispatchDriver
+class CRulerLevel20 : public COleDispatchDriver
 {
 public:
-	CRulerLevel2(){} // 调用 COleDispatchDriver 默认构造函数
-	CRulerLevel2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRulerLevel2(const CRulerLevel2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRulerLevel20(){} // 调用 COleDispatchDriver 默认构造函数
+	CRulerLevel20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRulerLevel20(const CRulerLevel20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59113,14 +61495,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CRulerLevels2 包装器类
+// CRulerLevels20 包装器类
 
-class CRulerLevels2 : public COleDispatchDriver
+class CRulerLevels20 : public COleDispatchDriver
 {
 public:
-	CRulerLevels2(){} // 调用 COleDispatchDriver 默认构造函数
-	CRulerLevels2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CRulerLevels2(const CRulerLevels2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CRulerLevels20(){} // 调用 COleDispatchDriver 默认构造函数
+	CRulerLevels20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CRulerLevels20(const CRulerLevels20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59176,14 +61558,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CScopeFolder 包装器类
+// CScopeFolder0 包装器类
 
-class CScopeFolder : public COleDispatchDriver
+class CScopeFolder0 : public COleDispatchDriver
 {
 public:
-	CScopeFolder(){} // 调用 COleDispatchDriver 默认构造函数
-	CScopeFolder(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CScopeFolder(const CScopeFolder& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CScopeFolder0(){} // 调用 COleDispatchDriver 默认构造函数
+	CScopeFolder0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CScopeFolder0(const CScopeFolder0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59236,14 +61618,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CScopeFolders 包装器类
+// CScopeFolders0 包装器类
 
-class CScopeFolders : public COleDispatchDriver
+class CScopeFolders0 : public COleDispatchDriver
 {
 public:
-	CScopeFolders(){} // 调用 COleDispatchDriver 默认构造函数
-	CScopeFolders(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CScopeFolders(const CScopeFolders& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CScopeFolders0(){} // 调用 COleDispatchDriver 默认构造函数
+	CScopeFolders0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CScopeFolders0(const CScopeFolders0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59293,14 +61675,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CScript 包装器类
+// CScript0 包装器类
 
-class CScript : public COleDispatchDriver
+class CScript0 : public COleDispatchDriver
 {
 public:
-	CScript(){} // 调用 COleDispatchDriver 默认构造函数
-	CScript(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CScript(const CScript& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CScript0(){} // 调用 COleDispatchDriver 默认构造函数
+	CScript0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CScript0(const CScript0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59397,14 +61779,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CScripts 包装器类
+// CScripts0 包装器类
 
-class CScripts : public COleDispatchDriver
+class CScripts0 : public COleDispatchDriver
 {
 public:
-	CScripts(){} // 调用 COleDispatchDriver 默认构造函数
-	CScripts(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CScripts(const CScripts& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CScripts0(){} // 调用 COleDispatchDriver 默认构造函数
+	CScripts0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CScripts0(const CScripts0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59471,14 +61853,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSearchFolders 包装器类
+// CSearchFolders0 包装器类
 
-class CSearchFolders : public COleDispatchDriver
+class CSearchFolders0 : public COleDispatchDriver
 {
 public:
-	CSearchFolders(){} // 调用 COleDispatchDriver 默认构造函数
-	CSearchFolders(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSearchFolders(const CSearchFolders& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSearchFolders0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSearchFolders0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSearchFolders0(const CSearchFolders0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59538,14 +61920,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSearchScope 包装器类
+// CSearchScope0 包装器类
 
-class CSearchScope : public COleDispatchDriver
+class CSearchScope0 : public COleDispatchDriver
 {
 public:
-	CSearchScope(){} // 调用 COleDispatchDriver 默认构造函数
-	CSearchScope(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSearchScope(const CSearchScope& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSearchScope0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSearchScope0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSearchScope0(const CSearchScope0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -59588,14 +61970,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSearchScopes 包装器类
+// CSearchScopes0 包装器类
 
-class CSearchScopes : public COleDispatchDriver
+class CSearchScopes0 : public COleDispatchDriver
 {
 public:
-	CSearchScopes(){} // 调用 COleDispatchDriver 默认构造函数
-	CSearchScopes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSearchScopes(const CSearchScopes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSearchScopes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSearchScopes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSearchScopes0(const CSearchScopes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -61800,14 +64182,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CServerPolicy 包装器类
+// CServerPolicy0 包装器类
 
-class CServerPolicy : public COleDispatchDriver
+class CServerPolicy0 : public COleDispatchDriver
 {
 public:
-	CServerPolicy(){} // 调用 COleDispatchDriver 默认构造函数
-	CServerPolicy(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CServerPolicy(const CServerPolicy& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CServerPolicy0(){} // 调用 COleDispatchDriver 默认构造函数
+	CServerPolicy0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CServerPolicy0(const CServerPolicy0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -61986,14 +64368,189 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShadowFormat 包装器类
+// CShadowFormat0 包装器类
 
-class CShadowFormat : public COleDispatchDriver
+class CShadowFormat0 : public COleDispatchDriver
 {
 public:
-	CShadowFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CShadowFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShadowFormat(const CShadowFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShadowFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShadowFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShadowFormat0(const CShadowFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ShadowFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void IncrementOffsetX(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementOffsetY(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	LPDISPATCH get_ForeColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void put_ForeColor(LPDISPATCH newValue)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Obscured()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Obscured(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_OffsetX()
+	{
+		float result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_OffsetX(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_OffsetY()
+	{
+		float result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_OffsetY(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Transparency()
+	{
+		float result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Transparency(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Type(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Style()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Style(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Blur()
+	{
+		float result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Blur(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Size()
+	{
+		float result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Size(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_RotateWithShape()
+	{
+		long result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotateWithShape(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// ShadowFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShadowFormat1 包装器类
+
+class CShadowFormat1 : public COleDispatchDriver
+{
+public:
+	CShadowFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShadowFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShadowFormat1(const CShadowFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -62156,14 +64713,538 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShape 包装器类
+// CShape0 包装器类
 
-class CShape : public COleDispatchDriver
+class CShape0 : public COleDispatchDriver
 {
 public:
-	CShape(){} // 调用 COleDispatchDriver 默认构造函数
-	CShape(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShape(const CShape& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShape0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShape0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShape0(const CShape0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// Shape 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Apply()
+	{
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Delete()
+	{
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH Duplicate()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Flip(long FlipCmd)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, FlipCmd);
+	}
+	void IncrementLeft(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementRotation(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementTop(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void PickUp()
+	{
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void RerouteConnections()
+	{
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void ScaleHeight(float Factor, long RelativeToOriginalSize, long fScale)
+	{
+		static BYTE parms[] = VTS_R4 VTS_I4 VTS_I4;
+		InvokeHelper(0x13, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Factor, RelativeToOriginalSize, fScale);
+	}
+	void ScaleWidth(float Factor, long RelativeToOriginalSize, long fScale)
+	{
+		static BYTE parms[] = VTS_R4 VTS_I4 VTS_I4;
+		InvokeHelper(0x14, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Factor, RelativeToOriginalSize, fScale);
+	}
+	void Select(VARIANT& Replace)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x15, DISPATCH_METHOD, VT_EMPTY, NULL, parms, &Replace);
+	}
+	void SetShapesDefaultProperties()
+	{
+		InvokeHelper(0x16, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH Ungroup()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x17, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void ZOrder(long ZOrderCmd)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x18, DISPATCH_METHOD, VT_EMPTY, NULL, parms, ZOrderCmd);
+	}
+	LPDISPATCH get_Adjustments()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_AutoShapeType()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_AutoShapeType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BlackWhiteMode()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BlackWhiteMode(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Callout()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_ConnectionSiteCount()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Connector()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ConnectorFormat()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Fill()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_GroupItems()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Height()
+	{
+		float result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Height(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_HorizontalFlip()
+	{
+		long result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Left()
+	{
+		float result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Left(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Line()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x70, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_LockAspectRatio()
+	{
+		long result;
+		InvokeHelper(0x71, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_LockAspectRatio(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x71, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	CString get_Name()
+	{
+		CString result;
+		InvokeHelper(0x73, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_Name(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x73, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Nodes()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x74, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Rotation()
+	{
+		float result;
+		InvokeHelper(0x75, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Rotation(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x75, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_PictureFormat()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x76, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Shadow()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x77, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_TextEffect()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x78, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_TextFrame()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x79, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ThreeD()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x7a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Top()
+	{
+		float result;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Top(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x7c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_VerticalFlip()
+	{
+		long result;
+		InvokeHelper(0x7d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_Vertices()
+	{
+		VARIANT result;
+		InvokeHelper(0x7e, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x7f, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x7f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Width()
+	{
+		float result;
+		InvokeHelper(0x80, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Width(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x80, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_ZOrderPosition()
+	{
+		long result;
+		InvokeHelper(0x81, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Script()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x82, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	CString get_AlternativeText()
+	{
+		CString result;
+		InvokeHelper(0x83, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_AlternativeText(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x83, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_HasDiagram()
+	{
+		long result;
+		InvokeHelper(0x84, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Diagram()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x85, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_HasDiagramNode()
+	{
+		long result;
+		InvokeHelper(0x86, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_DiagramNode()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x87, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Child()
+	{
+		long result;
+		InvokeHelper(0x88, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ParentGroup()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x89, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_CanvasItems()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x8a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Id()
+	{
+		long result;
+		InvokeHelper(0x8b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void CanvasCropLeft(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8c, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropTop(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8d, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropRight(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8e, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropBottom(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8f, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void put_RTF(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x90, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_TextFrame2()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x91, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Cut()
+	{
+		InvokeHelper(0x92, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Copy()
+	{
+		InvokeHelper(0x93, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	long get_HasChart()
+	{
+		long result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Chart()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_ShapeStyle()
+	{
+		long result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ShapeStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x96, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BackgroundStyle()
+	{
+		long result;
+		InvokeHelper(0x97, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BackgroundStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x97, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_SoftEdge()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x98, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Glow()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x99, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Reflection()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x9a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_HasSmartArt()
+	{
+		long result;
+		InvokeHelper(0x9b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_SmartArt()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x9c, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void ConvertTextToSmartArt(LPDISPATCH Layout)
+	{
+		static BYTE parms[] = VTS_DISPATCH;
+		InvokeHelper(0x9d, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Layout);
+	}
+	CString get_Title()
+	{
+		CString result;
+		InvokeHelper(0x9e, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_Title(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x9e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// Shape 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShape1 包装器类
+
+class CShape1 : public COleDispatchDriver
+{
+public:
+	CShape1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShape1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShape1(const CShape1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -62824,14 +65905,76 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShapeNode 包装器类
+// CShapeNode0 包装器类
 
-class CShapeNode : public COleDispatchDriver
+class CShapeNode0 : public COleDispatchDriver
 {
 public:
-	CShapeNode(){} // 调用 COleDispatchDriver 默认构造函数
-	CShapeNode(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShapeNode(const CShapeNode& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShapeNode0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeNode0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeNode0(const CShapeNode0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ShapeNode 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_EditingType()
+	{
+		long result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_Points()
+	{
+		VARIANT result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	long get_SegmentType()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+
+	// ShapeNode 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShapeNode1 包装器类
+
+class CShapeNode1 : public COleDispatchDriver
+{
+public:
+	CShapeNode1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeNode1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeNode1(const CShapeNode1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -62886,14 +66029,102 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShapeNodes 包装器类
+// CShapeNodes0 包装器类
 
-class CShapeNodes : public COleDispatchDriver
+class CShapeNodes0 : public COleDispatchDriver
 {
 public:
-	CShapeNodes(){} // 调用 COleDispatchDriver 默认构造函数
-	CShapeNodes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShapeNodes(const CShapeNodes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShapeNodes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeNodes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeNodes0(const CShapeNodes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ShapeNodes 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	void Delete(long Index)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Index);
+	}
+	void Insert(long Index, long SegmentType, long EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Index, SegmentType, EditingType, X1, Y1, X2, Y2, X3, Y3);
+	}
+	void SetEditingType(long Index, long EditingType)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Index, EditingType);
+	}
+	void SetPosition(long Index, float X1, float Y1)
+	{
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Index, X1, Y1);
+	}
+	void SetSegmentType(long Index, long SegmentType)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Index, SegmentType);
+	}
+
+	// ShapeNodes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShapeNodes1 包装器类
+
+class CShapeNodes1 : public COleDispatchDriver
+{
+public:
+	CShapeNodes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeNodes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeNodes1(const CShapeNodes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -62974,14 +66205,567 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShapeRange 包装器类
+// CShapeRange0 包装器类
 
-class CShapeRange : public COleDispatchDriver
+class CShapeRange0 : public COleDispatchDriver
 {
 public:
-	CShapeRange(){} // 调用 COleDispatchDriver 默认构造函数
-	CShapeRange(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShapeRange(const CShapeRange& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShapeRange0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeRange0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeRange0(const CShapeRange0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ShapeRange 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	void Align(long AlignCmd, long RelativeTo)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, AlignCmd, RelativeTo);
+	}
+	void Apply()
+	{
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Delete()
+	{
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Distribute(long DistributeCmd, long RelativeTo)
+	{
+		static BYTE parms[] = VTS_I4 VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, DistributeCmd, RelativeTo);
+	}
+	LPDISPATCH Duplicate()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Flip(long FlipCmd)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_EMPTY, NULL, parms, FlipCmd);
+	}
+	void IncrementLeft(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementRotation(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementTop(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	LPDISPATCH Group()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x13, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void PickUp()
+	{
+		InvokeHelper(0x14, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH Regroup()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x15, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void RerouteConnections()
+	{
+		InvokeHelper(0x16, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void ScaleHeight(float Factor, long RelativeToOriginalSize, long fScale)
+	{
+		static BYTE parms[] = VTS_R4 VTS_I4 VTS_I4;
+		InvokeHelper(0x17, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Factor, RelativeToOriginalSize, fScale);
+	}
+	void ScaleWidth(float Factor, long RelativeToOriginalSize, long fScale)
+	{
+		static BYTE parms[] = VTS_R4 VTS_I4 VTS_I4;
+		InvokeHelper(0x18, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Factor, RelativeToOriginalSize, fScale);
+	}
+	void Select(VARIANT& Replace)
+	{
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x19, DISPATCH_METHOD, VT_EMPTY, NULL, parms, &Replace);
+	}
+	void SetShapesDefaultProperties()
+	{
+		InvokeHelper(0x1a, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH Ungroup()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1b, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void ZOrder(long ZOrderCmd)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x1c, DISPATCH_METHOD, VT_EMPTY, NULL, parms, ZOrderCmd);
+	}
+	LPDISPATCH get_Adjustments()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_AutoShapeType()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_AutoShapeType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BlackWhiteMode()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BlackWhiteMode(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Callout()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_ConnectionSiteCount()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Connector()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ConnectorFormat()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Fill()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_GroupItems()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Height()
+	{
+		float result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Height(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_HorizontalFlip()
+	{
+		long result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_Left()
+	{
+		float result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Left(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Line()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x70, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_LockAspectRatio()
+	{
+		long result;
+		InvokeHelper(0x71, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_LockAspectRatio(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x71, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	CString get_Name()
+	{
+		CString result;
+		InvokeHelper(0x73, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_Name(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x73, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_Nodes()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x74, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Rotation()
+	{
+		float result;
+		InvokeHelper(0x75, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Rotation(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x75, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_PictureFormat()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x76, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Shadow()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x77, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_TextEffect()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x78, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_TextFrame()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x79, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ThreeD()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x7a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_Top()
+	{
+		float result;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Top(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x7c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_VerticalFlip()
+	{
+		long result;
+		InvokeHelper(0x7d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	VARIANT get_Vertices()
+	{
+		VARIANT result;
+		InvokeHelper(0x7e, DISPATCH_PROPERTYGET, VT_VARIANT, (void*)&result, NULL);
+		return result;
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x7f, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x7f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Width()
+	{
+		float result;
+		InvokeHelper(0x80, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Width(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x80, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_ZOrderPosition()
+	{
+		long result;
+		InvokeHelper(0x81, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Script()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x82, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	CString get_AlternativeText()
+	{
+		CString result;
+		InvokeHelper(0x83, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_AlternativeText(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x83, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_HasDiagram()
+	{
+		long result;
+		InvokeHelper(0x84, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Diagram()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x85, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_HasDiagramNode()
+	{
+		long result;
+		InvokeHelper(0x86, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_DiagramNode()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x87, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Child()
+	{
+		long result;
+		InvokeHelper(0x88, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_ParentGroup()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x89, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_CanvasItems()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x8a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Id()
+	{
+		long result;
+		InvokeHelper(0x8b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void CanvasCropLeft(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8c, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropTop(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8d, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropRight(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8e, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void CanvasCropBottom(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x8f, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void put_RTF(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x90, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_TextFrame2()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x91, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void Cut()
+	{
+		InvokeHelper(0x92, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void Copy()
+	{
+		InvokeHelper(0x93, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	long get_HasChart()
+	{
+		long result;
+		InvokeHelper(0x94, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Chart()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x95, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_ShapeStyle()
+	{
+		long result;
+		InvokeHelper(0x96, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ShapeStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x96, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BackgroundStyle()
+	{
+		long result;
+		InvokeHelper(0x97, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BackgroundStyle(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x97, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_SoftEdge()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x98, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Glow()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x99, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Reflection()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x9a, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	CString get_Title()
+	{
+		CString result;
+		InvokeHelper(0x9b, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_Title(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x9b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void MergeShapes(long MergeCmd, LPDISPATCH PrimaryShape)
+	{
+		static BYTE parms[] = VTS_I4 VTS_DISPATCH;
+		InvokeHelper(0x9c, DISPATCH_METHOD, VT_EMPTY, NULL, parms, MergeCmd, PrimaryShape);
+	}
+
+	// ShapeRange 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShapeRange1 包装器类
+
+class CShapeRange1 : public COleDispatchDriver
+{
+public:
+	CShapeRange1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapeRange1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapeRange1(const CShapeRange1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -63629,14 +67413,226 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CShapes 包装器类
+// CShapes0 包装器类
 
-class CShapes : public COleDispatchDriver
+class CShapes0 : public COleDispatchDriver
 {
 public:
-	CShapes(){} // 调用 COleDispatchDriver 默认构造函数
-	CShapes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CShapes(const CShapes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CShapes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapes0(const CShapes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// Shapes 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Count()
+	{
+		long result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH Item(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	LPUNKNOWN get__NewEnum()
+	{
+		LPUNKNOWN result;
+		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH AddCallout(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddConnector(long Type, float BeginX, float BeginY, float EndX, float EndY)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, BeginX, BeginY, EndX, EndY);
+		return result;
+	}
+	LPDISPATCH AddCurve(VARIANT& SafeArrayOfPoints)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &SafeArrayOfPoints);
+		return result;
+	}
+	LPDISPATCH AddLabel(long Orientation, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Orientation, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddLine(float BeginX, float BeginY, float EndX, float EndY)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, BeginX, BeginY, EndX, EndY);
+		return result;
+	}
+	LPDISPATCH AddPicture(LPCTSTR FileName, long LinkToFile, long SaveWithDocument, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddPolyline(VARIANT& SafeArrayOfPoints)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &SafeArrayOfPoints);
+		return result;
+	}
+	LPDISPATCH AddShape(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddTextEffect(long PresetTextEffect, LPCTSTR Text, LPCTSTR FontName, float FontSize, long FontBold, long FontItalic, float Left, float Top)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_BSTR VTS_BSTR VTS_R4 VTS_I4 VTS_I4 VTS_R4 VTS_R4;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, PresetTextEffect, Text, FontName, FontSize, FontBold, FontItalic, Left, Top);
+		return result;
+	}
+	LPDISPATCH AddTextbox(long Orientation, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x13, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Orientation, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH BuildFreeform(long EditingType, float X1, float Y1)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4;
+		InvokeHelper(0x14, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, EditingType, X1, Y1);
+		return result;
+	}
+	LPDISPATCH Range(VARIANT& Index)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_VARIANT;
+		InvokeHelper(0x15, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		return result;
+	}
+	void SelectAll()
+	{
+		InvokeHelper(0x16, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	LPDISPATCH get_Background()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Default()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH AddDiagram(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x17, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddCanvas(float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x19, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddChart(long Type, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x1a, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Type, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddTable(long NumRows, long NumColumns, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x1b, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, NumRows, NumColumns, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddSmartArt(LPDISPATCH Layout, float Left, float Top, float Width, float Height)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_DISPATCH VTS_R4 VTS_R4 VTS_R4 VTS_R4;
+		InvokeHelper(0x1c, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Layout, Left, Top, Width, Height);
+		return result;
+	}
+	LPDISPATCH AddChart2(long Style, long Type, float Left, float Top, float Width, float Height, BOOL NewLayout)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_BOOL;
+		InvokeHelper(0x1d, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, Style, Type, Left, Top, Width, Height, NewLayout);
+		return result;
+	}
+	LPDISPATCH AddPicture2(LPCTSTR FileName, long LinkToFile, long SaveWithDocument, float Left, float Top, float Width, float Height, long Compress)
+	{
+		LPDISPATCH result;
+		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_I4 VTS_R4 VTS_R4 VTS_R4 VTS_R4 VTS_I4;
+		InvokeHelper(0x1e, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height, Compress);
+		return result;
+	}
+
+	// Shapes 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CShapes1 包装器类
+
+class CShapes1 : public COleDispatchDriver
+{
+public:
+	CShapes1(){} // 调用 COleDispatchDriver 默认构造函数
+	CShapes1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CShapes1(const CShapes1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -63836,14 +67832,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspace 包装器类
+// CSharedWorkspace0 包装器类
 
-class CSharedWorkspace : public COleDispatchDriver
+class CSharedWorkspace0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspace(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspace(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspace(const CSharedWorkspace& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspace0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspace0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspace0(const CSharedWorkspace0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -63971,14 +67967,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceFile 包装器类
+// CSharedWorkspaceFile0 包装器类
 
-class CSharedWorkspaceFile : public COleDispatchDriver
+class CSharedWorkspaceFile0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceFile(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceFile(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceFile(const CSharedWorkspaceFile& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceFile0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceFile0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceFile0(const CSharedWorkspaceFile0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64049,14 +68045,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceFiles 包装器类
+// CSharedWorkspaceFiles0 包装器类
 
-class CSharedWorkspaceFiles : public COleDispatchDriver
+class CSharedWorkspaceFiles0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceFiles(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceFiles(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceFiles(const CSharedWorkspaceFiles& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceFiles0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceFiles0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceFiles0(const CSharedWorkspaceFiles0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64125,14 +68121,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceFolder 包装器类
+// CSharedWorkspaceFolder0 包装器类
 
-class CSharedWorkspaceFolder : public COleDispatchDriver
+class CSharedWorkspaceFolder0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceFolder(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceFolder(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceFolder(const CSharedWorkspaceFolder& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceFolder0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceFolder0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceFolder0(const CSharedWorkspaceFolder0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64180,14 +68176,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceFolders 包装器类
+// CSharedWorkspaceFolders0 包装器类
 
-class CSharedWorkspaceFolders : public COleDispatchDriver
+class CSharedWorkspaceFolders0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceFolders(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceFolders(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceFolders(const CSharedWorkspaceFolders& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceFolders0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceFolders0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceFolders0(const CSharedWorkspaceFolders0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64256,14 +68252,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceLink 包装器类
+// CSharedWorkspaceLink0 包装器类
 
-class CSharedWorkspaceLink : public COleDispatchDriver
+class CSharedWorkspaceLink0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceLink(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceLink(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceLink(const CSharedWorkspaceLink& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceLink0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceLink0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceLink0(const CSharedWorkspaceLink0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64365,14 +68361,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceLinks 包装器类
+// CSharedWorkspaceLinks0 包装器类
 
-class CSharedWorkspaceLinks : public COleDispatchDriver
+class CSharedWorkspaceLinks0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceLinks(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceLinks(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceLinks(const CSharedWorkspaceLinks& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceLinks0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceLinks0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceLinks0(const CSharedWorkspaceLinks0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64441,14 +68437,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceMember 包装器类
+// CSharedWorkspaceMember0 包装器类
 
-class CSharedWorkspaceMember : public COleDispatchDriver
+class CSharedWorkspaceMember0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceMember(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceMember(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceMember(const CSharedWorkspaceMember& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceMember0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceMember0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceMember0(const CSharedWorkspaceMember0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64513,14 +68509,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceMembers 包装器类
+// CSharedWorkspaceMembers0 包装器类
 
-class CSharedWorkspaceMembers : public COleDispatchDriver
+class CSharedWorkspaceMembers0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceMembers(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceMembers(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceMembers(const CSharedWorkspaceMembers& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceMembers0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceMembers0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceMembers0(const CSharedWorkspaceMembers0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64589,14 +68585,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceTask 包装器类
+// CSharedWorkspaceTask0 包装器类
 
-class CSharedWorkspaceTask : public COleDispatchDriver
+class CSharedWorkspaceTask0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceTask(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceTask(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceTask(const CSharedWorkspaceTask& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceTask0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceTask0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceTask0(const CSharedWorkspaceTask0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64731,14 +68727,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSharedWorkspaceTasks 包装器类
+// CSharedWorkspaceTasks0 包装器类
 
-class CSharedWorkspaceTasks : public COleDispatchDriver
+class CSharedWorkspaceTasks0 : public COleDispatchDriver
 {
 public:
-	CSharedWorkspaceTasks(){} // 调用 COleDispatchDriver 默认构造函数
-	CSharedWorkspaceTasks(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSharedWorkspaceTasks(const CSharedWorkspaceTasks& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSharedWorkspaceTasks0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSharedWorkspaceTasks0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSharedWorkspaceTasks0(const CSharedWorkspaceTasks0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64807,14 +68803,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSignature 包装器类
+// CSignature0 包装器类
 
-class CSignature : public COleDispatchDriver
+class CSignature0 : public COleDispatchDriver
 {
 public:
-	CSignature(){} // 调用 COleDispatchDriver 默认构造函数
-	CSignature(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSignature(const CSignature& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSignature0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSignature0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSignature0(const CSignature0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -64959,14 +68955,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSignatureInfo 包装器类
+// CSignatureInfo0 包装器类
 
-class CSignatureInfo : public COleDispatchDriver
+class CSignatureInfo0 : public COleDispatchDriver
 {
 public:
-	CSignatureInfo(){} // 调用 COleDispatchDriver 默认构造函数
-	CSignatureInfo(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSignatureInfo(const CSignatureInfo& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSignatureInfo0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSignatureInfo0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSignatureInfo0(const CSignatureInfo0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65107,14 +69103,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSignatureProvider 包装器类
+// CSignatureProvider0 包装器类
 
-class CSignatureProvider : public COleDispatchDriver
+class CSignatureProvider0 : public COleDispatchDriver
 {
 public:
-	CSignatureProvider(){} // 调用 COleDispatchDriver 默认构造函数
-	CSignatureProvider(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSignatureProvider(const CSignatureProvider& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSignatureProvider0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSignatureProvider0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSignatureProvider0(const CSignatureProvider0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65182,14 +69178,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSignatureSet 包装器类
+// CSignatureSet0 包装器类
 
-class CSignatureSet : public COleDispatchDriver
+class CSignatureSet0 : public COleDispatchDriver
 {
 public:
-	CSignatureSet(){} // 调用 COleDispatchDriver 默认构造函数
-	CSignatureSet(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSignatureSet(const CSignatureSet& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSignatureSet0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSignatureSet0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSignatureSet0(const CSignatureSet0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65291,14 +69287,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSignatureSetup 包装器类
+// CSignatureSetup0 包装器类
 
-class CSignatureSetup : public COleDispatchDriver
+class CSignatureSetup0 : public COleDispatchDriver
 {
 public:
-	CSignatureSetup(){} // 调用 COleDispatchDriver 默认构造函数
-	CSignatureSetup(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSignatureSetup(const CSignatureSetup& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSignatureSetup0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSignatureSetup0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSignatureSetup0(const CSignatureSetup0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65424,14 +69420,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArt 包装器类
+// CSmartArt0 包装器类
 
-class CSmartArt : public COleDispatchDriver
+class CSmartArt0 : public COleDispatchDriver
 {
 public:
-	CSmartArt(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArt(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArt(const CSmartArt& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArt0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArt0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArt0(const CSmartArt0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65528,14 +69524,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtColor 包装器类
+// CSmartArtColor0 包装器类
 
-class CSmartArtColor : public COleDispatchDriver
+class CSmartArtColor0 : public COleDispatchDriver
 {
 public:
-	CSmartArtColor(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtColor(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtColor(const CSmartArtColor& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtColor0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtColor0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtColor0(const CSmartArtColor0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65596,14 +69592,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtColors 包装器类
+// CSmartArtColors0 包装器类
 
-class CSmartArtColors : public COleDispatchDriver
+class CSmartArtColors0 : public COleDispatchDriver
 {
 public:
-	CSmartArtColors(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtColors(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtColors(const CSmartArtColors& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtColors0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtColors0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtColors0(const CSmartArtColors0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65632,11 +69628,11 @@ public:
 		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
 		return result;
 	}
-	LPDISPATCH Item(VARIANT& Index)
+	LPDISPATCH get_Item(VARIANT& Index)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_VARIANT;
-		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, &Index);
 		return result;
 	}
 	LPDISPATCH get_Parent()
@@ -65659,14 +69655,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtLayout 包装器类
+// CSmartArtLayout0 包装器类
 
-class CSmartArtLayout : public COleDispatchDriver
+class CSmartArtLayout0 : public COleDispatchDriver
 {
 public:
-	CSmartArtLayout(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtLayout(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtLayout(const CSmartArtLayout& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtLayout0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtLayout0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtLayout0(const CSmartArtLayout0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65727,14 +69723,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtLayouts 包装器类
+// CSmartArtLayouts0 包装器类
 
-class CSmartArtLayouts : public COleDispatchDriver
+class CSmartArtLayouts0 : public COleDispatchDriver
 {
 public:
-	CSmartArtLayouts(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtLayouts(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtLayouts(const CSmartArtLayouts& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtLayouts0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtLayouts0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtLayouts0(const CSmartArtLayouts0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65763,11 +69759,11 @@ public:
 		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
 		return result;
 	}
-	LPDISPATCH Item(VARIANT& Index)
+	LPDISPATCH get_Item(VARIANT& Index)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_VARIANT;
-		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, &Index);
 		return result;
 	}
 	LPDISPATCH get_Parent()
@@ -65790,14 +69786,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtNode 包装器类
+// CSmartArtNode0 包装器类
 
-class CSmartArtNode : public COleDispatchDriver
+class CSmartArtNode0 : public COleDispatchDriver
 {
 public:
-	CSmartArtNode(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtNode(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtNode(const CSmartArtNode& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtNode0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtNode0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtNode0(const CSmartArtNode0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65922,14 +69918,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtNodes 包装器类
+// CSmartArtNodes0 包装器类
 
-class CSmartArtNodes : public COleDispatchDriver
+class CSmartArtNodes0 : public COleDispatchDriver
 {
 public:
-	CSmartArtNodes(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtNodes(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtNodes(const CSmartArtNodes& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtNodes0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtNodes0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtNodes0(const CSmartArtNodes0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -65958,11 +69954,11 @@ public:
 		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
 		return result;
 	}
-	LPDISPATCH Item(VARIANT& Index)
+	LPDISPATCH get_Item(VARIANT& Index)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_VARIANT;
-		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, &Index);
 		return result;
 	}
 	LPDISPATCH get_Parent()
@@ -65991,14 +69987,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtQuickStyle 包装器类
+// CSmartArtQuickStyle0 包装器类
 
-class CSmartArtQuickStyle : public COleDispatchDriver
+class CSmartArtQuickStyle0 : public COleDispatchDriver
 {
 public:
-	CSmartArtQuickStyle(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtQuickStyle(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtQuickStyle(const CSmartArtQuickStyle& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtQuickStyle0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtQuickStyle0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtQuickStyle0(const CSmartArtQuickStyle0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -66059,14 +70055,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartArtQuickStyles 包装器类
+// CSmartArtQuickStyles0 包装器类
 
-class CSmartArtQuickStyles : public COleDispatchDriver
+class CSmartArtQuickStyles0 : public COleDispatchDriver
 {
 public:
-	CSmartArtQuickStyles(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartArtQuickStyles(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartArtQuickStyles(const CSmartArtQuickStyles& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartArtQuickStyles0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartArtQuickStyles0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartArtQuickStyles0(const CSmartArtQuickStyles0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -66095,11 +70091,11 @@ public:
 		InvokeHelper(0xfffffffc, DISPATCH_PROPERTYGET, VT_UNKNOWN, (void*)&result, NULL);
 		return result;
 	}
-	LPDISPATCH Item(VARIANT& Index)
+	LPDISPATCH get_Item(VARIANT& Index)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_VARIANT;
-		InvokeHelper(0x0, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, &Index);
+		InvokeHelper(0x0, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, parms, &Index);
 		return result;
 	}
 	LPDISPATCH get_Parent()
@@ -66122,14 +70118,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSmartDocument 包装器类
+// CSmartDocument0 包装器类
 
-class CSmartDocument : public COleDispatchDriver
+class CSmartDocument0 : public COleDispatchDriver
 {
 public:
-	CSmartDocument(){} // 调用 COleDispatchDriver 默认构造函数
-	CSmartDocument(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSmartDocument(const CSmartDocument& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSmartDocument0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSmartDocument0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSmartDocument0(const CSmartDocument0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -66842,14 +70838,74 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSoftEdgeFormat 包装器类
+// CSoftEdgeFormat0 包装器类
 
-class CSoftEdgeFormat : public COleDispatchDriver
+class CSoftEdgeFormat0 : public COleDispatchDriver
 {
 public:
-	CSoftEdgeFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CSoftEdgeFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSoftEdgeFormat(const CSoftEdgeFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSoftEdgeFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSoftEdgeFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSoftEdgeFormat0(const CSoftEdgeFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// SoftEdgeFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_Type()
+	{
+		long result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Type(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x1, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Radius()
+	{
+		float result;
+		InvokeHelper(0x2, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Radius(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x2, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// SoftEdgeFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CSoftEdgeFormat1 包装器类
+
+class CSoftEdgeFormat1 : public COleDispatchDriver
+{
+public:
+	CSoftEdgeFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CSoftEdgeFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSoftEdgeFormat1(const CSoftEdgeFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -67987,14 +72043,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CSync 包装器类
+// CSync0 包装器类
 
-class CSync : public COleDispatchDriver
+class CSync0 : public COleDispatchDriver
 {
 public:
-	CSync(){} // 调用 COleDispatchDriver 默认构造函数
-	CSync(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CSync(const CSync& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CSync0(){} // 调用 COleDispatchDriver 默认构造函数
+	CSync0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CSync0(const CSync0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -70096,14 +74152,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTabStop2 包装器类
+// CTabStop20 包装器类
 
-class CTabStop2 : public COleDispatchDriver
+class CTabStop20 : public COleDispatchDriver
 {
 public:
-	CTabStop2(){} // 调用 COleDispatchDriver 默认构造函数
-	CTabStop2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTabStop2(const CTabStop2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTabStop20(){} // 调用 COleDispatchDriver 默认构造函数
+	CTabStop20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTabStop20(const CTabStop20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -70254,14 +74310,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTabStops2 包装器类
+// CTabStops20 包装器类
 
-class CTabStops2 : public COleDispatchDriver
+class CTabStops20 : public COleDispatchDriver
 {
 public:
-	CTabStops2(){} // 调用 COleDispatchDriver 默认构造函数
-	CTabStops2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTabStops2(const CTabStops2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTabStops20(){} // 调用 COleDispatchDriver 默认构造函数
+	CTabStops20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTabStops20(const CTabStops20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -70655,12 +74711,7 @@ public:
 		InvokeHelper(0x2, DISPATCH_METHOD, VT_BOOL, (void*)&result, parms, Name);
 		return result;
 	}
-	/*
-	void ExitWindows()
-	{
-		InvokeHelper(0x3, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
-	*/
+
 	// Tasks 属性
 public:
 
@@ -71031,14 +75082,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTextColumn2 包装器类
+// CTextColumn20 包装器类
 
-class CTextColumn2 : public COleDispatchDriver
+class CTextColumn20 : public COleDispatchDriver
 {
 public:
-	CTextColumn2(){} // 调用 COleDispatchDriver 默认构造函数
-	CTextColumn2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTextColumn2(const CTextColumn2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTextColumn20(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextColumn20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextColumn20(const CTextColumn20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -71232,14 +75283,194 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTextEffectFormat 包装器类
+// CTextEffectFormat0 包装器类
 
-class CTextEffectFormat : public COleDispatchDriver
+class CTextEffectFormat0 : public COleDispatchDriver
 {
 public:
-	CTextEffectFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CTextEffectFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTextEffectFormat(const CTextEffectFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTextEffectFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextEffectFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextEffectFormat0(const CTextEffectFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// TextEffectFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void ToggleVerticalText()
+	{
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	long get_Alignment()
+	{
+		long result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Alignment(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_FontBold()
+	{
+		long result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_FontBold(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_FontItalic()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_FontItalic(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	CString get_FontName()
+	{
+		CString result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_FontName(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_FontSize()
+	{
+		float result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_FontSize(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_KernedPairs()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_KernedPairs(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_NormalizedHeight()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_NormalizedHeight(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetShape()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetShape(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetTextEffect()
+	{
+		long result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetTextEffect(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_RotatedChars()
+	{
+		long result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotatedChars(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	CString get_Text()
+	{
+		CString result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_BSTR, (void*)&result, NULL);
+		return result;
+	}
+	void put_Text(LPCTSTR newValue)
+	{
+		static BYTE parms[] = VTS_BSTR;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Tracking()
+	{
+		float result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Tracking(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// TextEffectFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CTextEffectFormat1 包装器类
+
+class CTextEffectFormat1 : public COleDispatchDriver
+{
+public:
+	CTextEffectFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextEffectFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextEffectFormat1(const CTextEffectFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -71412,14 +75643,113 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTextFrame 包装器类
+// CTextFrame0 包装器类
 
-class CTextFrame : public COleDispatchDriver
+class CTextFrame0 : public COleDispatchDriver
 {
 public:
-	CTextFrame(){} // 调用 COleDispatchDriver 默认构造函数
-	CTextFrame(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTextFrame(const CTextFrame& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTextFrame0(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextFrame0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextFrame0(const CTextFrame0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// TextFrame 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_MarginBottom()
+	{
+		float result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_MarginBottom(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_MarginLeft()
+	{
+		float result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_MarginLeft(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x65, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_MarginRight()
+	{
+		float result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_MarginRight(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_MarginTop()
+	{
+		float result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_MarginTop(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Orientation()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Orientation(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x68, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// TextFrame 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CTextFrame1 包装器类
+
+class CTextFrame1 : public COleDispatchDriver
+{
+public:
+	CTextFrame1(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextFrame1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextFrame1(const CTextFrame1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -71661,14 +75991,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTextFrame2 包装器类
+// CTextFrame20 包装器类
 
-class CTextFrame2 : public COleDispatchDriver
+class CTextFrame20 : public COleDispatchDriver
 {
 public:
-	CTextFrame2(){} // 调用 COleDispatchDriver 默认构造函数
-	CTextFrame2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTextFrame2(const CTextFrame2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTextFrame20(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextFrame20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextFrame20(const CTextFrame20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -71975,14 +76305,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CTextRange2 包装器类
+// CTextRange20 包装器类
 
-class CTextRange2 : public COleDispatchDriver
+class CTextRange20 : public COleDispatchDriver
 {
 public:
-	CTextRange2(){} // 调用 COleDispatchDriver 默认构造函数
-	CTextRange2(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CTextRange2(const CTextRange2& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CTextRange20(){} // 调用 COleDispatchDriver 默认构造函数
+	CTextRange20(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CTextRange20(const CTextRange20& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72343,14 +76673,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeColor 包装器类
+// CThemeColor0 包装器类
 
-class CThemeColor : public COleDispatchDriver
+class CThemeColor0 : public COleDispatchDriver
 {
 public:
-	CThemeColor(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeColor(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeColor(const CThemeColor& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeColor0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeColor0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeColor0(const CThemeColor0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72404,14 +76734,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeColorScheme 包装器类
+// CThemeColorScheme0 包装器类
 
-class CThemeColorScheme : public COleDispatchDriver
+class CThemeColorScheme0 : public COleDispatchDriver
 {
 public:
-	CThemeColorScheme(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeColorScheme(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeColorScheme(const CThemeColorScheme& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeColorScheme0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeColorScheme0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeColorScheme0(const CThemeColorScheme0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72484,14 +76814,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeEffectScheme 包装器类
+// CThemeEffectScheme0 包装器类
 
-class CThemeEffectScheme : public COleDispatchDriver
+class CThemeEffectScheme0 : public COleDispatchDriver
 {
 public:
-	CThemeEffectScheme(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeEffectScheme(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeEffectScheme(const CThemeEffectScheme& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeEffectScheme0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeEffectScheme0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeEffectScheme0(const CThemeEffectScheme0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72533,14 +76863,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeFont 包装器类
+// CThemeFont0 包装器类
 
-class CThemeFont : public COleDispatchDriver
+class CThemeFont0 : public COleDispatchDriver
 {
 public:
-	CThemeFont(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeFont(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeFont(const CThemeFont& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeFont0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeFont0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeFont0(const CThemeFont0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72588,14 +76918,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeFonts 包装器类
+// CThemeFonts0 包装器类
 
-class CThemeFonts : public COleDispatchDriver
+class CThemeFonts0 : public COleDispatchDriver
 {
 public:
-	CThemeFonts(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeFonts(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeFonts(const CThemeFonts& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeFonts0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeFonts0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeFonts0(const CThemeFonts0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72651,14 +76981,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThemeFontScheme 包装器类
+// CThemeFontScheme0 包装器类
 
-class CThemeFontScheme : public COleDispatchDriver
+class CThemeFontScheme0 : public COleDispatchDriver
 {
 public:
-	CThemeFontScheme(){} // 调用 COleDispatchDriver 默认构造函数
-	CThemeFontScheme(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThemeFontScheme(const CThemeFontScheme& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThemeFontScheme0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThemeFontScheme0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThemeFontScheme0(const CThemeFontScheme0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -72717,14 +77047,374 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CThreeDFormat 包装器类
+// CThreeDFormat0 包装器类
 
-class CThreeDFormat : public COleDispatchDriver
+class CThreeDFormat0 : public COleDispatchDriver
 {
 public:
-	CThreeDFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CThreeDFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CThreeDFormat(const CThreeDFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CThreeDFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CThreeDFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThreeDFormat0(const CThreeDFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+
+	// 特性
+public:
+
+	// 操作
+public:
+
+
+	// ThreeDFormat 方法
+public:
+	LPDISPATCH get_Application()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x60020000, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_Creator()
+	{
+		long result;
+		InvokeHelper(0x60020001, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	LPDISPATCH get_Parent()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x1, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	void IncrementRotationX(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xa, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementRotationY(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0xb, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void ResetRotation()
+	{
+		InvokeHelper(0xc, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+	}
+	void SetThreeDFormat(long PresetThreeDFormat)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xd, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PresetThreeDFormat);
+	}
+	void SetExtrusionDirection(long PresetExtrusionDirection)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xe, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PresetExtrusionDirection);
+	}
+	float get_Depth()
+	{
+		float result;
+		InvokeHelper(0x64, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Depth(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x64, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_ExtrusionColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x65, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	long get_ExtrusionColorType()
+	{
+		long result;
+		InvokeHelper(0x66, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ExtrusionColorType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x66, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Perspective()
+	{
+		long result;
+		InvokeHelper(0x67, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Perspective(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x67, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetExtrusionDirection()
+	{
+		long result;
+		InvokeHelper(0x68, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	long get_PresetLightingDirection()
+	{
+		long result;
+		InvokeHelper(0x69, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetLightingDirection(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x69, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetLightingSoftness()
+	{
+		long result;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetLightingSoftness(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetMaterial()
+	{
+		long result;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetMaterial(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6b, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetThreeDFormat()
+	{
+		long result;
+		InvokeHelper(0x6c, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_RotationX()
+	{
+		float result;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotationX(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_RotationY()
+	{
+		float result;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotationY(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x6e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_Visible()
+	{
+		long result;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Visible(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x6f, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	void SetPresetCamera(long PresetCamera)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0xf, DISPATCH_METHOD, VT_EMPTY, NULL, parms, PresetCamera);
+	}
+	void IncrementRotationZ(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x10, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementRotationHorizontal(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x11, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	void IncrementRotationVertical(float Increment)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x12, DISPATCH_METHOD, VT_EMPTY, NULL, parms, Increment);
+	}
+	long get_PresetLighting()
+	{
+		long result;
+		InvokeHelper(0x70, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_PresetLighting(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x70, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_Z()
+	{
+		float result;
+		InvokeHelper(0x71, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_Z(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x71, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BevelTopType()
+	{
+		long result;
+		InvokeHelper(0x72, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelTopType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x72, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_BevelTopInset()
+	{
+		float result;
+		InvokeHelper(0x73, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelTopInset(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x73, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_BevelTopDepth()
+	{
+		float result;
+		InvokeHelper(0x74, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelTopDepth(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x74, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_BevelBottomType()
+	{
+		long result;
+		InvokeHelper(0x75, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelBottomType(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x75, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_BevelBottomInset()
+	{
+		float result;
+		InvokeHelper(0x76, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelBottomInset(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x76, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_BevelBottomDepth()
+	{
+		float result;
+		InvokeHelper(0x77, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_BevelBottomDepth(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x77, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_PresetCamera()
+	{
+		long result;
+		InvokeHelper(0x78, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	float get_RotationZ()
+	{
+		float result;
+		InvokeHelper(0x79, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_RotationZ(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x79, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_ContourWidth()
+	{
+		float result;
+		InvokeHelper(0x7a, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ContourWidth(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7a, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	LPDISPATCH get_ContourColor()
+	{
+		LPDISPATCH result;
+		InvokeHelper(0x7b, DISPATCH_PROPERTYGET, VT_DISPATCH, (void*)&result, NULL);
+		return result;
+	}
+	float get_FieldOfView()
+	{
+		float result;
+		InvokeHelper(0x7c, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_FieldOfView(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7c, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	long get_ProjectText()
+	{
+		long result;
+		InvokeHelper(0x7d, DISPATCH_PROPERTYGET, VT_I4, (void*)&result, NULL);
+		return result;
+	}
+	void put_ProjectText(long newValue)
+	{
+		static BYTE parms[] = VTS_I4;
+		InvokeHelper(0x7d, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+	float get_LightAngle()
+	{
+		float result;
+		InvokeHelper(0x7e, DISPATCH_PROPERTYGET, VT_R4, (void*)&result, NULL);
+		return result;
+	}
+	void put_LightAngle(float newValue)
+	{
+		static BYTE parms[] = VTS_R4;
+		InvokeHelper(0x7e, DISPATCH_PROPERTYPUT, VT_EMPTY, NULL, parms, newValue);
+	}
+
+	// ThreeDFormat 属性
+public:
+
+};
+// 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
+
+
+// CThreeDFormat1 包装器类
+
+class CThreeDFormat1 : public COleDispatchDriver
+{
+public:
+	CThreeDFormat1(){} // 调用 COleDispatchDriver 默认构造函数
+	CThreeDFormat1(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CThreeDFormat1(const CThreeDFormat1& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -73849,14 +78539,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CUserPermission 包装器类
+// CUserPermission0 包装器类
 
-class CUserPermission : public COleDispatchDriver
+class CUserPermission0 : public COleDispatchDriver
 {
 public:
-	CUserPermission(){} // 调用 COleDispatchDriver 默认构造函数
-	CUserPermission(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CUserPermission(const CUserPermission& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CUserPermission0(){} // 调用 COleDispatchDriver 默认构造函数
+	CUserPermission0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CUserPermission0(const CUserPermission0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75096,14 +79786,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebComponent 包装器类
+// CWebComponent0 包装器类
 
-class CWebComponent : public COleDispatchDriver
+class CWebComponent0 : public COleDispatchDriver
 {
 public:
-	CWebComponent(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebComponent(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebComponent(const CWebComponent& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebComponent0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebComponent0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebComponent0(const CWebComponent0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75196,14 +79886,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebComponentFormat 包装器类
+// CWebComponentFormat0 包装器类
 
-class CWebComponentFormat : public COleDispatchDriver
+class CWebComponentFormat0 : public COleDispatchDriver
 {
 public:
-	CWebComponentFormat(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebComponentFormat(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebComponentFormat(const CWebComponentFormat& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebComponentFormat0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebComponentFormat0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebComponentFormat0(const CWebComponentFormat0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75304,14 +79994,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebComponentProperties 包装器类
+// CWebComponentProperties0 包装器类
 
-class CWebComponentProperties : public COleDispatchDriver
+class CWebComponentProperties0 : public COleDispatchDriver
 {
 public:
-	CWebComponentProperties(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebComponentProperties(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebComponentProperties(const CWebComponentProperties& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebComponentProperties0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebComponentProperties0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebComponentProperties0(const CWebComponentProperties0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75424,14 +80114,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebComponentWindowExternal 包装器类
+// CWebComponentWindowExternal0 包装器类
 
-class CWebComponentWindowExternal : public COleDispatchDriver
+class CWebComponentWindowExternal0 : public COleDispatchDriver
 {
 public:
-	CWebComponentWindowExternal(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebComponentWindowExternal(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebComponentWindowExternal(const CWebComponentWindowExternal& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebComponentWindowExternal0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebComponentWindowExternal0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebComponentWindowExternal0(const CWebComponentWindowExternal0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75659,14 +80349,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebPageFont 包装器类
+// CWebPageFont0 包装器类
 
-class CWebPageFont : public COleDispatchDriver
+class CWebPageFont0 : public COleDispatchDriver
 {
 public:
-	CWebPageFont(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebPageFont(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebPageFont(const CWebPageFont& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebPageFont0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebPageFont0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebPageFont0(const CWebPageFont0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -75741,14 +80431,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWebPageFonts 包装器类
+// CWebPageFonts0 包装器类
 
-class CWebPageFonts : public COleDispatchDriver
+class CWebPageFonts0 : public COleDispatchDriver
 {
 public:
-	CWebPageFonts(){} // 调用 COleDispatchDriver 默认构造函数
-	CWebPageFonts(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWebPageFonts(const CWebPageFonts& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWebPageFonts0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWebPageFonts0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWebPageFonts0(const CWebPageFonts0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -76453,14 +81143,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWorkflowTask 包装器类
+// CWorkflowTask0 包装器类
 
-class CWorkflowTask : public COleDispatchDriver
+class CWorkflowTask0 : public COleDispatchDriver
 {
 public:
-	CWorkflowTask(){} // 调用 COleDispatchDriver 默认构造函数
-	CWorkflowTask(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWorkflowTask(const CWorkflowTask& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWorkflowTask0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWorkflowTask0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWorkflowTask0(const CWorkflowTask0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -76551,14 +81241,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWorkflowTasks 包装器类
+// CWorkflowTasks0 包装器类
 
-class CWorkflowTasks : public COleDispatchDriver
+class CWorkflowTasks0 : public COleDispatchDriver
 {
 public:
-	CWorkflowTasks(){} // 调用 COleDispatchDriver 默认构造函数
-	CWorkflowTasks(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWorkflowTasks(const CWorkflowTasks& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWorkflowTasks0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWorkflowTasks0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWorkflowTasks0(const CWorkflowTasks0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -76608,14 +81298,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWorkflowTemplate 包装器类
+// CWorkflowTemplate0 包装器类
 
-class CWorkflowTemplate : public COleDispatchDriver
+class CWorkflowTemplate0 : public COleDispatchDriver
 {
 public:
-	CWorkflowTemplate(){} // 调用 COleDispatchDriver 默认构造函数
-	CWorkflowTemplate(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWorkflowTemplate(const CWorkflowTemplate& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWorkflowTemplate0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWorkflowTemplate0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWorkflowTemplate0(const CWorkflowTemplate0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -76682,14 +81372,14 @@ public:
 // 从类型库向导中用“添加类”创建的计算机生成的 IDispatch 包装器类
 
 
-// CWorkflowTemplates 包装器类
+// CWorkflowTemplates0 包装器类
 
-class CWorkflowTemplates : public COleDispatchDriver
+class CWorkflowTemplates0 : public COleDispatchDriver
 {
 public:
-	CWorkflowTemplates(){} // 调用 COleDispatchDriver 默认构造函数
-	CWorkflowTemplates(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
-	CWorkflowTemplates(const CWorkflowTemplates& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
+	CWorkflowTemplates0(){} // 调用 COleDispatchDriver 默认构造函数
+	CWorkflowTemplates0(LPDISPATCH pDispatch) : COleDispatchDriver(pDispatch) {}
+	CWorkflowTemplates0(const CWorkflowTemplates0& dispatchSrc) : COleDispatchDriver(dispatchSrc) {}
 
 	// 特性
 public:
@@ -78046,4 +82736,6 @@ public:
 public:
 
 };
+
+
 }
