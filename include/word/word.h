@@ -54,7 +54,7 @@ namespace wdocx {
 	BOOL StampCover(char * szHeader);
 	BOOL SendData(CString szHeader, CString szFileName, int index);
 	BOOL DownLoad(char * szInfo, char * szUpInfo, char * szFileName);
-	int DownLoadAllAttachmentEx(char * szInfo, CString szFileNames);
+	BOOL DownLoadAllAttachmentEx(char * szInfo, CString szFileNames);
 	BOOL SendAttach(CString szInfo);
 	BOOL SendMailEx(CString szInfo, float fPart /*以K为单位*/, float fTotal/*以兆为单位*/);
 	}

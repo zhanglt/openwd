@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Wed Feb 25 20:09:17 2015
+/* at Thu Feb 26 21:38:48 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -499,21 +499,20 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 432 */	NdrFcShort( 0xd ),	/* 13 */
 /* 434 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
 /* 436 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 438 */	NdrFcShort( 0x24 ),	/* 36 */
-/* 440 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 438 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 440 */	0x45,		/* Oi2 Flags:  srv must size, has return, has ext, */
 			0x2,		/* 2 */
 /* 442 */	0x8,		/* 8 */
-			0x1,		/* Ext Flags:  new corr desc, */
-/* 444 */	NdrFcShort( 0x0 ),	/* 0 */
+			0x3,		/* Ext Flags:  new corr desc, clt corr check, */
+/* 444 */	NdrFcShort( 0x1 ),	/* 1 */
 /* 446 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 448 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter IP */
 
-/* 450 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 450 */	NdrFcShort( 0x2113 ),	/* Flags:  must size, must free, out, simple ref, srv alloc size=8 */
 /* 452 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 454 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 454 */	NdrFcShort( 0x430 ),	/* Type Offset=1072 */
 
 	/* Return value */
 
@@ -529,22 +528,21 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 464 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 468 */	NdrFcShort( 0xe ),	/* 14 */
 /* 470 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 472 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 472 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 474 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 476 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 476 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x2,		/* 2 */
 /* 478 */	0x8,		/* 8 */
-			0x1,		/* Ext Flags:  new corr desc, */
+			0x5,		/* Ext Flags:  new corr desc, srv corr check, */
 /* 480 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 482 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 482 */	NdrFcShort( 0x1 ),	/* 1 */
 /* 484 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter IP */
 
-/* 486 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 486 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
 /* 488 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 490 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 490 */	NdrFcShort( 0x1c ),	/* Type Offset=28 */
 
 	/* Return value */
 
@@ -561,21 +559,20 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 504 */	NdrFcShort( 0xf ),	/* 15 */
 /* 506 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
 /* 508 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 510 */	NdrFcShort( 0x24 ),	/* 36 */
-/* 512 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 510 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 512 */	0x45,		/* Oi2 Flags:  srv must size, has return, has ext, */
 			0x2,		/* 2 */
 /* 514 */	0x8,		/* 8 */
-			0x1,		/* Ext Flags:  new corr desc, */
-/* 516 */	NdrFcShort( 0x0 ),	/* 0 */
+			0x3,		/* Ext Flags:  new corr desc, clt corr check, */
+/* 516 */	NdrFcShort( 0x1 ),	/* 1 */
 /* 518 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 520 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter pPort */
 
-/* 522 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 522 */	NdrFcShort( 0x2113 ),	/* Flags:  must size, must free, out, simple ref, srv alloc size=8 */
 /* 524 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 526 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 526 */	NdrFcShort( 0x430 ),	/* Type Offset=1072 */
 
 	/* Return value */
 
@@ -591,22 +588,21 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 536 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 540 */	NdrFcShort( 0x10 ),	/* 16 */
 /* 542 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 544 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 544 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 546 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 548 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 548 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x2,		/* 2 */
 /* 550 */	0x8,		/* 8 */
-			0x1,		/* Ext Flags:  new corr desc, */
+			0x5,		/* Ext Flags:  new corr desc, srv corr check, */
 /* 552 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 554 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 554 */	NdrFcShort( 0x1 ),	/* 1 */
 /* 556 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter iPort */
 
-/* 558 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 558 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
 /* 560 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 562 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 562 */	NdrFcShort( 0x1c ),	/* Type Offset=28 */
 
 	/* Return value */
 

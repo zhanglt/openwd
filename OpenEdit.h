@@ -35,8 +35,8 @@ class ATL_NO_VTABLE COpenEdit :
 {
 private:
 	int  nDocumentType;
-	int  nIP;
-	int  nPort;
+	BSTR  nIP;
+	BSTR  nPort;
 	BSTR  sPath;
 
 public:
@@ -114,10 +114,10 @@ public:
 	STDMETHOD(SendDocumentFile)(BSTR sHeader, int index);
 	STDMETHOD(SendAttachment)(BSTR sInfo);
 
-	STDMETHOD(get_ServerIp)(int* IP);
-	STDMETHOD(put_ServerIp)(int IP);
-	STDMETHOD(get_ServerPort)(int* pPort);
-	STDMETHOD(put_ServerPort)(int iPort);
+	STDMETHOD(get_ServerIp)(BSTR* IP);
+	STDMETHOD(put_ServerIp)(BSTR IP);
+	STDMETHOD(get_ServerPort)(BSTR* pPort);
+	STDMETHOD(put_ServerPort)(BSTR iPort);
 	STDMETHOD(get_ServerPath)(BSTR* pPath);
 	STDMETHOD(put_ServerPath)(BSTR sPath);
 };

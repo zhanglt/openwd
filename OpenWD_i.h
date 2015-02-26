@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Wed Feb 25 20:09:17 2015
+/* at Thu Feb 26 21:38:48 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -317,16 +317,16 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ BSTR sInfo) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerIp( 
-            /* [retval][out] */ int *IP) = 0;
+            /* [retval][out] */ BSTR *IP) = 0;
         
         virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerIp( 
-            /* [in] */ int IP) = 0;
+            /* [in] */ BSTR IP) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerPort( 
-            /* [retval][out] */ int *pPort) = 0;
+            /* [retval][out] */ BSTR *pPort) = 0;
         
         virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerPort( 
-            /* [in] */ int iPort) = 0;
+            /* [in] */ BSTR iPort) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ServerPath( 
             /* [retval][out] */ BSTR *pPath) = 0;
@@ -424,19 +424,19 @@ EXTERN_C const IID IID_IOpenEdit;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerIp )( 
             IOpenEdit * This,
-            /* [retval][out] */ int *IP);
+            /* [retval][out] */ BSTR *IP);
         
         /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerIp )( 
             IOpenEdit * This,
-            /* [in] */ int IP);
+            /* [in] */ BSTR IP);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerPort )( 
             IOpenEdit * This,
-            /* [retval][out] */ int *pPort);
+            /* [retval][out] */ BSTR *pPort);
         
         /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerPort )( 
             IOpenEdit * This,
-            /* [in] */ int iPort);
+            /* [in] */ BSTR iPort);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServerPath )( 
             IOpenEdit * This,

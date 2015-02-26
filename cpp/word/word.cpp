@@ -1631,7 +1631,7 @@ BOOL wdocx::DownLoad(char * szInfo, char * szUpInfo, char * szFileName)
 }
 
 
-int wdocx::DownLoadAllAttachmentEx(char * szInfo, CString szFileNames)
+BOOL wdocx::DownLoadAllAttachmentEx(char * szInfo, CString szFileNames)
 {
 	int index = 10;
 	char InfoBuf[256];
