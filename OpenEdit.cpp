@@ -1,4 +1,3 @@
-nIP
 // OpenEdit.cpp : COpenEdit µÄÊµÏÖ
 
 #include "stdafx.h"
