@@ -24,7 +24,7 @@ BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath);
 BOOL SetIpAndPort(CString Ip/*IP地址*/, CString  Port/*端口*/, CString ServerURL/*请求服务器URL*/, CString Password/*解锁密码*/);
 
 //功能：获取服务器IP及端口
-BOOL GetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/);
+BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/);
 
 //功能：设置文件ID号
 void SetID(char* FileID, char* TmpID = "");

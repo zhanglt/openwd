@@ -125,7 +125,7 @@ CString GetString(CString szKeyValue, CString szFileName)
 
 void WriteString(CString szKeyValue, CString szValue, CString szFileName)
 {
-	WritePrivateProfileString("Telecom", szKeyValue, szValue, szFileName);
+	WritePrivateProfileString("openwd", szKeyValue, szValue, szFileName);
 }
 
 
@@ -137,7 +137,7 @@ void WriteLog(CString szText)
 
 	memset(buf, 0, sizeof(buf));
 
-	GetSystemDirectory(buf, sizeof(buf));
+	GetWindowsDirectory(buf, sizeof(buf));
 
 	szFileName = buf;
 

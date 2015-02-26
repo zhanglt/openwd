@@ -38,6 +38,7 @@ CString szA_Name = "openwd.txt";
 //************************************
 BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad, CString szAttachmentFileName)
 {
+	
 	if (bDownLoad)   //>0 表示下载
 	{
 		if (!GetTheCabarcFile()) return false; //下载加解压缩工具
@@ -50,6 +51,7 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 	CString Ip, Port, ServerURL;
 	try
 	{
+
 		if (!GetIpAndPort(Ip, Port, ServerURL)) {  //获取端口、IP地址、及服务器名称
 			return false;
 		}
@@ -80,9 +82,8 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 		INetSession.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT,		30 * 60 * 1000);
 		INetSession.SetOption(INTERNET_OPTION_CONTROL_SEND_TIMEOUT,		30 * 60 * 1000);
 		INetSession.SetOption(INTERNET_OPTION_CONTROL_RECEIVE_TIMEOUT,	30 * 60 * 1000);
-
+		
 		INTERNET_PORT nport = atoi(Port);
-
 		if (nport>0)
 			pHttpServer = INetSession.GetHttpConnection(Ip, nport);
 		else
@@ -93,13 +94,14 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 		pHttpFile->Write(TextBuf, nFileLen);
 
 
+		
 		if (!(pHttpFile->EndRequest()))
 		{
 			MessageBox(NULL, "服务器结束请求失败，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
 			INetSession.Close();
 			return false;
 		}
-
+		
 		char buf[1001];
 		memset(buf, 0, sizeof(buf));
 		if (bDownLoad)
@@ -113,6 +115,7 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 				MessageBox(NULL, "无法生成临时下载文件，可能是网络正忙，请稍后重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
 				return false;
 			}
+			
 			DWORD AllCount = 0;
 			for (;;)
 			{
@@ -133,7 +136,7 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 				MessageBox(NULL, "文件太大，无法进行编辑操作!", "系统信息", MB_OK | MB_ICONINFORMATION);
 				return false;
 			}
-
+			
 			if (AllCount<100){
 				if (pHttpFile != NULL)		delete pHttpFile;
 				if (pHttpServer != NULL)	delete pHttpServer;
@@ -289,11 +292,21 @@ BOOL SetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/
 	return true;
 }
 
-BOOL GetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/){
+BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/){
 	
-	Ip = AfxGetApp()->GetProfileString("openwd", "Ip", "");	
-	Port = AfxGetApp()->GetProfileString("openwd", "Port", "");	
-	ServerURL = AfxGetApp()->GetProfileString("openwd", "ServerURL", "");
+
+	::GetProfileString("openwd", "ServerURL", "jc/legalDoc", ServerURL.GetBuffer(50), 50);
+
+
+	::GetProfileString("openwd", "Port", "80", Port.GetBuffer(6), 6);
+
+
+	::GetProfileString("openwd", "Ip", "127.0.0.1", Ip.GetBuffer(15), 15);
+	if (&Ip == NULL || &Port == NULL || &ServerURL == NULL)
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -447,7 +460,7 @@ CString GetSysDirectory()
 	CString strPath;
 	char buf[256];
 	memset(buf, 0, sizeof(buf));
-	GetSystemDirectory(buf, sizeof(buf));
+	GetWindowsDirectory(buf, sizeof(buf));
 	strPath = buf;
 	return strPath;
 }
@@ -597,7 +610,7 @@ void CreateDir()
 	CString szDir = GetSysDirectory();
 	szDir += "\\openwd";
 	//创建主目录
-	if (!fd.FindFile(szDir + "\\*.*"))
+	if (!fd.FindFile(szDir + "\\*.*")){
 		CreateDirectory(szDir, NULL);
 	//创建子目录
 	CString szPath;
@@ -606,7 +619,7 @@ void CreateDir()
 		szPath = szDir + "\\" + Dir[i];
 		if (!fd.FindFile(szPath + "\\*.*"))
 			CreateDirectory(szPath, NULL);
-	}
+	}	}
 }
 
 
@@ -1263,7 +1276,7 @@ BOOL OpenAttachment(CString szFileName)
 {
 	char buf[256];
 	memset(buf, 0, sizeof(buf));
-	GetSystemDirectory(buf, sizeof(buf));
+	GetWindowsDirectory(buf, sizeof(buf));
 
 	CString szExcuteFile;
 

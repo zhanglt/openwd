@@ -566,7 +566,7 @@ BOOL GetUnlokPassword(char * Password)
 	if (szValue == "")
 	{
 		//如果为空赋值为初始密码
-		szValue = "unicomoa";
+		szValue = "openwdoa";
 	}
 	else{
 		//对密文进行解密操作

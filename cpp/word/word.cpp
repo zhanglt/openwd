@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include "../../OpenWD/include/word/word.h"
 #include "../../OpenWD/include/word/msword.h"
-#include "util/PubFunction.h"
-#include "util/Regedit.h"
-#include "util/BrowseDirDialog.h"
+#include "../../OpenWD/include/util/PubFunction.h"
+#include "../../OpenWD/include/util/Regedit.h"
+#include "../../OpenWD/include/util/BrowseDirDialog.h"
 //#include "afxdlgs.h"
 //#include "des.h"
 //#include "../../OpenWD.h"
@@ -121,12 +121,13 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	default:
 		break;
 	}
-
+	/*
 	oDoc.ReleaseDispatch();
 	//	oWordApp.ReleaseDispatch();
 
 	//	oWordApp.Quit(vOpt,vOpt,vOpt);
 	CoUninitialize();
+	*/
 	return true;
 }
 
@@ -1098,11 +1099,12 @@ BOOL wdocx::SetPortect(CString szFileName)
 //************************************
 BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int nState, int bHaveTrace)
 {
-	//MessageBox(NULL,szInfo,"GetDocFileFromServer！头信息",MB_OK|MB_ICONINFORMATION);
 	int index = 1;
 	CString szTextFile;
 	CString szPowerFile;
+	
 	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "") return false;
 	szPowerFile = GetFileName("ini", "P_", index);
@@ -1270,14 +1272,14 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 	CString szFileName;
 
 	if (szInfo[1] == '1')
-		szFileName.Format("%s\\unicom\\%s\\%s_dg.doc", GetSysDirectory(), Dir[index], szFileID);
+		szFileName.Format("%s\\openwd\\%s\\%s_dg.doc", GetSysDirectory(), Dir[index], szFileID);
 	else
-		szFileName.Format("%s\\unicom\\%s\\%s.doc", GetSysDirectory(), Dir[index], szFileID);
+		szFileName.Format("%s\\openwd\\%s\\%s.doc", GetSysDirectory(), Dir[index], szFileID);
 
 	if (!OnFileCopy(szSendFile, szFileName)) return false;
 
 	CString szCabFile;
-	szCabFile.Format("%s\\unicom\\%s\\TempDoc.zip", GetSysDirectory(), Dir[index]);
+	szCabFile.Format("%s\\openwd\\%s\\TempDoc.zip", GetSysDirectory(), Dir[index]);
 
 	//AfxMessageBox(szFileName);
 
@@ -1452,13 +1454,13 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 			szFileName = buffer[i] + szFileName;
 		}
 	}
-	szCommand.Format("%s\\unicom\\%s\\unicomOA", GetSysDirectory(), Dir[index]);
+	szCommand.Format("%s\\openwd\\%s\\openwdOA", GetSysDirectory(), Dir[index]);
 
 
 	CString szTemp;	szTemp = szFileName; szTemp.MakeUpper();
 	int nrec = szTemp.Find(".ZIP");
 	if (!OnFileCopy(szPath, szCommand)) return false;
-	szCabFile.Format("%s\\unicom\\%s\\TempDoc.zip", GetSysDirectory(), Dir[index]);
+	szCabFile.Format("%s\\openwd\\%s\\TempDoc.zip", GetSysDirectory(), Dir[index]);
 
 	if (nrec<0)
 	{ //压缩之
@@ -1607,7 +1609,7 @@ BOOL wdocx::DownLoad(char * szInfo, char * szUpInfo, char * szFileName)
 	CString sztemp = szFileName;
 
 	//	sztemp.Replace(" ","");  
-	szTempFileName.Format("%s\\unicom\\%s\\%s", GetSysDirectory(), Dir[index], sztemp);
+	szTempFileName.Format("%s\\openwd\\%s\\%s", GetSysDirectory(), Dir[index], sztemp);
 	DeleteFile(szTempFileName);
 	if (!ReNameFile(szAttachFile, szTempFileName)) return false;
 	szAttachFile = szTempFileName;
@@ -1639,7 +1641,7 @@ BOOL wdocx::DownLoadAllAttachmentEx(char * szInfo, CString szFileNames)
 
 	//清除原有数据
 	CString szDownLoadPath;
-	szDownLoadPath.Format("%s\\unicom\\%s", GetSysDirectory(), Dir[index]);
+	szDownLoadPath.Format("%s\\openwd\\%s", GetSysDirectory(), Dir[index]);
 	DeleteDataFile(szDownLoadPath);
 
 	if (szFileNames == "")
