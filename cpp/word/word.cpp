@@ -65,7 +65,7 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	}catch (...){
 		TRACE("Office 2013! \n"); }
 
-
+	
 	switch (nState)
 	{
 	case  EDIT :
@@ -85,8 +85,9 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		catch (...){
 			TRACE("Office 2013!\n");
 		}
+		break;
 	case  MODIFY :
-		oWordApp.put_UserName(szUserName);
+		if (szUserName.GetLength()>0) oWordApp.put_UserName(szUserName);
 		//This is used by word xp 
 		if (oDoc.get_ProtectionType() == 0 || oDoc.get_ProtectionType() == 2){
 			try{
@@ -107,8 +108,9 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		catch (...){
 			TRACE("Office 2013!\n");
 		}
-
+		break;
 	case  READONLY:
+		
 		try{
 			oDoc.put_PrintRevisions(bHaveTrace);
 			oDoc.put_ShowRevisions(bHaveTrace);
@@ -117,7 +119,7 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		catch (...){
 			TRACE("Office 2013!\n");
 		}
-
+		break;
 	default:
 		break;
 	}

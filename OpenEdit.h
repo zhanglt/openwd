@@ -31,6 +31,8 @@ class ATL_NO_VTABLE COpenEdit :
 	public IConnectionPointContainerImpl<COpenEdit>,
 	public CProxy_IOpenEditEvents<COpenEdit>,
 	public IObjectWithSiteImpl<COpenEdit>,
+	//增加一下一行：安全提示解除，--当运行浏览器调用时，不会提示安全问题。
+	public IObjectSafetyImpl<COpenEdit, INTERFACESAFE_FOR_UNTRUSTED_CALLER | INTERFACESAFE_FOR_UNTRUSTED_DATA>,
 	public IDispatchImpl<IOpenEdit, &IID_IOpenEdit, &LIBID_OpenWDLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 private:
@@ -56,12 +58,15 @@ public:
 DECLARE_REGISTRY_RESOURCEID(IDR_OPENEDIT)
 
 
+
 BEGIN_COM_MAP(COpenEdit)
 	COM_INTERFACE_ENTRY(IOpenEdit)
 	COM_INTERFACE_ENTRY(IDispatch)
 	COM_INTERFACE_ENTRY(ISupportErrorInfo)
 	COM_INTERFACE_ENTRY(IConnectionPointContainer)
 	COM_INTERFACE_ENTRY(IObjectWithSite)
+	//增加一下一行：安全提示解除，--当运行浏览器调用时，不会提示安全问题。 
+	COM_INTERFACE_ENTRY(IObjectSafety)
 END_COM_MAP()
 
 BEGIN_CONNECTION_POINT_MAP(COpenEdit)
@@ -101,6 +106,7 @@ public:
 	// Parameter: BSTR nState  文件打开状态
 	//************************************
 	STDMETHOD(GetDocumentFile)(BSTR sHeader, BSTR sUserName, int nState, BOOL bTrace);
+	STDMETHOD(SendDocumentFile)(BSTR sHeader, int index);
 
 	//************************************
 	// Method:    GetAttachment
@@ -113,7 +119,6 @@ public:
 	// Parameter: BOOL idx 单/多文件标识
 	//************************************
 	STDMETHOD(GetAttachment)(BSTR sInfo, BSTR sFile, int idx);
-	STDMETHOD(SendDocumentFile)(BSTR sHeader, int index);
 	STDMETHOD(SendAttachment)(BSTR sInfo);
 
 	STDMETHOD(get_ServerIp)(BSTR* IP);
