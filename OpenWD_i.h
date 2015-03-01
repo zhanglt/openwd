@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Mar 01 21:44:38 2015
+/* at Mon Mar 02 10:36:58 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -334,6 +334,10 @@ EXTERN_C const IID IID_IOpenEdit;
         virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerPath( 
             /* [in] */ BSTR sPath) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE ShowWindows( 
+            /* [in] */ BSTR sTitle,
+            /* [in] */ int nCmdShow) = 0;
+        
     };
     
     
@@ -446,6 +450,11 @@ EXTERN_C const IID IID_IOpenEdit;
             IOpenEdit * This,
             /* [in] */ BSTR sPath);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *ShowWindows )( 
+            IOpenEdit * This,
+            /* [in] */ BSTR sTitle,
+            /* [in] */ int nCmdShow);
+        
         END_INTERFACE
     } IOpenEditVtbl;
 
@@ -517,6 +526,9 @@ EXTERN_C const IID IID_IOpenEdit;
 
 #define IOpenEdit_put_ServerPath(This,sPath)	\
     ( (This)->lpVtbl -> put_ServerPath(This,sPath) ) 
+
+#define IOpenEdit_ShowWindows(This,sTitle,nCmdShow)	\
+    ( (This)->lpVtbl -> ShowWindows(This,sTitle,nCmdShow) ) 
 
 #endif /* COBJMACROS */
 

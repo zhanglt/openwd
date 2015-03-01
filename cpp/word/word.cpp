@@ -33,7 +33,7 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	wdocx::CDocument0 oDoc;
 	oDocs = oWordApp.get_Documents();
     //显示Word文档
-	oWordApp.put_Visible(VARIANT_TRUE);
+
 	
 	oDoc.AttachDispatch(oDocs.Open(
 		COleVariant(szFileName, VT_BSTR),
@@ -55,7 +55,8 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		);
 
 	wdocx::CWindow0  win;
-	win = oWordApp.get_ActiveWindow(); //将word窗口放到前台。
+	win = oWordApp.get_ActiveWindow();
+
 
 	wdocx::CView0  view;
 	view = win.get_View();
@@ -123,6 +124,8 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	default:
 		break;
 	}
+	oWordApp.put_Visible(VARIANT_TRUE);
+	
 	/*
 	oDoc.ReleaseDispatch();
 	//	oWordApp.ReleaseDispatch();
@@ -1110,19 +1113,6 @@ BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int nState,
 	szTextFile = GetFileName("doc", "D_", index);
 	if (szTextFile == "") return false;
 	szPowerFile = GetFileName("ini", "P_", index);
-	/*
-	//下载完成，现在要进行打开文件的操作
-	char fname[256];
-	strcpy(fname, szTextFile);
-
-	FILE * pf = NULL;
-	pf = fopen(szPowerFile, "r");
-	if (pf == NULL)
-	{
-		MessageBox(NULL, "获取权限出错,请重试！", "系统信息", MB_OK | MB_ICONINFORMATION);
-		return false;
-	}*/
-	
 	if (wdocx::OpenWordFile(szTextFile, szUserName, nState, bHaveTrace) == false) {
 		DeleteFile(GetIniName(index));
 		return false;

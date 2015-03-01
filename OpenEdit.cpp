@@ -85,7 +85,6 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, int nState
 
 		if (oWpsApp.CreateDispatch("Wps.Application")) {//首先判断客户端是否安装金山WPS
 			oWpsApp.ReleaseDispatch();
-			AfxMessageBox("ddddddddddd");
 			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
@@ -211,3 +210,13 @@ STDMETHODIMP COpenEdit::put_ServerPath(BSTR sPath)
 	return S_OK;
 }
 
+
+
+STDMETHODIMP COpenEdit::ShowWindows(BSTR sTitle, int nCmdShow)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	USES_CONVERSION;
+	// TODO:  在此添加实现代码
+	ShowWinEx(W2A(sTitle), nCmdShow);
+	return S_OK;
+}

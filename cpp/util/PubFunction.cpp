@@ -1390,7 +1390,8 @@ int GetInSureFlagEx(int index)
 
 UINT ShowWindowEx(LPVOID pParam)
 {
-	//2003/8/24  10:04  因某此机器的窗口无法置于顶层，故需要写日志确认原因
+	
+	//因某此机器的窗口无法置于顶层，故需要写日志确认原因
 	HWND  hWnd = 0;
 	CString szTitle = lpTitle;
 	if (CmdShow<0)
@@ -1421,24 +1422,20 @@ UINT ShowWindowEx(LPVOID pParam)
 }
 
 void ShowWinEx(CString szTitle, int nCmdShow)
-{  //2003/8/24  10:04  因某此机器的窗口无法置于顶层，故需要写日志确认原因
-	//2004/1/7因某些机器打开wps的速度较慢，而无法将其置于顶层，故将这段代码改为多线程
+{ 
+	//因某些机器打开wps的速度较慢，而无法将其置于顶层，故将这段代码改为多线程
 	//循环查找方式
 	HWND  hWnd = 0;
 	if (nCmdShow<0)   //此种情况控制wps
 	{
 		CString szTemp;
-		szTitle = szFinalFile + " - Kingsoft wps";
-		//	WriteLog(szTitle);
+		//szTitle = szFinalFile + " - Kingsoft wps";
+			WriteLog(szTitle);
 		for (int i = 0; i<10; i++)
 		{
 			hWnd = ::FindWindow(NULL, szTitle);
 			if (hWnd) break;  //找到后退出
 			szTemp = szTitle;
-			//AfxMessageBox(szTemp);
-			//szTemp.Replace(".doc","");
-			//AfxMessageBox(szTemp);
-			//	WriteLog(szTemp);
 			hWnd = ::FindWindow(NULL, szTemp);
 			if (hWnd) break;  //找到后退出
 			szTemp.Format("循环中hWnd=%d", hWnd);
@@ -1452,13 +1449,12 @@ void ShowWinEx(CString szTitle, int nCmdShow)
 		//	WriteLog(szTemp);
 
 	}
-	else  // 控制网页
-	{
+	else{  // 控制网页
+	
 		//	WriteLog("控制网页");
 		hWnd = ::FindWindow(NULL, szTitle);
 		::ShowWindow(hWnd, nCmdShow);
 	}
-	//2004/1/9  
 	//    szTitle=lpTitle;
 	//    CmdShow = nCmdShow;
 	// 	AfxBeginThread(ShowWindowEx,NULL);

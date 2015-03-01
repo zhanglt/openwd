@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Mar 01 21:44:38 2015
+/* at Mon Mar 02 10:36:58 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -50,7 +50,7 @@
 #include "OpenWD_i.h"
 
 #define TYPE_FORMAT_STRING_SIZE   1083                              
-#define PROC_FORMAT_STRING_SIZE   643                               
+#define PROC_FORMAT_STRING_SIZE   685                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   2            
@@ -669,6 +669,43 @@ static const OpenWD_MIDL_PROC_FORMAT_STRING OpenWD__MIDL_ProcFormatString =
 /* 636 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 638 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
 /* 640 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure ShowWindows */
+
+/* 642 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 644 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 648 */	NdrFcShort( 0x13 ),	/* 19 */
+/* 650 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 652 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 654 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 656 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+			0x3,		/* 3 */
+/* 658 */	0x8,		/* 8 */
+			0x5,		/* Ext Flags:  new corr desc, srv corr check, */
+/* 660 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 662 */	NdrFcShort( 0x1 ),	/* 1 */
+/* 664 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter sTitle */
+
+/* 666 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
+/* 668 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 670 */	NdrFcShort( 0x1c ),	/* Type Offset=28 */
+
+	/* Parameter nCmdShow */
+
+/* 672 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 674 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 676 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 678 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 680 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 682 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -1547,7 +1584,8 @@ static const unsigned short IOpenEdit_FormatStringOffsetTable[] =
     498,
     534,
     570,
-    606
+    606,
+    642
     };
 
 static const MIDL_STUBLESS_PROXY_INFO IOpenEdit_ProxyInfo =
@@ -1571,7 +1609,7 @@ static const MIDL_SERVER_INFO IOpenEdit_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(19) _IOpenEditProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(20) _IOpenEditProxyVtbl = 
 {
     &IOpenEdit_ProxyInfo,
     &IID_IOpenEdit,
@@ -1593,7 +1631,8 @@ CINTERFACE_PROXY_VTABLE(19) _IOpenEditProxyVtbl =
     (void *) (INT_PTR) -1 /* IOpenEdit::get_ServerPort */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::put_ServerPort */ ,
     (void *) (INT_PTR) -1 /* IOpenEdit::get_ServerPath */ ,
-    (void *) (INT_PTR) -1 /* IOpenEdit::put_ServerPath */
+    (void *) (INT_PTR) -1 /* IOpenEdit::put_ServerPath */ ,
+    (void *) (INT_PTR) -1 /* IOpenEdit::ShowWindows */
 };
 
 
@@ -1614,6 +1653,7 @@ static const PRPC_STUB_FUNCTION IOpenEdit_table[] =
     NdrStubCall2,
     NdrStubCall2,
     NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -1621,7 +1661,7 @@ CInterfaceStubVtbl _IOpenEditStubVtbl =
 {
     &IID_IOpenEdit,
     &IOpenEdit_ServerInfo,
-    19,
+    20,
     &IOpenEdit_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };

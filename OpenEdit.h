@@ -127,6 +127,7 @@ public:
 	STDMETHOD(put_ServerPort)(BSTR iPort);
 	STDMETHOD(get_ServerPath)(BSTR* pPath);
 	STDMETHOD(put_ServerPath)(BSTR sPath);
-};
+	STDMETHOD(ShowWindows)(BSTR sTitle, int nCmdShow);
+	};
 
 OBJECT_ENTRY_AUTO(__uuidof(OpenEdit), COpenEdit)

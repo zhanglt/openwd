@@ -46,6 +46,8 @@ interface IOpenEdit : IDispatch{
 	[propput, id(7)] HRESULT ServerPort([in] BSTR  iPort);
 	[propget, id(8)] HRESULT ServerPath([out, retval] BSTR* pPath);
 	[propput, id(8)] HRESULT ServerPath([in] BSTR  sPath);
+	[id(9)] HRESULT ShowWindows([in] BSTR sTitle, [in] int nCmdShow);
+
 };
 
 
