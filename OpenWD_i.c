@@ -6,7 +6,11 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
+<<<<<<< HEAD
 /* at Sun Mar 01 21:44:38 2015
+=======
+/* at Sat Feb 28 23:49:37 2015
+>>>>>>> 6d421437ffb750d385a799193a8336f0d8e73513
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
