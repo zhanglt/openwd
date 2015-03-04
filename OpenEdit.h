@@ -51,7 +51,8 @@ public:
 		}else{
 			AfxEnableControlContainer();
 		}
-		CreateDir();//初始化临时文件目录
+
+	//	CreateDir();//初始化临时文件目录
 
 	}
 

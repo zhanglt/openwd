@@ -13,7 +13,6 @@
 
 #include "stdafx.h"
 #include "PubFunction.h"
-//#include "../../OpenWD.h"
 #include "des.h"
 #include <comutil.h>
 #include <stdio.h>
@@ -560,7 +559,8 @@ BOOL GetUnlokPassword(char * Password)
 
 	CString szValue;
 	//读取注册表中的password的密文。
-	szValue = AfxGetApp()->GetProfileString("Telecom", "Password", "");
+	szValue = AfxGetApp()->GetProfileString("openwd", "Password", "");
+
 	//    MessageBox(NULL,szValue,"注册表中取出的password",MB_OK|MB_ICONINFORMATION);
 	//密文是否为空
 	if (szValue == "")

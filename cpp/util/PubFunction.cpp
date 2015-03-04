@@ -12,9 +12,9 @@ using namespace std;
 
 #define DOWNLOAD 1   //下载
 #define SEND     0   //上传
-#define NSIZE 11
+#define NSIZE 7
 //CString Dir[NSIZE]={"","正文编辑","正文定稿","正文排版","正文盖章","传真编辑","传真定稿","传真排版","传真盖章","附件处理","附件下载"};
-CString Dir[NSIZE] = { "", "文书编辑", "正文定稿", "正文排版", "正文盖章", "传真编辑", "生成文书", "传真排版", "文书盖章", "附件处理", "附件下载" };
+CString Dir[NSIZE] = { "", "正文编辑", "正文定稿", "正文排版", "正文盖章", "附件处理", "附件下载" };
 
 CString szFileID = "SDopenwd";     //文件ID号
 CString szTmpID = "Tmp";
@@ -56,7 +56,7 @@ BOOL DocConnectionHttp(CString TextBuf, DWORD nFileLen, int index, int bDownLoad
 			return false;
 		}
 		/*
-		if (AfxGetApp()->GetProfileString("Telecom", "Large", "") == "1")
+		if (AfxGetApp()->GetProfileString("", "Large", "") == "1")
 		{
 		memset(ServerURL, 0, sizeof(ServerURL));
 		strcpy(ServerURL, "servlet/ULoadBDoc");
@@ -235,7 +235,7 @@ int  IsNeedLoad(int index)
 	if (GetFileName("bmp", "B_", index) == "") return -1;  //公章
 
 	//如果不清理文件，则每次都要下载
-	if (AfxGetApp()->GetProfileString("Telecom", "DeleteAllFile", "") != "") return true;
+	if (AfxGetApp()->GetProfileString("openwd", "DeleteAllFile", "") != "") return true;
 
 	if (GetString("IsNeedLoad", GetIniName(index)) == "1") return false;  //如果存在则不需要下载
 
@@ -277,25 +277,12 @@ BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath)
 	}
 	return true;
 }
-BOOL SetIpAndPort(CString Ip/*IP地址*/, CString Port/*端口*/, CString ServerURL/*请求服务器URL*/, CString Password/*解锁密码*/)
-{
-	//MessageBox(NULL,Password,"系统信息",MB_OK|MB_ICONINFORMATION);
-	//CString szValue;
-	//szValue = Ip;
-	AfxGetApp()->WriteProfileString("openwd", "Ip", Ip);
-	//szValue.Format("%d", Port);
-	AfxGetApp()->WriteProfileString("openwd", "Port", Port);
-	//szValue = ServerURL;
-	AfxGetApp()->WriteProfileString("openwd", "ServerURL", ServerURL);
-	//szValue = Password;
-	AfxGetApp()->WriteProfileString("openwd", "Password", Password);
-	return true;
-}
+
 
 BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/){
 	
 
-	::GetProfileString("openwd", "ServerURL", "jc/legalDoc", ServerURL.GetBuffer(50), 50);
+	::GetProfileString("openwd", "ServerURL", "openwd/OpenDoc", ServerURL.GetBuffer(50), 50);
 
 
 	::GetProfileString("openwd", "Port", "80", Port.GetBuffer(6), 6);
@@ -676,11 +663,9 @@ int CreateFileName(CString szFileName)
 		{
 			MessageBox(NULL, "文件已经打开，请关闭该文件后再试！", "系统信息", MB_OK | MB_ICONINFORMATION);
 			return 1;
-		}
-		else return 0;
+		}else return 0;
 	}
 	//不存在则生成，否退出
-
 	FILE * pf = NULL;
 	try
 	{
@@ -701,15 +686,11 @@ int CreateFileName(CString szFileName)
 
 CString GetFileName(CString Suffix/*后缀*/, CString szName, int index /*顺序*/)
 {
-
 	CString Path;
 	int n = 0;
-
 	Path.Format("%s\\openwd\\%s\\OA%s%s.%s", GetSysDirectory(), Dir[index], szName, szFileID, Suffix);
-
 	int rec = CreateFileName(Path);
 	if (rec != 0)  Path = "";
-
 	return Path;
 }
 
@@ -717,29 +698,14 @@ CString GetFile(CString Suffix/*后缀*/, CString szName, int index /*顺序*/)
 {
 	CString Path;
 	int n = 0;
-
 	Path.Format("OA%s%s.%s", szName, szFileID, Suffix);
-
 	return Path;
 }
 
 
-
-/*
-
-BOOL IsFileExist(int index)
-{
-if(IsTheFileExist(GetFileName("doc","D_",index))) return true;
-if(IsTheFileExist(GetFileName("wps","T_",index))) return true;
-return false;
-}
-
-*/
-
 DWORD GetFileLen(FILE * pfile)
 {
 	DWORD nFileLen = 0;
-
 	fseek(pfile, 0, SEEK_END);
 	nFileLen = ftell(pfile);   //获取文件长度
 	rewind(pfile);           //指针移到开头
@@ -767,7 +733,7 @@ DWORD GetFileLen(CString szFileName)
 
 
 
-//pfile :文件指针  2003/5/20 23:40
+//pfile :文件指针  
 long FindString(FILE *pfile, char *szMark, BOOL bLast, DWORD nGap)
 {
 
@@ -882,17 +848,10 @@ BOOL  WriteToFile(CString szFileName, FILE * pfile, long BufferLen)
 
 BOOL SplitFile(FILE *pfile, CString szFileName, char* szMarkStart, char* szMarkEnd)
 {
-
-
-
 	long nFirstLen;
 	long nLastLen;
 	long nFileLen;
-
 	CString qq;
-
-
-	//搜寻（LUKE：2004年4月）
 	qq = szMarkStart;
 	if (qq == "PICTURESTART")
 	{
@@ -946,7 +905,6 @@ bool OnFileCopy(CString m_SrcName, CString m_DstName)
 	fread((void*)buf, 1, nlen, pfile);
 	fclose(pfile);
 
-
 	pfile = fopen(m_DstName, "wb+");
 	if (pfile == NULL)
 	{
@@ -961,7 +919,6 @@ bool OnFileCopy(CString m_SrcName, CString m_DstName)
 
 	return true;
 }
-
 
 
 BOOL ExecuteFile(CString cmd, CString szFileName, UINT sw_cmd)
@@ -1034,8 +991,6 @@ BOOL ExecuteFile(CString cmd, CString szFileName, UINT sw_cmd)
 
 BOOL Compression(CString szCabFile, CString szSendFile)
 {
-	//	MessageBox( NULL,szSendFile, "测试信息", MB_OK | MB_ICONINFORMATION );
-
 #define   FCOUNT 1
 
 	char CabFile[256];
@@ -1266,7 +1221,7 @@ CString GetFileEx(CString szPath)
 		if (szEx == Ex[n]) return Ex[n];
 	}
 
-	return "其他";
+	return "other";
 
 }
 
@@ -1281,10 +1236,11 @@ BOOL OpenAttachment(CString szFileName)
 	CString szExcuteFile;
 
 	HKEY KEY = HKEY_LOCAL_MACHINE;
-#define NCOUNT 2
+#define NCOUNT 3
 	CString szKeyPath[NCOUNT] = {
-		"SOFTWARE\\Microsoft\\Office\\9.0\\Word\\InstallRoot\\",
-		"SOFTWARE\\Microsoft\\Office\\10.0\\Word\\InstallRoot\\"
+		"SOFTWARE\\Microsoft\\Office\\10.0\\Word\\InstallRoot\\",
+		"SOFTWARE\\Microsoft\\Office\\11.0\\Word\\InstallRoot\\",
+		"SOFTWARE\\Microsoft\\Office\\15.0\\Word\\InstallRoot\\"
 	};
 	CString szKeyValue = "Path";
 	int count = 0;
@@ -1297,7 +1253,7 @@ BOOL OpenAttachment(CString szFileName)
 
 	if (i >= NCOUNT)
 	{
-		MessageBox(NULL, "无法获取Office 2000的安装路径，请确认后重试！", "系统信息", MB_OK | MB_ICONINFORMATION);
+		MessageBox(NULL, "无法获取Office 的安装路径，请确认后重试！", "系统信息", MB_OK | MB_ICONINFORMATION);
 		return false;
 	}
 

@@ -29,7 +29,7 @@ BOOL  RestoreMenubar(BOOL hide)
 
 		//开始一个KingSoft Wps实例 
 		wpsDoc::CApplication oWpsApp; 
-		if (!oWpsApp.CreateDispatch("wps.Application")) 
+		if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 		{ 
 			MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 			return S_FALSE ; 
@@ -111,7 +111,7 @@ BOOL HideMenubar(char * szFileName,BOOL hide)
 
 	//开始一个Microsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return S_FALSE ; 
@@ -207,14 +207,12 @@ BOOL HideMenubar(char * szFileName,BOOL hide)
 BOOL wpsDoc::OpenWpsFile(char * szFileName,char * szUserName,int nPower,int bHaveTrace)
 
 {
+	
 	//    if(FileIsOpen(szFileName)) return false;
-	COleVariant covTrue((short)TRUE), covFalse((short)FALSE), covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
-	COleVariant vTrue((short)TRUE), 
-		vFalse((short)FALSE), 
-		vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),
-		vP( (short)true, VT_I2 ); 
-	COleVariant vPP(short (1));
-	COleVariant vMM(short (0));
+	COleVariant covTrue((short)TRUE),
+		covFalse((short)FALSE),
+		covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
+	COleVariant varstrNull("");
 	COleVariant vdSaveChanges(short(0));
 	COleVariant vFormat(short(0));
 
@@ -223,7 +221,8 @@ BOOL wpsDoc::OpenWpsFile(char * szFileName,char * szUserName,int nPower,int bHav
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	CoInitialize(NULL);
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return S_FALSE ; 
@@ -233,24 +232,24 @@ BOOL wpsDoc::OpenWpsFile(char * szFileName,char * szUserName,int nPower,int bHav
 	wpsDoc::CDocuments oDocs; 
 	wpsDoc::CDocument0 oDoc;
 	oDocs = oWpsApp.get_Documents();
-	oWpsApp.put_Visible(VARIANT_TRUE);   //显示Wps文档
+	//oWpsApp.put_Visible(VARIANT_TRUE);   //显示Wps文档
 	oDoc.AttachDispatch(oDocs.Open(
-		COleVariant(szFileName, VT_BSTR),//文件名称
-		covFalse,      //打开非wps文件时，是否进行转换
-		covFalse,      //表示是否以只读方式打开文件
-		covFalse,      //表示是否将打开的文档添加到“文件”菜单底部的最近使用过的文件列表中
-		NULL,       //表示打开文档时所需要的密码
-		NULL,       //如果打开的文件是模板类型，PasswordTemplate 参数表示打开模板时所需要的密码
-		covFalse,      //当即将打开的文档是一个已经打开的文档时，需要用到此参数。参数为 True 时，表示放弃对已打开文档的所有尚未保存的修改，并将重新打开该文档；参数为 True 时，表示则直接激活已打开的文档
-		NULL,       //表示文档修改之后，保存时所需要的密码
-		NULL,       //如果打开的文件是模板类型，在模板修改之后，保存时所需要的密码
-		0,          //表示打开文档时使用的文件转换器
-		NULL,       //表示保存文档时的编码方式。
-		covTrue,       //表示打开的文档是否显示在 WPS 应用程序中
-		covFalse,      //表示是否修复打开的文档
-	     0,         //表示文档中横排文字的排列方式
-		 covFalse,      //表示在文字编码不能识别时，是否弹出“编码”对话框
-		NULL)     
+		COleVariant(szFileName, VT_BSTR),
+		covFalse,
+		covFalse,
+		covFalse,
+		varstrNull,
+		varstrNull,
+		covFalse,
+		varstrNull,
+		varstrNull,
+		vFormat,
+		covFalse,
+		covTrue,
+		covFalse,
+		covFalse,
+		covFalse,
+		varstrNull)
 		);
 	wpsDoc::CWindow0 win;
 	win=oWpsApp.get_ActiveWindow();
@@ -283,17 +282,18 @@ BOOL wpsDoc::OpenWpsFile(char * szFileName,char * szUserName,int nPower,int bHav
 			TRACE("Office 2000!\n");
 		}
 
-		oDoc.Protect(0,vFalse,COleVariant(Password),vFalse,vFalse);
+		oDoc.Protect(0, covFalse, COleVariant(Password), covFalse, covFalse);
 
 	}
 	else if(nPower==READONLY)
 	{
 		oDoc.put_PrintRevisions(bHaveTrace);
 		oDoc.put_ShowRevisions(bHaveTrace);
-		oDoc.Protect(2,vFalse,COleVariant(Password),vFalse,vFalse);
+		oDoc.Protect(2, covFalse, COleVariant(Password), covFalse, covFalse);
 	}
-	oDoc.ReleaseDispatch();
-
+	//oDoc.ReleaseDispatch();
+	oWpsApp.put_Visible(VARIANT_TRUE);   //显示Wps文档
+	CoUninitialize();
 	return true;
 }
 
@@ -315,7 +315,7 @@ BOOL wpsDoc::LastText(CString szTempleteFileName,/*被插入的文件名*/  CString szH
 	GetUnlokPassword(Password);
 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return false ; 
@@ -479,7 +479,7 @@ BOOL wpsDoc::Stamp(CString szFileName,/*被插入的文件名*/ CString InserFileNames/
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return false ; 
@@ -607,7 +607,7 @@ BOOL wpsDoc::Stamp(CString szFileName,/*被插入的文件名*/ CString InserFileNames/
 //    
 //	//开始一个Kingsoft Wps实例 
 //    wpsDoc::CApplication oWpsApp; 
-//    if (!oWpsApp.CreateDispatch("Wps.Application")) 
+//    if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 //    { 
 //        MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 //        return S_FALSE ; 
@@ -664,7 +664,7 @@ BOOL EditFaxWps(CString szFileName,CString szUserName,CString szHeader,int nPowe
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return S_FALSE ; 
@@ -797,7 +797,7 @@ BOOL FinalFaxWps(CString szFileName,CString  szHeader)
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return S_FALSE ; 
@@ -904,7 +904,7 @@ BOOL FinalFaxTextWps(CString szFileName,int nPower)
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return false ; 
@@ -1005,13 +1005,9 @@ BOOL StampFaxWps(CString szFileName,CString szStampFile)
 	COleDateTime oleDt=COleDateTime::GetCurrentTime();
 	CString strDate=oleDt.Format("%Y/%m/%d/ %H:%M:%S");
 
-
-
-
-
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return false ; 
@@ -1174,7 +1170,7 @@ BOOL SetPortect(CString szFileName)
 	GetUnlokPassword(Password);
 	//开始一个Kingsoft Wps实例 
 	wpsDoc::CApplication oWpsApp; 
-	if (!oWpsApp.CreateDispatch("wps.Application")) 
+	if (!oWpsApp.CreateDispatch("KWPS.Application")) 
 	{ 
 		MessageBox(NULL,"加保护时，创建Wps对象失败","系统信息",MB_OK | MB_SETFOREGROUND); 
 		return  false; 
@@ -1503,7 +1499,7 @@ BOOL wpsDoc::WpsConnectionHttp(char * TextBuf,DWORD nFileLen,int index,int bDown
 		}
 
 		/*
-		if(AfxGetApp()->GetProfileString("Telecom","Large","")=="1")
+		if(AfxGetApp()->GetProfileString("","Large","")=="1")
 		{
 			ServerURL="servlet/ULoadBDoc";
 		}*/
@@ -1692,7 +1688,7 @@ int  wpsDoc::IsNeedLoad(int index)
 	if(GetFileName("bmp","B_",index)=="") return -1;  //公章
 
 	//如果不清理文件，则每次都要下载
-	if(AfxGetApp()->GetProfileString("Telecom","DeleteAllFile","")!="") return true;
+	if(AfxGetApp()->GetProfileString("openwd","DeleteAllFile","")!="") return true;
 
 	if(GetString("IsNeedLoad",GetIniName(index))=="1") return false;  //如果存在则不需要下载
 
@@ -1878,7 +1874,7 @@ BOOL wpsDoc::SendData(CString szHeader, CString szFileName, int index)
 
 		char *buffer= (char*)malloc(FS+nlen+100);
 
-		AfxGetApp()->WriteProfileString("Telecom","Large","1");  
+		::WriteProfileString("openwd","Large","1");  
 
 
 		DWORD nAllCount=0;
@@ -1913,7 +1909,7 @@ BOOL wpsDoc::SendData(CString szHeader, CString szFileName, int index)
 			//发送数据
 			if(!wpsDoc::WpsConnectionHttp(buffer,nFileLen,index,0)) 
 			{
-				AfxGetApp()->WriteProfileString("Telecom","Large","0");
+				::WriteProfileString("openwd","Large","0");
 				if(pfile) fclose(pfile);
 				free(buffer);
 				return false;
@@ -1921,7 +1917,7 @@ BOOL wpsDoc::SendData(CString szHeader, CString szFileName, int index)
 		}   //发送结束
 		if(pfile) fclose(pfile);
 		free(buffer);
-		AfxGetApp()->WriteProfileString("Telecom","Large","0");
+		::WriteProfileString("openwd", "Large", "0");
 	}
 
 	DeleteFile(szCabFile);

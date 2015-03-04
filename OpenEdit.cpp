@@ -66,7 +66,7 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, int nState
 	// TODO:  在此添加实现代码
 
 	if (this->nDocumentType == 0){//文档类型（ms office）
-
+		AfxMessageBox("nDocumentType=0");
 		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
 			oWordApp.Quit(vOpt, vOpt, vOpt);
 			oWordApp.ReleaseDispatch(); //ReleaseDispatch()不能关闭当前启动的winword.exe进程，需要使用wordApp.quit() 来退出进程。
@@ -75,15 +75,16 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, int nState
 				return S_FALSE;
 			}
 		}else{//如果没有安装ms word ，启动wps处理
-
+			AfxMessageBox("wps");
 			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
 			}
 		}
 	}else{//文档类型（Kingsoft office wps）
-
-		if (oWpsApp.CreateDispatch("Wps.Application")) {//首先判断客户端是否安装金山WPS
+	
+		if (oWpsApp.CreateDispatch("KWPS.Application")) {//首先判断客户端是否安装金山WPS
+			oWpsApp.Quit(vOpt, vOpt, vOpt);
 			oWpsApp.ReleaseDispatch();
 			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
 				AfxGetApp()->DoWaitCursor(0);
@@ -91,7 +92,7 @@ STDMETHODIMP COpenEdit::GetDocumentFile(BSTR sHeader, BSTR sUserName, int nState
 			}
 		}
 		else{//如果没有安装金山WPS，启动ms word 来处理
-
+		
 			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), nState, 1)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;

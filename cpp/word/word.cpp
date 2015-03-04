@@ -10,7 +10,7 @@
 
 BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int bHaveTrace){
 
-	//开始一个Microsoft Word实例 
+//开始一个Microsoft Word实例 
 	wdocx::CApplication oWordApp;
 	CoInitialize(NULL);
 	if (!oWordApp.CreateDispatch("Word.Application")){
@@ -18,7 +18,6 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		CoUninitialize();
 		return S_FALSE;
 	}
-	//    if(FileIsOpen(szFileName)) return false;
 	COleVariant covTrue((short)TRUE),
 				covFalse((short)FALSE),
 				covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
@@ -124,15 +123,16 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	default:
 		break;
 	}
-	oWordApp.put_Visible(VARIANT_TRUE);
 	
+	oWordApp.put_Visible(VARIANT_TRUE);
 	/*
 	oDoc.ReleaseDispatch();
 	//	oWordApp.ReleaseDispatch();
 
 	//	oWordApp.Quit(vOpt,vOpt,vOpt);
-	CoUninitialize();
 	*/
+	CoUninitialize();
+	
 	return true;
 }
 
@@ -141,10 +141,7 @@ BOOL wdocx::LastText(CString szTempleteFileName,/*被插入的文件名*/  CString szHe
 {
 
 	COleVariant covTrue((short)TRUE), covFalse((short)FALSE), covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
-	COleVariant vTrue((short)TRUE),
-		vFalse((short)FALSE),
-		vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),
-		vP((short)true, VT_I2);
+	COleVariant vTrue((short)TRUE), vFalse((short)FALSE),vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),vP((short)true, VT_I2);
 	COleVariant vPP(short(1));
 	COleVariant vMM(short(0));
 	COleVariant vdSaveChanges(short(0));
@@ -1105,8 +1102,7 @@ BOOL wdocx::SetPortect(CString szFileName)
 BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int nState, int bHaveTrace)
 {
 	int index = 1;
-	CString szTextFile;
-	CString szPowerFile;
+	CString szTextFile, szPowerFile;
 	
 	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
 	
@@ -1509,7 +1505,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 
 		char *buffer = (char*)malloc(FS + nlen + 100);
 
-		AfxGetApp()->WriteProfileString("Telecom", "Large", "1");
+		::WriteProfileString("openwd", "Large", "1");
 
 
 		DWORD nAllCount = 0;
@@ -1544,7 +1540,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 			//发送数据
 			if (!DocConnectionHttp(buffer, nFileLen, index, 0))
 			{
-				AfxGetApp()->WriteProfileString("Telecom", "Large", "0");
+				WriteProfileString("openwd", "Large", "0");
 				if (pfile) fclose(pfile);
 				free(buffer);
 				return false;
@@ -1552,7 +1548,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 		}   //发送结束
 		if (pfile) fclose(pfile);
 		free(buffer);
-		AfxGetApp()->WriteProfileString("Telecom", "Large", "0");
+		WriteProfileString("openwd", "Large", "0");
 	}
 
 	DeleteFile(szCabFile);
