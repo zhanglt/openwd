@@ -38,7 +38,8 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>Static</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -65,7 +66,7 @@
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(LibraryPath);$(VCInstallDir)UnitTest\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)$(Configuration)\</IntDir>
@@ -143,13 +144,18 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>LOG4CPLUS_STATIC;WIN32;_WINDOWS;NDEBUG;_USRDLL;_MERGE_PROXYSTUB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>
+      </SDLCheck>
       <BrowseInformation>true</BrowseInformation>
-      <AdditionalIncludeDirectories>include;include/wps;include/word;include/util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/D "_CRT_SECURE_NO_WARNINGS" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>.;include;include/wps;include/word;include/util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -172,10 +178,11 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\OpenWD.def</ModuleDefinitionFile>
       <AdditionalDependencies>lib/log4cplus.lib;comsvcs.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <RegisterOutput>true</RegisterOutput>
+      <Version>1.0</Version>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -189,7 +196,9 @@
     <ClCompile Include="cpp\util\PubFunction.cpp" />
     <ClCompile Include="cpp\util\Regedit.cpp" />
     <ClCompile Include="cpp\util\ShowMsgDlg.cpp" />
+    <ClCompile Include="cpp\word\ConnectionAdvisor.cpp" />
     <ClCompile Include="cpp\word\word.cpp" />
+    <ClCompile Include="cpp\word\WordEventSink.cpp" />
     <ClCompile Include="cpp\wps\wps.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -237,6 +246,7 @@
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="include\util\BrowseDirDialog.h" />
     <ClInclude Include="include\util\des.h" />
+    <ClInclude Include="include\util\HttpFileClient.h" />
     <ClInclude Include="include\util\InfoZip.h" />
     <ClInclude Include="include\util\PubFunction.h" />
     <ClInclude Include="include\util\Regedit.h" />
@@ -244,8 +254,10 @@
     <ClInclude Include="include\util\UnzipDLL.h" />
     <ClInclude Include="include\util\ZCallBck.h" />
     <ClInclude Include="include\util\ZipDLL.h" />
+    <ClInclude Include="include\word\ConnectionAdvisor.h" />
     <ClInclude Include="include\word\msword.h" />
     <ClInclude Include="include\word\word.h" />
+    <ClInclude Include="include\word\WordEventSink.h" />
     <ClInclude Include="include\wps\kingsoftWPS.h" />
     <ClInclude Include="include\wps\wps.h" />
     <ClInclude Include="OpenEdit.h" />

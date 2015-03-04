@@ -135,6 +135,7 @@ BOOL CInfoZip::Execute(CZipParams * pParams)
 
 BOOL CInfoZip::AddFiles(const char *pszArchive, char ** paFiles, int iFileCount)
 {
+	AfxMessageBox("2222222222222222");
 	CZipParams zpParams;
 	SetDefaultValues(&zpParams);
 
@@ -142,7 +143,7 @@ BOOL CInfoZip::AddFiles(const char *pszArchive, char ** paFiles, int iFileCount)
 	zpParams.m_pszArchiveFileName = (char*)malloc(strlen(pszArchive) + 1);
 	ZeroMemory(zpParams.m_pszArchiveFileName, strlen(pszArchive) + 1);
 	strcpy(zpParams.m_pszArchiveFileName, pszArchive);
-
+	AfxMessageBox("33333333333333");
 	//	设置压缩的文件的数目
 	zpParams.m_liFileCount = iFileCount;
 	//    zpParams.m_bNoDirEntries=1;
@@ -154,11 +155,12 @@ BOOL CInfoZip::AddFiles(const char *pszArchive, char ** paFiles, int iFileCount)
 		ZeroMemory(zpParams.m_pszFileNames[i], MAX_PATH + 1);
 		strcpy(zpParams.m_pszFileNames[i], paFiles[i]);
 	}
-
+	AfxMessageBox("44444444444444444444");
 	//  执行压缩命令
 	int iProcessedCount = m_ZipDllExec(&zpParams);
+	AfxMessageBox("555555555555555555555");
 	ReleaseParams(&zpParams);
-
+	AfxMessageBox("6666666666666666666666");
 	return (iProcessedCount == iFileCount);
 }
 

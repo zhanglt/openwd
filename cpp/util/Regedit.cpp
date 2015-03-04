@@ -113,7 +113,7 @@ CString GetString(CString szKeyValue, CString szFileName)
 	memset(buf, 0, sizeof(buf));
 
 	GetPrivateProfileString(
-		"openWDcom",
+		"openwd",
 		szKeyValue,
 		"",
 		buf,

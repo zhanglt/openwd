@@ -4,15 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-<<<<<<< HEAD
-/* at Mon Mar 02 10:36:58 2015
-=======
-<<<<<<< HEAD
-/* at Sun Mar 01 21:44:38 2015
-=======
-/* at Sat Feb 28 23:49:37 2015
->>>>>>> 6d421437ffb750d385a799193a8336f0d8e73513
->>>>>>> a8e9fe1a40d0a57ecf819c0a1be4f6eb9f5d312c
+/* at Tue Mar 17 16:22:47 2015
  */
 /* Compiler settings for OpenWD.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -307,9 +299,7 @@ EXTERN_C const IID IID_IOpenEdit;
             /* [in] */ int nDocType) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetDocumentFile( 
-            /* [in] */ BSTR sHeader,
-            BSTR sUserName,
-            /* [in] */ int nState,
+            /* [in] */ int nOpenMode,
             /* [in] */ BOOL bTrace) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetAttachment( 
@@ -319,7 +309,7 @@ EXTERN_C const IID IID_IOpenEdit;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE SendDocumentFile( 
             /* [in] */ BSTR sHeader,
-            /* [in] */ int index) = 0;
+            /* [in] */ int nOpenMode) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE SendAttachment( 
             /* [in] */ BSTR sInfo) = 0;
@@ -341,6 +331,18 @@ EXTERN_C const IID IID_IOpenEdit;
         
         virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_ServerPath( 
             /* [in] */ BSTR sPath) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_FileID( 
+            /* [retval][out] */ BSTR *pFileID) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_FileID( 
+            /* [in] */ BSTR sFileID) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UserName( 
+            /* [retval][out] */ BSTR *pUsername) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_UserName( 
+            /* [in] */ BSTR sUserName) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE ShowWindows( 
             /* [in] */ BSTR sTitle,
@@ -414,9 +416,7 @@ EXTERN_C const IID IID_IOpenEdit;
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetDocumentFile )( 
             IOpenEdit * This,
-            /* [in] */ BSTR sHeader,
-            BSTR sUserName,
-            /* [in] */ int nState,
+            /* [in] */ int nOpenMode,
             /* [in] */ BOOL bTrace);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetAttachment )( 
@@ -428,7 +428,7 @@ EXTERN_C const IID IID_IOpenEdit;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *SendDocumentFile )( 
             IOpenEdit * This,
             /* [in] */ BSTR sHeader,
-            /* [in] */ int index);
+            /* [in] */ int nOpenMode);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *SendAttachment )( 
             IOpenEdit * This,
@@ -457,6 +457,22 @@ EXTERN_C const IID IID_IOpenEdit;
         /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_ServerPath )( 
             IOpenEdit * This,
             /* [in] */ BSTR sPath);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_FileID )( 
+            IOpenEdit * This,
+            /* [retval][out] */ BSTR *pFileID);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_FileID )( 
+            IOpenEdit * This,
+            /* [in] */ BSTR sFileID);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_UserName )( 
+            IOpenEdit * This,
+            /* [retval][out] */ BSTR *pUsername);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_UserName )( 
+            IOpenEdit * This,
+            /* [in] */ BSTR sUserName);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *ShowWindows )( 
             IOpenEdit * This,
@@ -505,14 +521,14 @@ EXTERN_C const IID IID_IOpenEdit;
 #define IOpenEdit_put_DocumentType(This,nDocType)	\
     ( (This)->lpVtbl -> put_DocumentType(This,nDocType) ) 
 
-#define IOpenEdit_GetDocumentFile(This,sHeader,sUserName,nState,bTrace)	\
-    ( (This)->lpVtbl -> GetDocumentFile(This,sHeader,sUserName,nState,bTrace) ) 
+#define IOpenEdit_GetDocumentFile(This,nOpenMode,bTrace)	\
+    ( (This)->lpVtbl -> GetDocumentFile(This,nOpenMode,bTrace) ) 
 
 #define IOpenEdit_GetAttachment(This,sInfo,sFile,idx)	\
     ( (This)->lpVtbl -> GetAttachment(This,sInfo,sFile,idx) ) 
 
-#define IOpenEdit_SendDocumentFile(This,sHeader,index)	\
-    ( (This)->lpVtbl -> SendDocumentFile(This,sHeader,index) ) 
+#define IOpenEdit_SendDocumentFile(This,sHeader,nOpenMode)	\
+    ( (This)->lpVtbl -> SendDocumentFile(This,sHeader,nOpenMode) ) 
 
 #define IOpenEdit_SendAttachment(This,sInfo)	\
     ( (This)->lpVtbl -> SendAttachment(This,sInfo) ) 
@@ -534,6 +550,18 @@ EXTERN_C const IID IID_IOpenEdit;
 
 #define IOpenEdit_put_ServerPath(This,sPath)	\
     ( (This)->lpVtbl -> put_ServerPath(This,sPath) ) 
+
+#define IOpenEdit_get_FileID(This,pFileID)	\
+    ( (This)->lpVtbl -> get_FileID(This,pFileID) ) 
+
+#define IOpenEdit_put_FileID(This,sFileID)	\
+    ( (This)->lpVtbl -> put_FileID(This,sFileID) ) 
+
+#define IOpenEdit_get_UserName(This,pUsername)	\
+    ( (This)->lpVtbl -> get_UserName(This,pUsername) ) 
+
+#define IOpenEdit_put_UserName(This,sUserName)	\
+    ( (This)->lpVtbl -> put_UserName(This,sUserName) ) 
 
 #define IOpenEdit_ShowWindows(This,sTitle,nCmdShow)	\
     ( (This)->lpVtbl -> ShowWindows(This,sTitle,nCmdShow) ) 

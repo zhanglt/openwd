@@ -35,9 +35,9 @@ interface IOpenEdit : IDispatch{
 	
 	[propget, id(1)] HRESULT DocumentType([out, retval] int* pDocType);
 	[propput, id(1)] HRESULT DocumentType([in] int nDocType);
-	[id(2)] HRESULT GetDocumentFile([in] BSTR sHeader, BSTR sUserName, [in] int nState, [in] BOOL bTrace);
+	[id(2)] HRESULT GetDocumentFile([in] int nOpenMode, [in] BOOL bTrace);
 	[id(3)] HRESULT GetAttachment([in] BSTR sInfo, [in] BSTR sFile, [in] int idx);
-	[id(4)] HRESULT SendDocumentFile([in] BSTR sHeader, [in] int index);
+	[id(4)] HRESULT SendDocumentFile([in] BSTR sHeader, [in] int nOpenMode);
 	[id(5)] HRESULT SendAttachment([in] BSTR sInfo);
 
 	[propget, id(6)] HRESULT ServerIp([out, retval] BSTR* IP);
@@ -46,7 +46,11 @@ interface IOpenEdit : IDispatch{
 	[propput, id(7)] HRESULT ServerPort([in] BSTR  iPort);
 	[propget, id(8)] HRESULT ServerPath([out, retval] BSTR* pPath);
 	[propput, id(8)] HRESULT ServerPath([in] BSTR  sPath);
-	[id(9)] HRESULT ShowWindows([in] BSTR sTitle, [in] int nCmdShow);
+	[propget, id(9)] HRESULT FileID([out, retval] BSTR* pFileID);
+	[propput, id(9)] HRESULT FileID([in] BSTR  sFileID);
+	[propget, id(10)] HRESULT UserName([out, retval] BSTR* pUsername);
+	[propput, id(10)] HRESULT UserName([in] BSTR  sUserName);
+	[id(11)] HRESULT ShowWindows([in] BSTR sTitle, [in] int nCmdShow);
 
 };
 

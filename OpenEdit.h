@@ -9,7 +9,8 @@
 #include "_IOpenEditEvents_CP.h"
 #include <string>
 #include <iostream>
-#include "../util/PubFunction.h"
+#include "util/PubFunction.h"
+#include "word/WordEventSink.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Windows CE 平台(如不提供完全 DCOM 支持的 Windows Mobile 平台)上无法正确支持单线程 COM 对象。定义 _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA 可强制 ATL 支持创建单线程 COM 对象实现并允许使用其单线程 COM 对象实现。rgs 文件中的线程模型已被设置为“Free”，原因是该模型是非 DCOM Windows CE 平台支持的唯一线程模型。"
@@ -40,7 +41,16 @@ private:
 	BSTR  nIP;
 	BSTR  nPort;
 	BSTR  sPath;
-
+	BSTR  sFileID;
+	BSTR  sUserName;
+	Word::_ApplicationPtr m_pWord;
+	//Word::_DocumentPtr    m_pDoc;
+	CWordEventSink        m_WordEventSink;
+	void DumpComError(const _com_error& e) const;
+	void DumpOleError(const COleException& e) const;
+	void DumpDispatchError(const COleDispatchException& e) const;
+	BOOL GetPageCount(DWORD& PageCount);
+	
 public:
 	COpenEdit()
 	{
@@ -51,7 +61,8 @@ public:
 		}else{
 			AfxEnableControlContainer();
 		}
-		CreateDir();//初始化临时文件目录
+		m_WordEventSink.SetLauncher(this);
+	//	CreateDir();//初始化临时文件目录
 
 	}
 
@@ -85,9 +96,26 @@ END_CONNECTION_POINT_MAP()
 
 	void FinalRelease()
 	{
+		/*
+		if (m_pWord!=NULL)
+		{
+			try
+			{
+			//m_pWord->Quit(&_variant_t((long)Word::wdDoNotSaveChanges));
+			m_pWord->Release();
+			
+			}
+			catch (_com_error& ComError)
+			{
+				DumpComError(ComError);
+			}
+		}
+		*/
+
 	}
 
 public:
+	void OnDocClose();
 	
 	//************************************
 	//word/wps文档标识
@@ -103,10 +131,10 @@ public:
 	// Parameter: BSTR szHeader
 	// Parameter: BSTR szUserName
 	// Parameter: BOOL bTrace  修改痕迹标识
-	// Parameter: BSTR nState  文件打开状态
+	// Parameter: BSTR nOpenMode  文件打开状态
 	//************************************
-	STDMETHOD(GetDocumentFile)(BSTR sHeader, BSTR sUserName, int nState, BOOL bTrace);
-	STDMETHOD(SendDocumentFile)(BSTR sHeader, int index);
+	STDMETHOD(GetDocumentFile)(int nOpenMode, BOOL bTrace=1);
+	STDMETHOD(SendDocumentFile)(BSTR sHeader, int nOpenMode);
 
 	//************************************
 	// Method:    GetAttachment
@@ -127,6 +155,10 @@ public:
 	STDMETHOD(put_ServerPort)(BSTR iPort);
 	STDMETHOD(get_ServerPath)(BSTR* pPath);
 	STDMETHOD(put_ServerPath)(BSTR sPath);
+	STDMETHOD(get_FileID)(BSTR* pFileID);
+	STDMETHOD(put_FileID)(BSTR sFileID);
+	STDMETHOD(get_UserName)(BSTR* pUserName);
+	STDMETHOD(put_UserName)(BSTR sUserName);
 	STDMETHOD(ShowWindows)(BSTR sTitle, int nCmdShow);
 	};
 

@@ -24553,7 +24553,23 @@ public:
 		InvokeHelper(0x12, DISPATCH_METHOD, VT_DISPATCH, (void*)&result, parms, FileName, ConfirmConversions, ReadOnly, AddToRecentFiles, PasswordDocument, PasswordTemplate, Revert, WritePasswordDocument, WritePasswordTemplate, Format, Encoding, Visible, OpenAndRepair, DocumentDirection, NoEncodingDialog);
 		return result;
 	}
-	LPDISPATCH Open(VARIANT * FileName, VARIANT * ConfirmConversions, VARIANT * ReadOnly, VARIANT * AddToRecentFiles, VARIANT * PasswordDocument, VARIANT * PasswordTemplate, VARIANT * Revert, VARIANT * WritePasswordDocument, VARIANT * WritePasswordTemplate, VARIANT * Format, VARIANT * Encoding, VARIANT * Visible, VARIANT * OpenAndRepair, VARIANT * DocumentDirection, VARIANT * NoEncodingDialog, VARIANT * XMLTransform)
+	LPDISPATCH Open(
+		VARIANT * FileName, 
+		VARIANT * ConfirmConversions, 
+		VARIANT * ReadOnly, 
+		VARIANT * AddToRecentFiles, 
+		VARIANT * PasswordDocument, 
+		VARIANT * PasswordTemplate, 
+		VARIANT * Revert, 
+		VARIANT * WritePasswordDocument, 
+		VARIANT * WritePasswordTemplate, 
+		VARIANT * Format, 
+		VARIANT * Encoding, 
+		VARIANT * Visible, 
+		VARIANT * OpenAndRepair, 
+		VARIANT * DocumentDirection, 
+		VARIANT * NoEncodingDialog, 
+		VARIANT * XMLTransform)
 	{
 		LPDISPATCH result;
 		static BYTE parms[] = VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT;

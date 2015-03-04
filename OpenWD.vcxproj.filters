@@ -88,6 +88,12 @@
     <ClCompile Include="cpp\wps\wps.cpp">
       <Filter>源文件\wps</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\word\ConnectionAdvisor.cpp">
+      <Filter>源文件\word</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\word\WordEventSink.cpp">
+      <Filter>源文件\word</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -155,6 +161,15 @@
     </ClInclude>
     <ClInclude Include="include\wps\wps.h">
       <Filter>头文件\wps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\HttpFileClient.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\word\ConnectionAdvisor.h">
+      <Filter>头文件\word</Filter>
+    </ClInclude>
+    <ClInclude Include="include\word\WordEventSink.h">
+      <Filter>头文件\word</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

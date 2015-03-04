@@ -1,41 +1,29 @@
 #include "StdAfx.h"
-#include "../../OpenWD/include/word/word.h"
-#include "../../OpenWD/include/word/msword.h"
-#include "../../OpenWD/include/util/PubFunction.h"
-#include "../../OpenWD/include/util/Regedit.h"
-#include "../../OpenWD/include/util/BrowseDirDialog.h"
-//#include "afxdlgs.h"
-//#include "des.h"
-//#include "../../OpenWD.h"
+#include "include/word/word.h"
+#include "include/word/msword.h"
 
-BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int bHaveTrace){
+#include "include/util/PubFunction.h"
+#include "include/util/Regedit.h"
+#include "include/util/BrowseDirDialog.h"
+#include <iostream>
 
-	//开始一个Microsoft Word实例 
-	wdocx::CApplication oWordApp;
-	CoInitialize(NULL);
-	if (!oWordApp.CreateDispatch("Word.Application")){
-		MessageBox(NULL, "创建Word对象失败", "系统信息", MB_OK | MB_SETFOREGROUND);
-		CoUninitialize();
-		return S_FALSE;
-	}
-	//    if(FileIsOpen(szFileName)) return false;
+
+
+using namespace std;
+
+BOOL wdocx::OpenWordFile(Word::_ApplicationPtr m_pWord, CString szFileName, CString szUserName, int nState, int bHaveTrace){
+	//CoInitialize(NULL);
 	COleVariant covTrue((short)TRUE),
 				covFalse((short)FALSE),
 				covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
 	COleVariant varstrNull("");
 	COleVariant vdSaveChanges(short(0));
 	COleVariant vFormat(short(0));
-	//char Password[256];
-	//memset(Password, 0, sizeof(Password));
-	////GetUnlokPassword(Password);	
-    //建立一个新的文档 
-	wdocx::CDocuments oDocs;
-	wdocx::CDocument0 oDoc;
-	oDocs = oWordApp.get_Documents();
-    //显示Word文档
+	Word::_DocumentPtr    m_pDoc;
 
 	
-	oDoc.AttachDispatch(oDocs.Open(
+
+	m_pDoc = m_pWord->Documents->Open(
 		COleVariant(szFileName, VT_BSTR),
 		covFalse,
 		covFalse,
@@ -51,48 +39,45 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		covFalse,
 		covFalse,
 		covFalse,
-		varstrNull)
-		);
+		varstrNull);
+	m_pWord->Visible = VARIANT_TRUE;
 
-	wdocx::CWindow0  win;
-	win = oWordApp.get_ActiveWindow();
-
-
-	wdocx::CView0  view;
-	view = win.get_View();
-
-	try{ 
-		oDoc.put_TrackRevisions(false); 
-	}catch (...){
-		TRACE("Office 2013! \n"); }
-
-	
+	try{
+		m_pDoc->put_TrackRevisions(VARIANT_FALSE);
+	}
+	catch (...){
+		TRACE("Office 2013! \n");
+	}
 	switch (nState)
 	{
-	case  EDIT :
-		if (oDoc.get_ProtectionType() == 0 || oDoc.get_ProtectionType() == 2){
+	case  EDIT:
+
+		if (m_pDoc->GetProtectionType() == 0 || m_pDoc->GetProtectionType() == 2){
+
 			try{
-				oDoc.Unprotect(COleVariant("Password"));
+				m_pDoc->Unprotect(COleVariant("Password"));
+		
+				
 			}
 			catch (...){
 				TRACE("Office 2013!\n");
 			}
 		}
 		try{
-			oDoc.put_TrackRevisions(false);
-			oDoc.put_PrintRevisions(bHaveTrace);
-			oDoc.put_ShowRevisions(bHaveTrace);
+			m_pDoc->put_TrackRevisions(VARIANT_FALSE);
+			m_pDoc->put_PrintRevisions(bHaveTrace);
+			m_pDoc->put_ShowRevisions(bHaveTrace);
 		}
 		catch (...){
 			TRACE("Office 2013!\n");
 		}
 		break;
-	case  MODIFY :
-		if (szUserName.GetLength()>0) oWordApp.put_UserName(szUserName);
+	case  MODIFY:
+		if (szUserName.GetLength() > 0) m_pWord->put_UserName(szUserName.AllocSysString());
 		//This is used by word xp 
-		if (oDoc.get_ProtectionType() == 0 || oDoc.get_ProtectionType() == 2){
+		if (m_pDoc->GetProtectionType() == 0 || m_pDoc->GetProtectionType() == 2){
 			try{
-				oDoc.Unprotect(COleVariant("Password"));
+				m_pDoc->Unprotect(COleVariant("Password"));
 			}
 			catch (...){
 				TRACE("Office 2013!\n");
@@ -100,22 +85,24 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 		}
 
 		try{
-			oDoc.put_TrackRevisions(true);
-			oDoc.put_PrintRevisions(bHaveTrace);
-			oDoc.put_ShowRevisions(bHaveTrace);
-			view.put_ShowInsertionsAndDeletions(bHaveTrace);
-			oDoc.Protect(0, covFalse, COleVariant("Password"), covOptional, covOptional);
+			m_pDoc->put_TrackRevisions(VARIANT_TRUE);
+			m_pDoc->put_PrintRevisions(bHaveTrace);
+			m_pDoc->put_ShowRevisions(bHaveTrace);
+			//view.put_ShowInsertionsAndDeletions(bHaveTrace);
+			m_pDoc->Protect(Word::wdAllowOnlyRevisions, covFalse, COleVariant("Password"), covOptional, covOptional);
+			
 		}
 		catch (...){
 			TRACE("Office 2013!\n");
 		}
 		break;
 	case  READONLY:
-		
+
 		try{
-			oDoc.put_PrintRevisions(bHaveTrace);
-			oDoc.put_ShowRevisions(bHaveTrace);
-			oDoc.Protect(2, covFalse, COleVariant("Password"), covOptional, covOptional);
+
+			m_pDoc->PrintRevisions = bHaveTrace;
+			m_pDoc->ShowRevisions = bHaveTrace;
+			m_pDoc->Protect(Word::wdAllowOnlyFormFields, covFalse, COleVariant("Password"), covOptional, covOptional);
 		}
 		catch (...){
 			TRACE("Office 2013!\n");
@@ -124,15 +111,17 @@ BOOL wdocx::OpenWordFile(CString szFileName, CString szUserName, int nState, int
 	default:
 		break;
 	}
-	oWordApp.put_Visible(VARIANT_TRUE);
-	
+
 	/*
+
 	oDoc.ReleaseDispatch();
 	//	oWordApp.ReleaseDispatch();
 
 	//	oWordApp.Quit(vOpt,vOpt,vOpt);
-	CoUninitialize();
 	*/
+
+	//CoUninitialize();
+	
 	return true;
 }
 
@@ -141,10 +130,7 @@ BOOL wdocx::LastText(CString szTempleteFileName,/*被插入的文件名*/  CString szHe
 {
 
 	COleVariant covTrue((short)TRUE), covFalse((short)FALSE), covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
-	COleVariant vTrue((short)TRUE),
-		vFalse((short)FALSE),
-		vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),
-		vP((short)true, VT_I2);
+	COleVariant vTrue((short)TRUE), vFalse((short)FALSE),vOpt((long)DISP_E_PARAMNOTFOUND, VT_ERROR),vP((short)true, VT_I2);
 	COleVariant vPP(short(1));
 	COleVariant vMM(short(0));
 	COleVariant vdSaveChanges(short(0));
@@ -1098,29 +1084,42 @@ BOOL wdocx::SetPortect(CString szFileName)
 // Returns:   BOOL
 // Qualifier:
 // Parameter: CString szInfo
-// Parameter: CString szUserName
-// Parameter: int nState
+// Parameter: CString szUserName 文档用户名（非空）
+// Parameter: int nOpenMode
 // Parameter: int bHaveTrace
 //************************************
-BOOL wdocx::GetDocFileFromServer(CString szInfo, CString szUserName, int nState, int bHaveTrace)
+BOOL wdocx::GetDocFileFromServer(Word::_ApplicationPtr m_pWord, CString sFileID, CString szUserName, int nOpenMode, int bHaveTrace)
 {
-	int index = 1;
-	CString szTextFile;
-	CString szPowerFile;
-	
-	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
-	
-	szTextFile = GetFileName("doc", "D_", index);
-	if (szTextFile == "") return false;
-	szPowerFile = GetFileName("ini", "P_", index);
-	if (wdocx::OpenWordFile(szTextFile, szUserName, nState, bHaveTrace) == false) {
-		DeleteFile(GetIniName(index));
+
+	CString szTextFile, szPowerFile, Path;
+	Path.Format("%s\\openwd\\%s\\%s.%s", GetSysDirectory(), Dir[nOpenMode], sFileID, "doc");
+	AfxMessageBox(Path);
+
+	if (!DocConnDownHttp(sFileID, nOpenMode)){
+		AfxMessageBox("文档下载（DocConnDownHttp）失败");
+		return false; 
+	}  //下载文件
+
+	//Path.Format("%s\\openwd\\%s\\OA%s%s.%s", GetSysDirectory(), Dir[index], szName, szFileID, Suffix);
+	szTextFile = Path;
+	/*
+	szTextFile = GetFileName("doc", sFileID , nOpenMode);//获取下载后文件的全路径
+
+	if (szTextFile == "") { 
+		AfxMessageBox("下载后的文件没有找到");
+		return false; }*/
+	//szPowerFile = GetFileName("ini", "P_", nOpenMode);//获取打开文件的方式（只读、修改）
+
+	if (wdocx::OpenWordFile(m_pWord,szTextFile, szUserName, nOpenMode, bHaveTrace) == false) {
+		DeleteFile(GetIniName(nOpenMode));
+		AfxMessageBox("打开下载后的文件失败");
 		return false;
 	}
+	
+	WriteString("LastFileName", szTextFile, GetIniName(nOpenMode));
+	WriteString("IsNeedLoad", "1", GetIniName(nOpenMode));
 
-	WriteString("LastFileName", szTextFile, GetIniName(index));
-	WriteString("IsNeedLoad", "1", GetIniName(index));
-	//szFinalFile=GetFile("doc","D_",index);
+	
 	return true;
 }
 
@@ -1227,14 +1226,17 @@ BOOL wdocx::FinalFaxTextEx(char *szInfo, int nPower)
 	return true;
 }
 
-BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
+BOOL wdocx::SendDocFileToServer(char* szInfo, int nOpenMode)
 {
-	CString szSendFile;
-	CString szIniFile = GetIniName(index);
-	//MessageBox(NULL,szInfo,"系统信息szInfo",MB_OK|MB_ICONERROR);
-	//MessageBox(NULL,szIniFile,"系统信息szIniFile",MB_OK|MB_ICONERROR);
-	szSendFile = GetString("LastFileName", szIniFile);
-	if (szSendFile == "") return false;
+	
+	
+	CString szIniFile = GetSysDirectory() + "\\openwd\\" + Dir[nOpenMode] + "\\" + szFileID + ".ini";
+
+	CString szSendFile= GetString("LastFileName", szIniFile);
+
+	if (szSendFile == ""){ 
+		AfxMessageBox("发送的文件名称为空");
+		return false; }
 
 	if (!IsTheFileExist(szSendFile))
 	{
@@ -1248,9 +1250,8 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 		return false;
 	}
 
-
-
-	if (GetString("Protect", GetIniName(index)) == "1")
+	
+	if (GetString("Protect", GetIniName(nOpenMode)) == "1")
 	{
 
 		if (!SetPortect(szSendFile)) {
@@ -1264,24 +1265,27 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 	CString szFileName;
 
 	if (szInfo[1] == '1')
-		szFileName.Format("%s\\openwd\\%s\\%s_dg.doc", GetSysDirectory(), Dir[index], szFileID);
+		szFileName.Format("%s\\openwd\\%s\\%s_dg.doc", GetSysDirectory(), Dir[nOpenMode], szFileID);
 	else
-		szFileName.Format("%s\\openwd\\%s\\%s.doc", GetSysDirectory(), Dir[index], szFileID);
+		szFileName.Format("%s\\openwd\\%s\\%s.doc", GetSysDirectory(), Dir[nOpenMode], szFileID);
 
-	if (!OnFileCopy(szSendFile, szFileName)) return false;
+	if (!OnFileCopy(szSendFile, szFileName)) { 
+		AfxMessageBox("复制文件错误");
+		return false; }
 
 	CString szCabFile;
-	szCabFile.Format("%s\\openwd\\%s\\TempDoc.zip", GetSysDirectory(), Dir[index]);
-
-	//AfxMessageBox(szFileName);
-
-	if (!Compression(szCabFile, szFileName)) return false;   //如果压缩文件失败返回
+	szCabFile.Format("%s\\openwd\\%s\\TempDoc.zip", GetSysDirectory(), Dir[nOpenMode]);
+	
+	if (!Compression(szCabFile, szFileName)){
+		AfxMessageBox("压缩文件错误！");
+		return false;   //如果压缩文件失败返回
+	}
+	
 	szSendFile = szCabFile;
-
+	
 	DeleteFile(szFileName);
 
 	//037165839926-15637102006
-
 
 
 	FILE * pfile = NULL;
@@ -1291,9 +1295,10 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 	try
 	{
 		pfile = fopen(szSendFile, "rb");
+	
 		if (pfile == NULL)
 		{
-			MessageBox(NULL, "打开上传文件出错，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
+			MessageBox(NULL, "打开上传文件出错1111，请重试!", "系统信息", MB_OK | MB_ICONINFORMATION);
 			return false;
 		}
 	}
@@ -1315,36 +1320,49 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 	}
 
 	nFileLen = GetFileLen(pfile);   //获取文件长度
+	
+
+	
 	if (nFileLen<1)
 	{
 		MessageBox(NULL, "要上传的是一个空文件，请重新下载后再试！", "系统信息", MB_OK | MB_ICONINFORMATION);
 		fclose(pfile);
+		pfile = NULL;
+	
 		DeleteFile(szCabFile);
-		DeleteFile(GetIniName(index));
+		DeleteFile(GetIniName(nOpenMode));
 		return false;
 	}
 	//此处可以添加发送文件的属性等
 
 	int nInfoLen = strlen(szInfo);
+
 	buf = new char[nFileLen + nInfoLen + 1];
+	
 	memset(buf, 0, sizeof(nFileLen + nInfoLen + 1));
 
 	strcpy(buf, szInfo);
-
+	
+	
+	
 	int len = fread((void*)(buf + nInfoLen), 1, nFileLen, pfile);
 
+	//pfile = fopen("c:\\aa.zip", "wb");
+	//len = fwrite((void*)(buf + nInfoLen), 1, nFileLen, pfile);
+	
 	if (len != nFileLen)
 	{
 		MessageBox(NULL, "发送数据的长度不正确，请重新发送!", "系统信息", MB_OK | MB_ICONERROR);
-		if (pfile) fclose(pfile);
+		if (pfile) { fclose(pfile); pfile = NULL;}
 		delete buf;
 		return false;
 	}
 
-	if (pfile) fclose(pfile);
+	if (pfile){ fclose(pfile); pfile = NULL; }
+	
+	
 
-
-	if (!DocConnectionHttp(buf, nInfoLen + nFileLen, index, false/*表示发送数据*/))
+	if (!DocConnUploadHttp(buf, nInfoLen + nFileLen, nOpenMode))
 	{
 		delete buf;
 		return false;
@@ -1353,7 +1371,7 @@ BOOL wdocx::SendDocFileToServer(char* szInfo, int index)
 
 	//删除目录
 	//DeleteAll(index);
-	DeleteDirFile(index);
+	DeleteDirFile(nOpenMode);
 
 	delete buf;
 
@@ -1509,7 +1527,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 
 		char *buffer = (char*)malloc(FS + nlen + 100);
 
-		AfxGetApp()->WriteProfileString("Telecom", "Large", "1");
+		::WriteProfileString("openwd", "Large", "1");
 
 
 		DWORD nAllCount = 0;
@@ -1544,7 +1562,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 			//发送数据
 			if (!DocConnectionHttp(buffer, nFileLen, index, 0))
 			{
-				AfxGetApp()->WriteProfileString("Telecom", "Large", "0");
+				WriteProfileString("openwd", "Large", "0");
 				if (pfile) fclose(pfile);
 				free(buffer);
 				return false;
@@ -1552,7 +1570,7 @@ BOOL wdocx::SendData(CString szHeader, CString szFileName, int index)
 		}   //发送结束
 		if (pfile) fclose(pfile);
 		free(buffer);
-		AfxGetApp()->WriteProfileString("Telecom", "Large", "0");
+		WriteProfileString("openwd", "Large", "0");
 	}
 
 	DeleteFile(szCabFile);
