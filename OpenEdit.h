@@ -61,7 +61,11 @@ public:
 		}else{
 			AfxEnableControlContainer();
 		}
+<<<<<<< HEAD
 		m_WordEventSink.SetLauncher(this);
+=======
+
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	//	CreateDir();//初始化临时文件目录
 
 	}

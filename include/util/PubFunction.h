@@ -17,12 +17,18 @@ extern CString szTmpID;
 extern CString szFinalFile;
 extern CString szA_Name;
 
+<<<<<<< HEAD
 BOOL DocConnectionHttp(char *  TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
 BOOL DocConnDownHttp(CString  sFileID = "", int nOpenMode = 1, CString szAttachmentFileName = "");
 BOOL DocConnUploadHttp(char *  TextBuf = "", DWORD nFileLen = 0, int index = 1, CString szAttachmentFileName = "");
 
 int  IsNeedLoad(int index);
 BOOL MakeFile(CString szFileName, int nOpenMode, CString szAttachmentPath);
+=======
+BOOL DocConnectionHttp(CString TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
+int  IsNeedLoad(int index);
+BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath);
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 //功能：获取服务器IP及端口
 BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/);
 

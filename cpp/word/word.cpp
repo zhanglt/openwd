@@ -7,12 +7,23 @@
 #include "include/util/BrowseDirDialog.h"
 #include <iostream>
 
+<<<<<<< HEAD
 
 
 using namespace std;
 
 BOOL wdocx::OpenWordFile(Word::_ApplicationPtr m_pWord, CString szFileName, CString szUserName, int nState, int bHaveTrace){
 	//CoInitialize(NULL);
+=======
+//开始一个Microsoft Word实例 
+	wdocx::CApplication oWordApp;
+	CoInitialize(NULL);
+	if (!oWordApp.CreateDispatch("Word.Application")){
+		MessageBox(NULL, "创建Word对象失败", "系统信息", MB_OK | MB_SETFOREGROUND);
+		CoUninitialize();
+		return S_FALSE;
+	}
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	COleVariant covTrue((short)TRUE),
 				covFalse((short)FALSE),
 				covOptional((long)DISP_E_PARAMNOTFOUND, VT_ERROR);
@@ -111,7 +122,12 @@ BOOL wdocx::OpenWordFile(Word::_ApplicationPtr m_pWord, CString szFileName, CStr
 	default:
 		break;
 	}
+<<<<<<< HEAD
 
+=======
+	
+	oWordApp.put_Visible(VARIANT_TRUE);
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	/*
 
 	oDoc.ReleaseDispatch();
@@ -119,8 +135,12 @@ BOOL wdocx::OpenWordFile(Word::_ApplicationPtr m_pWord, CString szFileName, CStr
 
 	//	oWordApp.Quit(vOpt,vOpt,vOpt);
 	*/
+<<<<<<< HEAD
 
 	//CoUninitialize();
+=======
+	CoUninitialize();
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	
 	return true;
 }
@@ -1090,6 +1110,7 @@ BOOL wdocx::SetPortect(CString szFileName)
 //************************************
 BOOL wdocx::GetDocFileFromServer(Word::_ApplicationPtr m_pWord, CString sFileID, CString szUserName, int nOpenMode, int bHaveTrace)
 {
+<<<<<<< HEAD
 
 	CString szTextFile, szPowerFile, Path;
 	Path.Format("%s\\openwd\\%s\\%s.%s", GetSysDirectory(), Dir[nOpenMode], sFileID, "doc");
@@ -1113,6 +1134,18 @@ BOOL wdocx::GetDocFileFromServer(Word::_ApplicationPtr m_pWord, CString sFileID,
 	if (wdocx::OpenWordFile(m_pWord,szTextFile, szUserName, nOpenMode, bHaveTrace) == false) {
 		DeleteFile(GetIniName(nOpenMode));
 		AfxMessageBox("打开下载后的文件失败");
+=======
+	int index = 1;
+	CString szTextFile, szPowerFile;
+	
+	if (!DocConnectionHttp(szInfo, strlen(szInfo), index)){ return false; }  //下载文件
+	
+	szTextFile = GetFileName("doc", "D_", index);
+	if (szTextFile == "") return false;
+	szPowerFile = GetFileName("ini", "P_", index);
+	if (wdocx::OpenWordFile(szTextFile, szUserName, nState, bHaveTrace) == false) {
+		DeleteFile(GetIniName(index));
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 		return false;
 	}
 	

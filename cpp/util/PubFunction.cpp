@@ -54,8 +54,12 @@ BOOL DocConnectionHttp(char * TextBuf , DWORD nFileLen, int index, int bDownLoad
 		}
 
 		/*
+<<<<<<< HEAD
 		//2003/7/9 added by lhx
 		if (AfxGetApp()->GetProfileString("Telecom", "Large", "") == "1")
+=======
+		if (AfxGetApp()->GetProfileString("", "Large", "") == "1")
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 		{
 			memset(ServerURL, 0, sizeof(ServerURL));
 			strcpy(ServerURL, "servlet/ULoadBDoc");
@@ -482,6 +486,19 @@ BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath)
 	}
 	return true;
 }
+<<<<<<< HEAD
+=======
+
+
+BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/){
+	
+
+	::GetProfileString("openwd", "ServerURL", "openwd/OpenDoc", ServerURL.GetBuffer(50), 50);
+
+
+	::GetProfileString("openwd", "Port", "80", Port.GetBuffer(6), 6);
+
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 
 
 BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/){
@@ -882,8 +899,13 @@ int CreateFileName(CString szFileName)
 CString GetFileName(CString Suffix/*后缀*/, CString szName, int nOpenMode /*顺序*/)
 {
 	CString Path;
+<<<<<<< HEAD
 	Path.Format("%s\\openwd\\%s\\OA%s.%s", GetSysDirectory(), Dir[nOpenMode], szName, Suffix);
 
+=======
+	int n = 0;
+	Path.Format("%s\\openwd\\%s\\OA%s%s.%s", GetSysDirectory(), Dir[index], szName, szFileID, Suffix);
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	int rec = CreateFileName(Path);
 	if (rec != 0)  Path = "";
 	return Path;

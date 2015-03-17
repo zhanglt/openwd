@@ -79,7 +79,11 @@ STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
 	//CString test((LPCTSTR)sHeader);
 
 	if (this->nDocumentType == 0){//文档类型（ms office）
+<<<<<<< HEAD
 		/*
+=======
+		AfxMessageBox("nDocumentType=0");
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
 			oWordApp.Quit(vOpt, vOpt, vOpt);
 			oWordApp.ReleaseDispatch(); //ReleaseDispatch()不能关闭当前启动的winword.exe进程，需要使用wordApp.quit() 来退出进程。
@@ -89,6 +93,7 @@ STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
 			}
 			
 		}else{//如果没有安装ms word ，启动wps处理
+<<<<<<< HEAD
 			if (!wpsDoc::GetWpsFileFromServer(W2A(this->sFileID), W2A(this->sUserName), bTrace)) {
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
@@ -98,10 +103,15 @@ STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
 		if (SUCCEEDED(hr)){
 			BOOL Res = m_WordEventSink.Advise(m_pWord, IID_IWordAppEventSink);
 			if (!wdocx::GetDocFileFromServer(m_pWord, W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
+=======
+			AfxMessageBox("wps");
+			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
 			}
 		}
+<<<<<<< HEAD
 		else{
 
 	
@@ -120,6 +130,8 @@ STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
 
 
 
+=======
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 	}else{//文档类型（Kingsoft office wps）
 	
 		if (oWpsApp.CreateDispatch("KWPS.Application")) {//首先判断客户端是否安装金山WPS
@@ -132,7 +144,11 @@ STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
 		}
 		else{//如果没有安装金山WPS，启动ms word 来处理
 		
+<<<<<<< HEAD
 			if (!wdocx::GetDocFileFromServer(this,W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
+=======
+			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), nState, 1)) {
+>>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
 				AfxGetApp()->DoWaitCursor(0);
 				return S_FALSE;
 			}
