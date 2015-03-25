@@ -7,9 +7,8 @@
 
 #include "OpenWD_i.h"
 #include "_IOpenEditEvents_CP.h"
-#include <string>
-#include <iostream>
-#include "util/PubFunction.h"
+
+
 #include "word/WordEventSink.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -50,6 +49,7 @@ private:
 	void DumpOleError(const COleException& e) const;
 	void DumpDispatchError(const COleDispatchException& e) const;
 	BOOL GetPageCount(DWORD& PageCount);
+	void ShowWinEx(CString szTitle, int nCmdShow = SW_MINIMIZE);
 	
 public:
 	COpenEdit()
@@ -61,11 +61,11 @@ public:
 		}else{
 			AfxEnableControlContainer();
 		}
-<<<<<<< HEAD
-		m_WordEventSink.SetLauncher(this);
-=======
 
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
+		m_WordEventSink.SetLauncher(this);
+
+
+
 	//	CreateDir();//初始化临时文件目录
 
 	}

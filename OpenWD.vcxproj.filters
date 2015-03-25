@@ -70,23 +70,11 @@
     <ClCompile Include="cpp\util\BrowseDirDialog.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\util\des.cpp">
-      <Filter>源文件\util</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\util\InfoZip.cpp">
-      <Filter>源文件\util</Filter>
-    </ClCompile>
     <ClCompile Include="cpp\util\PubFunction.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
     <ClCompile Include="cpp\util\Regedit.cpp">
       <Filter>源文件\util</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\util\ShowMsgDlg.cpp">
-      <Filter>源文件\util</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\wps\wps.cpp">
-      <Filter>源文件\wps</Filter>
     </ClCompile>
     <ClCompile Include="cpp\word\ConnectionAdvisor.cpp">
       <Filter>源文件\word</Filter>
@@ -132,37 +120,10 @@
     <ClInclude Include="include\util\BrowseDirDialog.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
-    <ClInclude Include="include\util\des.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\InfoZip.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
     <ClInclude Include="include\util\PubFunction.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
     <ClInclude Include="include\util\Regedit.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\ShowMsgDlg.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\UnzipDLL.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\ZCallBck.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\ZipDLL.h">
-      <Filter>头文件\util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\wps\kingsoftWPS.h">
-      <Filter>头文件\wps</Filter>
-    </ClInclude>
-    <ClInclude Include="include\wps\wps.h">
-      <Filter>头文件\wps</Filter>
-    </ClInclude>
-    <ClInclude Include="include\util\HttpFileClient.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
     <ClInclude Include="include\word\ConnectionAdvisor.h">

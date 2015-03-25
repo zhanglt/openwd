@@ -191,15 +191,11 @@
   <ItemGroup>
     <ClCompile Include="compreg.cpp" />
     <ClCompile Include="cpp\util\BrowseDirDialog.cpp" />
-    <ClCompile Include="cpp\util\des.cpp" />
-    <ClCompile Include="cpp\util\InfoZip.cpp" />
     <ClCompile Include="cpp\util\PubFunction.cpp" />
     <ClCompile Include="cpp\util\Regedit.cpp" />
-    <ClCompile Include="cpp\util\ShowMsgDlg.cpp" />
     <ClCompile Include="cpp\word\ConnectionAdvisor.cpp" />
     <ClCompile Include="cpp\word\word.cpp" />
     <ClCompile Include="cpp\word\WordEventSink.cpp" />
-    <ClCompile Include="cpp\wps\wps.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Unit_Test|Win32'">false</CompileAsManaged>
@@ -245,21 +241,12 @@
     <ClInclude Include="compreg.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="include\util\BrowseDirDialog.h" />
-    <ClInclude Include="include\util\des.h" />
-    <ClInclude Include="include\util\HttpFileClient.h" />
-    <ClInclude Include="include\util\InfoZip.h" />
     <ClInclude Include="include\util\PubFunction.h" />
     <ClInclude Include="include\util\Regedit.h" />
-    <ClInclude Include="include\util\ShowMsgDlg.h" />
-    <ClInclude Include="include\util\UnzipDLL.h" />
-    <ClInclude Include="include\util\ZCallBck.h" />
-    <ClInclude Include="include\util\ZipDLL.h" />
     <ClInclude Include="include\word\ConnectionAdvisor.h" />
     <ClInclude Include="include\word\msword.h" />
     <ClInclude Include="include\word\word.h" />
     <ClInclude Include="include\word\WordEventSink.h" />
-    <ClInclude Include="include\wps\kingsoftWPS.h" />
-    <ClInclude Include="include\wps\wps.h" />
     <ClInclude Include="OpenEdit.h" />
     <ClInclude Include="OpenWD_i.h" />
     <ClInclude Include="Resource.h" />

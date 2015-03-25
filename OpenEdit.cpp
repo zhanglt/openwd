@@ -2,32 +2,19 @@
 
 #include "stdafx.h"
 #include "OpenEdit.h"
-#include "word/msword.h"
+
 #include "word/word.h"
-#include "wps/kingsoftWPS.h"
-#include "wps/wps.h"
-#include "word/WordEventSink.h"
-#include <iostream>
-#include <ostream>
-#include <fstream>
-#include "comutil.h"
-#include <comutil.h>
-#include <stdio.h>
-#include <comdef.h>
-
-#pragma comment(lib, "comsupp.lib")
-#pragma comment(lib, "kernel32.lib")
 
 
+//#include "comutil.h"
+//#include <comutil.h>
+//#include <stdio.h>
+//#include <comdef.h>
 
+//#pragma comment(lib, "comsupp.lib")
+//#pragma comment(lib, "kernel32.lib")
 using namespace std;
-wdocx::CApplication oWordApp; //ms word 
-wpsDoc::CApplication oWpsApp;  // kingsoft wps
 COleVariant   vOpt(DISP_E_PARAMNOTFOUND, VT_ERROR);
-// COpenEdit
-
-
-
 
 STDMETHODIMP COpenEdit::InterfaceSupportsErrorInfo(REFIID riid)
 {
@@ -45,8 +32,43 @@ STDMETHODIMP COpenEdit::InterfaceSupportsErrorInfo(REFIID riid)
 }
 
 
+STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	USES_CONVERSION;
+	//CString test((LPCTSTR)sHeader);
+	if (this->nDocumentType == 0){//文档类型（ms office）
+		if (SUCCEEDED(m_pWord.CreateInstance(__uuidof(Word::Application)))){
+			BOOL Res = m_WordEventSink.Advise(m_pWord, IID_IWordAppEventSink);
+			if (!wdocx::GetDocFileFromServer(m_pWord, W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}
+		}
+	}
+	AfxGetApp()->DoWaitCursor(0);
+	
+	return S_OK;
+}
 
 
+STDMETHODIMP COpenEdit::SendDocumentFile(BSTR sHeader, int nOpenMode)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	USES_CONVERSION;
+	AfxGetApp()->DoWaitCursor(1);
+	if (this->nDocumentType == 0){//文档类型（ms office）
+		if (SUCCEEDED(m_pWord.CreateInstance(__uuidof(Word::Application)))) {//判断客户端是否安装ms word
+			m_pWord->Quit(vOpt, vOpt, vOpt);
+			m_pWord->Release(); 
+			if (!wdocx::SendDocFileToServer(W2A(sHeader), nOpenMode)) {
+				AfxGetApp()->DoWaitCursor(0);
+				return S_FALSE;
+			}}}
+	AfxGetApp()->DoWaitCursor(0);
+
+	return S_OK;
+}
 
 STDMETHODIMP COpenEdit::get_DocumentType(int* pDocType)
 {
@@ -69,98 +91,6 @@ STDMETHODIMP COpenEdit::put_DocumentType(int nDocType)
 	return S_OK;
 }
 
-
-STDMETHODIMP COpenEdit::GetDocumentFile(int nOpenMode, BOOL bTrace)
-{
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	USES_CONVERSION;
-	// TODO:  在此添加实现代码
-	//CString Header = "d1";
-	//CString test((LPCTSTR)sHeader);
-
-	if (this->nDocumentType == 0){//文档类型（ms office）
-<<<<<<< HEAD
-		/*
-=======
-		AfxMessageBox("nDocumentType=0");
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
-		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
-			oWordApp.Quit(vOpt, vOpt, vOpt);
-			oWordApp.ReleaseDispatch(); //ReleaseDispatch()不能关闭当前启动的winword.exe进程，需要使用wordApp.quit() 来退出进程。
-			if (!wdocx::GetDocFileFromServer(this,W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-			
-		}else{//如果没有安装ms word ，启动wps处理
-<<<<<<< HEAD
-			if (!wpsDoc::GetWpsFileFromServer(W2A(this->sFileID), W2A(this->sUserName), bTrace)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}*/
-		HRESULT hr = m_pWord.CreateInstance(__uuidof(Word::Application));
-		if (SUCCEEDED(hr)){
-			BOOL Res = m_WordEventSink.Advise(m_pWord, IID_IWordAppEventSink);
-			if (!wdocx::GetDocFileFromServer(m_pWord, W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
-=======
-			AfxMessageBox("wps");
-			if (!wpsDoc::GetWpsFileFromServer(W2A(sHeader), W2A(sUserName), 1)) {
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-<<<<<<< HEAD
-		else{
-
-	
-		
-		
-		
-		}
-
-		//	m_pDoc = m_pWord->Documents->Add();
-		
-		
-		
-		//Res = m_WordEventSink.Advise(m_pDoc, IID_IWordDocEventSink);
-		
-		//m_pWord->Visible = VARIANT_TRUE;
-
-
-
-=======
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
-	}else{//文档类型（Kingsoft office wps）
-	
-		if (oWpsApp.CreateDispatch("KWPS.Application")) {//首先判断客户端是否安装金山WPS
-			oWpsApp.Quit(vOpt, vOpt, vOpt);
-			oWpsApp.ReleaseDispatch();
-			if (!wpsDoc::GetWpsFileFromServer(W2A(this->sFileID), W2A(this->sUserName), bTrace)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-		else{//如果没有安装金山WPS，启动ms word 来处理
-		
-<<<<<<< HEAD
-			if (!wdocx::GetDocFileFromServer(this,W2A(this->sFileID), W2A(this->sUserName), nOpenMode, bTrace)) {
-=======
-			if (!wdocx::GetDocFileFromServer(W2A(sHeader), W2A(sUserName), nState, 1)) {
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-	}
-
-	AfxGetApp()->DoWaitCursor(0);
-	
-	return S_OK;
-}
-
-
 STDMETHODIMP COpenEdit::GetAttachment(BSTR sInfo, BSTR sFile, int idx)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
@@ -170,53 +100,6 @@ STDMETHODIMP COpenEdit::GetAttachment(BSTR sInfo, BSTR sFile, int idx)
 	return S_OK;
 }
 
-
-STDMETHODIMP COpenEdit::SendDocumentFile(BSTR sHeader, int nOpenMode)
-{
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	USES_CONVERSION;
-	// TODO:  在此添加实现代码
-	AfxGetApp()->DoWaitCursor(1);
-	if (this->nDocumentType == 0){//文档类型（ms office）
-
-		if (oWordApp.CreateDispatch("Word.Application")) {//判断客户端是否安装ms word
-			oWordApp.Quit(vOpt, vOpt, vOpt);
-			oWordApp.ReleaseDispatch(); //ReleaseDispatch()不能关闭当前启动的winword.exe进程，需要使用wordApp.quit() 来退出进程。
-			if (!wdocx::SendDocFileToServer(W2A(sHeader), nOpenMode)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-		else{//如果没有安装ms word ，启动wps处理
-			if (!wpsDoc::SendWpsFileToServer(W2A(sHeader), nOpenMode)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-	}
-	else{//文档类型（Kingsoft office wps）
-
-		if (oWpsApp.CreateDispatch("KWPS.Application")) {//首先判断客户端是否安装金山WPS
-			oWpsApp.Quit(vOpt, vOpt, vOpt);
-			oWpsApp.ReleaseDispatch();
-			if (!wpsDoc::SendWpsFileToServer(W2A(sHeader), nOpenMode)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-		else{//如果没有安装金山WPS，启动ms word 来处理
-
-			if (!wdocx::SendDocFileToServer(W2A(sHeader), nOpenMode)) {
-				AfxGetApp()->DoWaitCursor(0);
-				return S_FALSE;
-			}
-		}
-	}
-
-	AfxGetApp()->DoWaitCursor(0);
-
-	return S_OK;
-}
 
 
 STDMETHODIMP COpenEdit::SendAttachment(BSTR sInfo)
@@ -434,5 +317,45 @@ void COpenEdit::OnDocClose()
 	CString Msg;
 	Msg.Format("Close event received\nNumber of pages is %d", PageCount);
 	AfxMessageBox(Msg);
+
+}
+
+
+void COpenEdit::ShowWinEx(CString szTitle, int nCmdShow)
+{
+	//因某些机器打开wps的速度较慢，而无法将其置于顶层，故将这段代码改为多线程
+	//循环查找方式
+	HWND  hWnd = 0;
+	if (nCmdShow < 0)   //此种情况控制wps
+	{
+		CString szTemp;
+		//szTitle = szFinalFile + " - Kingsoft wps";
+	for (int i = 0; i < 10; i++)
+		{
+			hWnd = ::FindWindow(NULL, szTitle);
+			if (hWnd) break;  //找到后退出
+			szTemp = szTitle;
+			hWnd = ::FindWindow(NULL, szTemp);
+			if (hWnd) break;  //找到后退出
+			szTemp.Format("循环中hWnd=%d", hWnd);
+
+			//  WriteLog(szTemp);
+
+			Sleep(200);
+		}
+		int rec = ::SetWindowPos(hWnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+		//	szTemp.Format("设置窗口时的返回值=%d",rec);
+		//	WriteLog(szTemp);
+
+	}
+	else{  // 控制网页
+
+		//	WriteLog("控制网页");
+		hWnd = ::FindWindow(NULL, szTitle);
+		::ShowWindow(hWnd, nCmdShow);
+	}
+	//    szTitle=lpTitle;
+	//    CmdShow = nCmdShow;
+	// 	AfxBeginThread(ShowWindowEx,NULL);
 
 }

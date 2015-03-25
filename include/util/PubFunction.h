@@ -17,18 +17,16 @@ extern CString szTmpID;
 extern CString szFinalFile;
 extern CString szA_Name;
 
-<<<<<<< HEAD
-BOOL DocConnectionHttp(char *  TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
 BOOL DocConnDownHttp(CString  sFileID = "", int nOpenMode = 1, CString szAttachmentFileName = "");
 BOOL DocConnUploadHttp(char *  TextBuf = "", DWORD nFileLen = 0, int index = 1, CString szAttachmentFileName = "");
 
 int  IsNeedLoad(int index);
 BOOL MakeFile(CString szFileName, int nOpenMode, CString szAttachmentPath);
-=======
+
 BOOL DocConnectionHttp(CString TextBuf = "", DWORD nFileLen = 0, int index = 1, int bDownLoad = 1, CString szAttachmentFileName = "");
 int  IsNeedLoad(int index);
-BOOL MakeFile(CString szFileName, int index, CString szAttachmentPath);
->>>>>>> a03c0c6abce3e58942d69c2e4d8e0044811fb020
+
+
 //功能：获取服务器IP及端口
 BOOL GetIpAndPort(CString &Ip/*IP地址*/, CString &Port/*端口*/, CString &ServerURL/*请求服务器URL*/);
 
@@ -43,14 +41,6 @@ long FindStringAdd(FILE *pfile, char *szMark, BOOL bLast = 0, DWORD nGap = 0);
 string FillToEightBits(string sz);
 
 void CleanPlaintextMark(int iPlaintextLength);
-
-void SetFlagEx(int index, int nflag);
-
-int GetFlagEx(int index);
-
-void SetInSureFlagEx(int index, int nflag);
-
-int  GetInSureFlagEx(int index);
 
 void  DeleteFilesEx(int index);
 
@@ -79,8 +69,6 @@ CString GetSysDirectory();
 DWORD GetFileLen(CString szFileName);
 DWORD GetFileLen(FILE * pfile);
 
-BOOL Compression(CString szCabFile, CString szSendFile);
-BOOL DeCompression(CString& szCabFile, CString szFileName, int index);
 
 BOOL SplitFile(FILE *pfile, CString szFileName, char* szMarkStart, char* szMarkEnd);
 BOOL ReNameFile(CString szSourceFile, CString szDesFile);
@@ -90,7 +78,7 @@ void DeleteDirFile(int index);
 
 //分解文件名
 void GetAllFileNames(CStringArray &szItems, CString szFileNames);
-BOOL JudgeFileIgnoreOrNot(CString szPath, CString & szFileName);
+
 #endif
 
 
